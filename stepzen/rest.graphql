@@ -1,0 +1,57 @@
+type Tx {
+  transaction_hash: String!
+  txLink: Transaction
+    @materializer(
+      query: "transaction"
+      arguments: [{ name: "id", field: "transaction_hash" }]
+    )
+}
+
+type TxEdge {
+  node: Tx
+  cursor: String
+}
+
+type TxConnection {
+  pageInfo: PageInfo!
+  edges: [TxEdge]
+}
+
+type Swap {
+  amount0: String
+  amount1: String
+  amountUSD: String
+  id: String
+  sqrtPriceX96: String
+  tick: String
+}
+
+type Transaction {
+  swaps: [Swap]
+}
+
+type Root {
+  result: [Tx]
+  cursor: String
+  page: Int
+  page_size: Int
+  total: Int
+}
+
+type Query {
+  list_of_transactions_pool(
+    address: String!
+    first: Int = 0
+    after: String = ""
+  ): Root
+    @rest(
+      method: GET
+      endpoint: "https://deep-index.moralis.io/api/v2/$address/logs?chain=eth&cursor=$after"
+      headers: [{ name: "X-API-Key", value: "" }]
+    )
+
+  transaction(id: String!): Transaction
+    @graphql(
+      endpoint: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
+    )
+}

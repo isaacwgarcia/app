@@ -1,8 +1,8 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import styles from "../styles/Home.module.css";
 
-export default function Home() {
+function Home() {
   return (
     <div className={styles.container}>
       <Head>
@@ -17,7 +17,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
+          Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
 
@@ -58,12 +58,69 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }
+
+export async function getStaticProps() {
+  console.log("Getting Static Props ");
+  let headers = {};
+
+  headers["Content-Type"] = "application/json";
+
+  var graphql = JSON.stringify({
+    query: `query moralisQuery {
+    moralisQuery(chain: "eth", x_api_key: "dDxWDZNNCNTu5DAkZaRj8DIIWBeb02jGI4f1gUW2tkIANXcEUnGlkOB7XZCiQuyy"){
+        cursor
+        page
+        page_size
+        result{
+            address
+            block_hash
+            block_number
+            block_timestamp
+            data
+            topic0
+            topic1
+            topic2
+            topic3
+            transaction_hash
+        }
+        total
+    }
+}`,
+  });
+
+  var requestOptions = {
+    method: "POST",
+    headers: headers,
+    body: graphql,
+  };
+
+  console.log("before fetch");
+  fetch(
+    "https://publicbaf08be93829ae40.stepzen.net/api/moralis/__graphql",
+    requestOptions
+  )
+    .then((response) => console.log(response.text()))
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
+
+  return {
+    props: {
+      //posts,
+    },
+    // Next.js will attempt to re-generate the page:
+    // - When a request comes in
+    // - At most once every 10 seconds
+    revalidate: 1, // In seconds
+  };
+}
+
+export default Home;
