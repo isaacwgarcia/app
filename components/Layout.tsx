@@ -1,8 +1,11 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import { Box, Grid } from "@mui/material";
+import { useRouter } from "next/router";
+import ClearAllIcon from "@mui/icons-material/ClearAll";
 
 export default function Layout({ children }) {
+  const router = useRouter();
   return (
     <>
       <Navbar />
@@ -27,7 +30,13 @@ export default function Layout({ children }) {
           </Box>
           <Box mt={2} width="90%">
             <Box padding={2} overflow="true" fontSize="0.6rem">
-              LATERAL MENU
+              <a
+                onClick={() => {
+                  router.push("/pools");
+                }}
+              >
+                <ClearAllIcon /> All Pools
+              </a>
             </Box>
           </Box>
         </Grid>
