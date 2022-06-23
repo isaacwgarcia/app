@@ -25,31 +25,7 @@ async function fetchAPI(query: any, { variables }: APIConnection = {}) {
 }
 
 export async function queryTXs(id) {
-  console.log("Calling queryTxs...", id);
   try {
-    /* const data = await fetchAPI(
-      `
-      query MyQuery {
-        list_of_transactions_pool(address: "${id}") {
-          cursor
-          page
-          result {
-            transaction_hash
-            txLink {
-              swaps {
-                amount0
-                amount1
-                amountUSD
-              }
-            }
-          }
-        }
-      }
-      
-         
-        `
-    ); */
-
     const moralis_query = await fetch(`${process.env.STEPZEN_API_URL}`, {
       method: "POST",
       headers: {
