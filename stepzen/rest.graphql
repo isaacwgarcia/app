@@ -38,18 +38,38 @@ type Root {
   total: Int
 }
 
+type Token0 {
+  name: String
+}
+
+type Token1 {
+  name: String
+}
+
+type Pool {
+  feeTier: String
+  id: String
+  token0: Token0
+  token1: Token1
+  volumeUSD: String
+}
+
 type Query {
+  pools(first: Int, orderBy: String, orderDirection: String): [Pool]
+    @graphql(
+      endpoint: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
+    )
+
   list_of_transactions_pool(
     address: String!
-    first: Int = 0
     after: String = ""
+    apikey: String!
   ): Root
     @rest(
       method: GET
       endpoint: "https://deep-index.moralis.io/api/v2/$address/logs?chain=eth&cursor=$after"
-      headers: [{ name: "X-API-Key", value: "" }]
+      headers: [{ name: "X-API-Key", value: "$apikey" }]
     )
-
   transaction(id: String!): Transaction
     @graphql(
       endpoint: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
