@@ -11,7 +11,6 @@ import { useRouter } from "next/router";
 export default function PoolTable({ tableData }) {
   const router = useRouter();
 
-  console.log("PoolTable length", tableData.length);
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">

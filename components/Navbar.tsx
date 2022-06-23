@@ -1,6 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import { useRouter } from "next/router";
+import Pricing from "./Pricing";
 
 const Navbar = () => {
   const router = useRouter();
@@ -22,6 +23,10 @@ const Navbar = () => {
           justifyContent: "flex-end",
         }}
       >
+        <Box padding="1rem">
+          <Pricing />
+        </Box>
+
         <Box sx={{ padding: "1rem" }}>
           <button
             onClick={() => {

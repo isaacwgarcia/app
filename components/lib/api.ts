@@ -1,4 +1,3 @@
-import { createNoSubstitutionTemplateLiteral } from "typescript";
 import { APIConnection } from "../../stepzen/stepzenTypes";
 
 async function fetchAPI(query: any, { variables }: APIConnection = {}) {
@@ -93,6 +92,37 @@ export async function getPools() {
 
     const values = await pools_query.json();
     return values?.data.pools;
+  } catch (e) {
+    return e.message;
+  }
+}
+
+export async function getPrice(id) {
+  try {
+    const price_query = await fetch(`${process.env.STEPZEN_API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+      body: JSON.stringify({
+        query: `
+        query MyQuery {
+          get_price(pair: "${id}") {
+            data {
+              amount
+              base
+              currency
+            }
+          }
+        }
+      `,
+      }),
+    });
+
+    const price = await price_query.json();
+
+    return price?.data;
   } catch (e) {
     return e.message;
   }

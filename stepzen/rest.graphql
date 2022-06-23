@@ -54,10 +54,26 @@ type Pool {
   volumeUSD: String
 }
 
+type Price {
+  amount: String
+  base: String
+  currency: String
+}
+
+type Val {
+  data: Price
+}
+
 type Query {
   pools(first: Int, orderBy: String, orderDirection: String): [Pool]
     @graphql(
       endpoint: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
+    )
+
+  get_price(pair: String!): Val
+    @rest(
+      method: GET
+      endpoint: "https://api.coinbase.com/v2/prices/$pair/spot"
     )
 
   list_of_transactions_pool(
