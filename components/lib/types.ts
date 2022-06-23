@@ -15,3 +15,14 @@ export interface Transaction {
 export interface Link {
   swaps: Swap[];
 }
+
+export interface Pool {
+  volumeUSD: number;
+  id: String;
+  token0: Token;
+  token1: Token;
+}
+
+export interface Token {
+  name: String;
+}

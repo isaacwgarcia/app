@@ -1,16 +1,16 @@
 import { queryTXs } from "../../components/lib/api";
-import { useEffect } from "react";
 import styles from "../../styles/Home.module.css";
-import { Transaction, Swap } from "../../components/lib/types";
+import { Transaction } from "../../components/lib/types";
 import dynamic from "next/dynamic";
 
 const Table = dynamic(() => import("../../components/Table/table"), {
   ssr: false,
 });
 const headersTable = ["Transaction ID", "amount USD"];
-let dataTable: any[] = [];
 
 function Pool(data) {
+  let dataTable: any[] = [];
+
   const txs = data.data as Transaction[];
 
   async function fillData(txs) {
@@ -19,20 +19,18 @@ function Pool(data) {
         transaction_hash: tx.transaction_hash,
         amount: tx.txLink?.swaps[0]?.amountUSD,
       };
-      dataTable.push(txData);
+
+      if (txData.amount > 0) dataTable.push(txData);
     });
   }
 
-  useEffect(() => {
-    fillData(txs);
-  }, []);
+  fillData(txs);
 
   return (
     <div className={styles.container}>
       Pool Name
       <br />
-      Details of Transactions:
-      <br /> <br />
+      <br />
       <Table tableHead={headersTable} tableData={dataTable} />
     </div>
   );

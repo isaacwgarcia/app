@@ -61,3 +61,39 @@ export async function queryTXs(id) {
     return e.message;
   }
 }
+
+export async function getPools() {
+  try {
+    const pools_query = await fetch(`${process.env.STEPZEN_API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+      body: JSON.stringify({
+        query: `
+        query MyQuery {
+          pools(first: 10, orderBy: "volumeUSD", orderDirection: "desc") {
+            volumeUSD
+            id
+            token0 {
+              name
+            }
+            token1 {
+              name
+            }
+          }
+        }
+        
+        
+        
+      `,
+      }),
+    });
+
+    const values = await pools_query.json();
+    return values?.data.pools;
+  } catch (e) {
+    return e.message;
+  }
+}
