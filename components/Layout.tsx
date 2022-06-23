@@ -45,16 +45,6 @@ export default function Layout({ children }) {
           {children}
         </Grid>
       </Grid>
-
-      <Box
-        overflow="true"
-        fontSize="0.6rem"
-        display="flex"
-        justifyContent="center"
-        alignContent="center"
-      >
-        POWERED BY STEPZEN - MORALIS - THE GRAPH
-      </Box>
     </>
   );
 }
