@@ -1,11 +1,8 @@
 import { Box } from "@mui/material";
-import React, { useState } from "react";
-import { getPrice } from "../components/lib/api";
+import React, { useState, useEffect } from "react";
+import { getPrice } from "./lib/api";
 
-export default function Pricing() {
-  //const fetcher = (url) => fetch(url).then((r) => r.json());
-  //const { data, error } = useSWR("/api/user/123", fetcher);
-
+export default function PricesBar() {
   const [loaded, setLoaded] = useState(false);
   const [eth, setEth] = useState(0);
   const [btc, setBtc] = useState(0);
@@ -23,22 +20,24 @@ export default function Pricing() {
       })
     );
     setLtc(
-      await getPrice("LTC-USD").then((res) => {
+      await getPrice("BTC-USD").then((res) => {
         return res.get_price.data.amount;
       })
     );
     setLoaded(true);
   }
-  React.useEffect(() => {
-    prices();
-  }, [loaded]);
+  useEffect(() => {
+    const interval = setInterval(() => prices(), 10000); //Update in 10 seconds
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   return (
     <Box display="flex">
-      <Box>ETH Price: {eth} </Box>&nbsp;&nbsp;
-      <Box>MATIC Price: {btc} </Box>&nbsp;&nbsp;
-      <Box>LTC Price: {ltc} </Box>
-      &nbsp;&nbsp;
+      <Box padding="0.5rem">ETH ${eth} </Box>
+      <Box padding="0.5rem">MATIC ${btc} </Box>
+      <Box padding="0.5rem">BTC ${ltc} </Box>
     </Box>
   );
 }

@@ -2,8 +2,15 @@ import { Box } from "@mui/material";
 import Head from "next/head";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
+import { useContext, useEffect } from "react";
+import { AppContext } from "../components/state/context";
+import { useRouter } from "next/router";
 
 function Home() {
+  const context = useContext(AppContext);
+  const router = useRouter();
+
+  if (context.state.token.accessToken) router.push("/dashboard");
   return (
     <Box bgcolor="black" color="white" sx={{ height: "100vh" }}>
       <Head>

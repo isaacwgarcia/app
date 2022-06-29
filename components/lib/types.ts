@@ -31,3 +31,14 @@ export interface LensToken {
   accessToken: String;
   refreshToken: String;
 }
+
+export interface User {
+  bio: "";
+  handle: "";
+  id: "";
+  location: "";
+  name: "";
+  twitterUrl: "";
+  website: "";
+  picture: "";
+}
