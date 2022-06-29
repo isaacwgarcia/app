@@ -3,29 +3,6 @@ import { LensToken } from "../lib/types";
 import Web3Modal from "web3modal";
 import { BigNumber, ethers, utils } from "ethers";
 
-async function fetchAPI(query: any, { variables }: APIConnection = {}) {
-  const headers = {
-    Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
-    "Content-Type": "application/json",
-  };
-
-  const res = await fetch(`${process.env.STEPZEN_API_URL}`, {
-    method: "POST",
-    headers,
-    body: JSON.stringify({
-      query,
-      variables,
-    }),
-  });
-
-  const json = await res.json();
-  if (json.errors) {
-    console.error(json.errors);
-    throw new Error("Failed to fetch API");
-  }
-  return json.data;
-}
-
 export async function queryTXs(id) {
   try {
     const moralis_query = await fetch(`${process.env.STEPZEN_API_URL}`, {
