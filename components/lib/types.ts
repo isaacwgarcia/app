@@ -26,3 +26,8 @@ export interface Pool {
 export interface Token {
   name: String;
 }
+
+export interface LensToken {
+  accessToken: String;
+  refreshToken: String;
+}

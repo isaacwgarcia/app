@@ -20,7 +20,7 @@ function Pool(data) {
         amount: tx.txLink?.swaps[0]?.amountUSD,
       };
 
-      if (txData.amount > 0) dataTable.push(txData);
+      if (txData.amount > 200000) dataTable.push(txData);
     });
   }
 

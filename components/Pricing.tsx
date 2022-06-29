@@ -18,7 +18,7 @@ export default function Pricing() {
       })
     );
     setBtc(
-      await getPrice("BTC-USD").then((res) => {
+      await getPrice("MATIC-USD").then((res) => {
         return res.get_price.data.amount;
       })
     );
@@ -36,7 +36,7 @@ export default function Pricing() {
   return (
     <Box display="flex">
       <Box>ETH Price: {eth} </Box>&nbsp;&nbsp;
-      <Box>BTC Price: {btc} </Box>&nbsp;&nbsp;
+      <Box>MATIC Price: {btc} </Box>&nbsp;&nbsp;
       <Box>LTC Price: {ltc} </Box>
       &nbsp;&nbsp;
     </Box>

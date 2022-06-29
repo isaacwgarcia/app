@@ -60,8 +60,53 @@ type Price {
   currency: String
 }
 
-type Val {
+type PriceRoot {
   data: Price
+}
+
+type Challenge {
+  text: String
+}
+
+type Data {
+  challenge: Challenge
+}
+
+type RootChallenge {
+  data: Data
+}
+
+type Request {
+  address: String
+}
+
+input ChallengeRequest {
+  address: String!
+}
+
+scalar Signature
+
+input SignedAuthChallenge {
+  """
+  The ethereum address you signed the signature with
+  """
+  address: String!
+  """
+  The signature
+  """
+  signature: Signature!
+}
+scalar Jwt
+
+type AuthenticationResult {
+  """
+  The access token
+  """
+  accessToken: Jwt!
+  """
+  The refresh token
+  """
+  refreshToken: Jwt!
 }
 
 type Query {
@@ -70,7 +115,7 @@ type Query {
       endpoint: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
     )
 
-  get_price(pair: String!): Val
+  get_price(pair: String!): PriceRoot
     @rest(
       method: GET
       endpoint: "https://api.coinbase.com/v2/prices/$pair/spot"
@@ -90,4 +135,14 @@ type Query {
     @graphql(
       endpoint: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
     )
+  """
+  Querys for Lens
+  """
+  challenge(request: ChallengeRequest!): Challenge
+    @graphql(endpoint: "https://api-mumbai.lens.dev")
+}
+
+type Mutation {
+  authenticate(request: SignedAuthChallenge!): AuthenticationResult!
+    @graphql(endpoint: "https://api-mumbai.lens.dev/")
 }

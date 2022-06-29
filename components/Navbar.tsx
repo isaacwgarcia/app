@@ -2,9 +2,14 @@ import React from "react";
 import { Box } from "@mui/material";
 import { useRouter } from "next/router";
 import Pricing from "./Pricing";
+import { auth } from "../components/lib/api";
+import { LensToken } from "./lib/types";
 
 const Navbar = () => {
   const router = useRouter();
+  async function login() {
+    const lens_token = (await auth()) as LensToken;
+  }
 
   return (
     <>
@@ -19,7 +24,6 @@ const Navbar = () => {
           color: "white",
           background: "black",
           zIndex: "10",
-
           justifyContent: "flex-end",
         }}
       >
@@ -30,6 +34,7 @@ const Navbar = () => {
         <Box sx={{ padding: "1rem" }}>
           <button
             onClick={() => {
+              login();
               router.push("/dashboard");
             }}
           >

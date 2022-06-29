@@ -1,4 +1,7 @@
 import { APIConnection } from "../../stepzen/stepzenTypes";
+import { LensToken } from "../lib/types";
+import Web3Modal from "web3modal";
+import { BigNumber, ethers, utils } from "ethers";
 
 async function fetchAPI(query: any, { variables }: APIConnection = {}) {
   const headers = {
@@ -125,5 +128,81 @@ export async function getPrice(id) {
     return price?.data;
   } catch (e) {
     return e.message;
+  }
+}
+
+export async function generateChallenge(address) {
+  try {
+    const challenge = await fetch(`${process.env.STEPZEN_API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+      body: JSON.stringify({
+        query: `
+          query TestQuery {
+            challenge(
+                request: {address: "${address}"}
+              ) {
+            text
+              }  
+          }
+     
+      `,
+      }),
+    });
+
+    const challengeText = await challenge.json();
+    return challengeText?.data;
+  } catch (e) {
+    return e.message;
+  }
+}
+
+export async function authenticate(address, signature) {
+  try {
+    const auth = await fetch(`${process.env.STEPZEN_API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+      body: JSON.stringify({
+        query: `
+         mutation { 
+            authenticate(request: {address: "${address}",signature:"${signature}"}) {
+              accessToken
+              refreshToken
+            }
+          }
+     
+      `,
+      }),
+    });
+
+    const authResponse = await auth.json();
+    return authResponse?.data;
+  } catch (e) {
+    return e.message;
+  }
+}
+
+export async function auth(): Promise<LensToken | boolean> {
+  try {
+    const web3Modal = new Web3Modal();
+    const connection = await web3Modal.connect();
+    const provider = new ethers.providers.Web3Provider(connection);
+    const accounts = await provider.listAccounts();
+    const address = accounts[0];
+    const signer = provider.getSigner();
+    const challenge = await generateChallenge(address);
+    const signedMessage = await signer.signMessage(challenge.challenge.text);
+    const response = await authenticate(address, signedMessage);
+
+    return response.authenticate;
+  } catch (e) {
+    console.log("e ", e);
+    return false;
   }
 }
