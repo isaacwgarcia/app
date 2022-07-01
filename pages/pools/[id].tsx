@@ -2,6 +2,7 @@ import { queryTXs } from "../../components/lib/api";
 import styles from "../../styles/Home.module.css";
 import { Transaction } from "../../components/lib/types";
 import dynamic from "next/dynamic";
+import { Input, Button } from "@mui/material";
 
 const Table = dynamic(() => import("../../components/Table/table"), {
   ssr: false,
@@ -20,7 +21,7 @@ function Pool(data) {
         amount: tx.txLink?.swaps[0]?.amountUSD,
       };
 
-      if (txData.amount > 200000) dataTable.push(txData);
+      if (txData.amount > 50000) dataTable.push(txData);
     });
   }
 
@@ -31,6 +32,13 @@ function Pool(data) {
       Pool Name
       <br />
       <br />
+      Latest Transactions:
+      <br />
+      <Table tableHead={headersTable} tableData={dataTable} /> <br /> <br />{" "}
+      <br />
+      Search Data:
+      <br />
+      <Input /> <Button>Text</Button>
       <Table tableHead={headersTable} tableData={dataTable} />
     </div>
   );

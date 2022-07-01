@@ -29,13 +29,33 @@ export default function Layout({ children }) {
             </Box>
           </Box>
           <Box mt={2} width="90%">
-            <Box padding={2} overflow="true" fontSize="0.6rem">
+            <Box overflow="true" fontSize="0.6rem">
               <a
                 onClick={() => {
                   router.push("/pools");
                 }}
               >
                 <ClearAllIcon /> All Pools
+              </a>
+            </Box>
+            <Box overflow="true" fontSize="0.6rem">
+              <a
+                onClick={() => {
+                  router.push("/address");
+                }}
+              >
+                <ClearAllIcon />
+                Search By Address
+              </a>
+            </Box>
+            <Box overflow="true" fontSize="0.6rem">
+              <a
+                onClick={() => {
+                  router.push("/asset");
+                }}
+              >
+                <ClearAllIcon />
+                Search By Asset
               </a>
             </Box>
           </Box>
