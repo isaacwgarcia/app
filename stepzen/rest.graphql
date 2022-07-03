@@ -5,6 +5,14 @@ type Tx {
       query: "transaction"
       arguments: [{ name: "id", field: "transaction_hash" }]
     )
+  detail(apikey: String!): TXDetail
+    @materializer(
+      query: "tx_details"
+      arguments: [
+        { name: "txhash", field: "transaction_hash" }
+        { name: "apikey", argument: "apikey" }
+      ]
+    )
 }
 
 type TxEdge {
@@ -407,7 +415,114 @@ type NFTList {
   total: Int
 }
 
+type Balance {
+  balance: String
+}
+
+input Bal {
+  balance: String
+}
+
+type Tweet {
+  id: String
+  text: String
+}
+
+type Meta {
+  newest_id: String
+  next_token: String
+  oldest_id: String
+  result_count: Int
+}
+
+type Tweets {
+  data: [Tweet]
+  meta: Meta
+}
+
+type DataCryptoCompareTX {
+  active_addresses: Int
+  average_transaction_value: Float
+  block_height: Int
+  block_size: Int
+  block_time: Float
+  current_supply: Float
+  difficulty: Int
+  hashrate: Float
+  id: Int
+  large_transaction_count: Int
+  new_addresses: Int
+  symbol: String
+  time: Int
+  transaction_count: Int
+  transaction_count_all_time: Int
+  unique_addresses_all_time: Int
+  zero_balance_addresses_all_time: Int
+}
+
+type DataCryptoCompare {
+  Aggregated: Boolean
+  Data: [DataCryptoCompareTX]
+  TimeFrom: Int
+  TimeTo: Int
+}
+
+type CryptoCompare {
+  Data: DataCryptoCompare
+  HasWarning: Boolean
+  Message: String
+  RateLimit: JSON
+  Response: String
+  Type: Int
+}
+
+type Log {
+  address: String
+  block_hash: String
+  block_number: String
+  block_timestamp: DateTime
+  data: String
+  log_index: String
+  topic0: String
+  topic1: String
+  topic2: String
+  topic3: JSON
+  transaction_hash: String
+  transaction_index: String
+  transaction_value: String
+  transfer_index: [Int]
+}
+
+type TXDetail {
+  block_hash: String
+  block_number: String
+  block_timestamp: DateTime
+  from_address: String
+  gas: String
+  gas_price: String
+  hash: String
+  input: String
+  logs: [Log]
+  nonce: String
+  receipt_contract_address: JSON
+  receipt_cumulative_gas_used: String
+  receipt_gas_used: String
+  receipt_root: JSON
+  receipt_status: String
+  to_address: String
+  transaction_index: String
+  transfer_index: [Int]
+  value: String
+}
+
 type Query {
+  historical_crypto(token: String!, apikey: Secret!): CryptoCompare
+    @rest(
+      method: GET
+      endpoint: "https://min-api.cryptocompare.com/data/blockchain/histo/day?fsym=$token"
+      headers: [{ name: "authorization", value: "Apikey $apikey" }]
+    )
+
   pools(first: Int, orderBy: String, orderDirection: String): [Pool]
     @graphql(
       endpoint: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
@@ -419,11 +534,31 @@ type Query {
       endpoint: "https://api.coinbase.com/v2/prices/$pair/spot"
     )
 
+  tx_details(txhash: String!, apikey: String!): TXDetail
+    @rest(
+      method: GET
+      endpoint: "https://deep-index.moralis.io/api/v2/transaction/$txhash?chain=eth"
+      headers: [{ name: "X-API-Key", value: "$apikey" }]
+    )
   list_nft(address: String!, apikey: String!): NFTList
     @rest(
       method: GET
       endpoint: "https://deep-index.moralis.io/api/v2/$address/nft?chain=eth&format=decimal"
       headers: [{ name: "X-API-Key", value: "$apikey" }]
+    )
+
+  get_balance(address: String!, apikey: String!, chain: String!): Balance
+    @rest(
+      method: GET
+      endpoint: "https://deep-index.moralis.io/api/v2/$address/balance?chain=$chain"
+      headers: [{ name: "X-API-Key", value: "$apikey" }]
+    )
+
+  get_tweets(query: String!, authorization: Secret!): Tweets
+    @rest(
+      method: GET
+      endpoint: "https://api.twitter.com/2/tweets/search/recent?query=$query"
+      headers: [{ name: "authorization", value: "$authorization" }]
     )
 
   list_of_transactions_pool(
@@ -447,13 +582,12 @@ type Query {
   Querys for Lens
   """
   challenge(request: ChallengeRequest!): Challenge
-    @graphql(endpoint: "https://api-mumbai.lens.dev")
+    @graphql(endpoint: "https://api.lens.dev")
 
-  recommendedProfiles: [Profile!]!
-    @graphql(endpoint: "https://api-mumbai.lens.dev/")
+  recommendedProfiles: [Profile!]! @graphql(endpoint: "https://api.lens.dev/")
 }
 
 type Mutation {
   authenticate(request: SignedAuthChallenge!): AuthenticationResult!
-    @graphql(endpoint: "https://api-mumbai.lens.dev/")
+    @graphql(endpoint: "https://api.lens.dev/")
 }

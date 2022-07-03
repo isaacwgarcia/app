@@ -165,6 +165,49 @@ export async function authenticate(address, signature) {
   }
 }
 
+export async function getNfts(address) {
+  try {
+    const auth = await fetch(`${process.env.STEPZEN_API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+      body: JSON.stringify({
+        query: `
+        {
+          list_nft(
+            address: "${address}", apikey: "${process.env.STEPZEN_MORALIS_API_KEY}"
+          ) {
+            cursor
+            page
+            page_size
+            status
+            total
+            result {
+              name
+              owner_of
+              symbol
+              token_address
+              token_id
+              token_uri
+            }
+          }
+        }
+        
+        
+     
+      `,
+      }),
+    });
+
+    const nfts_response = await auth.json();
+    console.log("nfts_response>>>> ", nfts_response);
+    return nfts_response?.data;
+  } catch (e) {
+    return e.message;
+  }
+}
 export async function auth(): Promise<LensToken | boolean> {
   try {
     const web3Modal = new Web3Modal();

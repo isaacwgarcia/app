@@ -42,3 +42,7 @@ export interface User {
   website: "";
   picture: "";
 }
+
+export interface FormData {
+  form_data: Record<string, string>;
+}
