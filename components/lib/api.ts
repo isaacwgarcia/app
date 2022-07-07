@@ -2,6 +2,7 @@ import { APIConnection } from "../../stepzen/stepzenTypes";
 import { LensToken } from "../lib/types";
 import Web3Modal from "web3modal";
 import { BigNumber, ethers, utils } from "ethers";
+import { coinbaseWallet } from "../connectors/coinbaseWallet";
 
 export async function queryTXs(id) {
   try {
@@ -257,22 +258,4 @@ export async function getProfile(address) {
     const profile_response = await profile.json();
     return profile_response?.data;
   } catch (e) {}
-}
-
-export async function auth(): Promise<LensToken | boolean> {
-  try {
-    const web3Modal = new Web3Modal();
-    const connection = await web3Modal.connect();
-    const provider = new ethers.providers.Web3Provider(connection);
-    const accounts = await provider.listAccounts();
-    const address = accounts[0];
-    const signer = provider.getSigner();
-    const challenge = await generateChallenge(address);
-    const signedMessage = await signer.signMessage(challenge.challenge.text);
-    const response = await authenticate(address, signedMessage);
-    return response.authenticate;
-  } catch (e) {
-    console.log("e ", e);
-    return false;
-  }
 }

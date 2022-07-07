@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import Head from "next/head";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AppContext } from "../components/state/context";
 import { useRouter } from "next/router";
 

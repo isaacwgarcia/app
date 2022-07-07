@@ -2,22 +2,40 @@ import React from "react";
 import { Box } from "@mui/material";
 import { useRouter } from "next/router";
 import PricesBar from "./PricesBar";
-import { auth } from "../components/lib/api";
 import { LensToken } from "./lib/types";
 import { loadToken } from "./state/reducer";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "../components/state/context";
+import { coinbaseWallet, hooks } from "../components/connectors/coinbaseWallet";
+import { generateChallenge, authenticate } from "../components/lib/api";
 
-const Navbar = () => {
+const { useChainId, useAccounts, useError, useIsActivating, useProvider } =
+  hooks;
+
+export default function Navbar() {
+  const chainId = useChainId();
+  const accounts = useAccounts();
+  const error = useError();
+  const isActivating = useIsActivating();
+  const provider = useProvider();
   const { dispatch } = useContext(AppContext);
   const context = useContext(AppContext);
   const router = useRouter();
   const [logged, setLogged] = useState(false);
 
   async function login() {
-    const lens_token = (await auth()) as LensToken;
-    if (lens_token) setLogged(true);
-    dispatch(loadToken(lens_token));
+    void (await coinbaseWallet.connectEagerly());
+    if (provider) {
+      const signer = provider.getSigner();
+      const challenge = await generateChallenge(accounts[0]);
+      const signedMessage = await signer.signMessage(challenge.challenge.text);
+      const response = await authenticate(accounts[0], signedMessage);
+      const lens_token = response.authenticate as LensToken;
+      if (lens_token) setLogged(true);
+      dispatch(loadToken(lens_token));
+    } else {
+      console.log("Please wait for Coinbase to connect...");
+    }
   }
 
   return (
@@ -56,5 +74,4 @@ const Navbar = () => {
       </Box>
     </>
   );
-};
-export default Navbar;
+}
