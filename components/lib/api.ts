@@ -202,12 +202,63 @@ export async function getNfts(address) {
     });
 
     const nfts_response = await auth.json();
-    console.log("nfts_response>>>> ", nfts_response);
     return nfts_response?.data;
   } catch (e) {
     return e.message;
   }
 }
+
+export async function getProfile(address) {
+  try {
+    const profile = await fetch(`${process.env.STEPZEN_API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+      body: JSON.stringify({
+        query: `
+
+        {
+          profiles(request: {ownedBy: "${address}"}) {
+            items {
+              id
+              name
+              handle
+              attributes {
+                displayType
+                key
+                traitType
+                value
+              }
+              coverPicture {
+                ... on NftImage {
+                  __typename
+                  chainId
+                  contractAddress
+                  tokenId
+                  uri
+                  verified
+                }
+                ... on MediaSet {
+                  original {
+                    url
+                  }
+                }
+              }
+            }
+          }
+        }
+        
+    `,
+      }),
+    });
+
+    const profile_response = await profile.json();
+    return profile_response?.data;
+  } catch (e) {}
+}
+
 export async function auth(): Promise<LensToken | boolean> {
   try {
     const web3Modal = new Web3Modal();
@@ -219,7 +270,6 @@ export async function auth(): Promise<LensToken | boolean> {
     const challenge = await generateChallenge(address);
     const signedMessage = await signer.signMessage(challenge.challenge.text);
     const response = await authenticate(address, signedMessage);
-
     return response.authenticate;
   } catch (e) {
     console.log("e ", e);

@@ -45,16 +45,15 @@ function FindAddress() {
       <br />
       {loaded ? (
         <Box display="flex" flexDirection="column" width="100%">
-          <Box width="25%">Account Balance: </Box>
+          <Box width="25%">Account Balance: Call Balance API</Box>
           <Box width="75%">
             NFTs List:
             {nfts.map((nft, index) => {
-              console.log("NFT >>> ", nft);
               return (
                 <NFTCard
                   key={index}
                   name={nft.name}
-                  url={nft.token_uri ? nft.token_uri : ""}
+                  url={nft.token_uri ? nft.token_uri : "empty"}
                   address={nft.token_address}
                 />
               );

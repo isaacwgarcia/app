@@ -1,0 +1,41 @@
+scalar LimitScalar
+scalar Cursor
+scalar InternalPublicationId
+
+input ProfileQueryRequest {
+  limit: LimitScalar
+  cursor: Cursor
+
+  # The profile ids
+  profileIds: [ProfileId!]
+
+  # The ethereum addresses
+  ownedBy: [EthereumAddress!]
+
+  # The handles for the profile
+  handles: [Handle!]
+
+  # The mirrored publication id
+  whoMirroredPublicationId: InternalPublicationId
+}
+
+type PaginatedProfileResult {
+  items: [Profile!]!
+  pageInfo: PaginatedResultInfo!
+}
+
+type PaginatedResultInfo {
+  # Cursor to query the actual results
+  prev: Cursor
+
+  # Cursor to query next results
+  next: Cursor
+
+  # The total number of entities the pagination iterates over. e.g. For a query that requests all nfts with more than 10 likes, this field gives the total amount of nfts with more than 10 likes, not the total amount of nfts
+  totalCount: Int!
+}
+
+type Query {
+  profiles(request: ProfileQueryRequest!): PaginatedProfileResult!
+    @graphql(endpoint: "https://api-mumbai.lens.dev/")
+}

@@ -1,0 +1,27 @@
+type TransactionGQ {
+  id: String
+}
+
+type SwapGQ {
+  amountUSD: String
+  transaction: TransactionGQ
+}
+
+type PoolGQ {
+  swaps: [SwapGQ]
+}
+
+input Swap_filter {
+  pool_contains: String
+}
+
+type Query {
+  pool(id: String): PoolGQ
+    @graphql(
+      endpoint: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
+    )
+  swaps(where: Swap_filter, orderBy: String, orderDirection: String): [SwapGQ]
+    @graphql(
+      endpoint: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
+    )
+}

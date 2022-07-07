@@ -419,10 +419,6 @@ type Balance {
   balance: String
 }
 
-input Bal {
-  balance: String
-}
-
 type Tweet {
   id: String
   text: String
@@ -547,10 +543,10 @@ type Query {
       headers: [{ name: "X-API-Key", value: "$apikey" }]
     )
 
-  get_balance(address: String!, apikey: String!, chain: String!): Balance
+  get_balance(address: String!, apikey: String!): Balance
     @rest(
       method: GET
-      endpoint: "https://deep-index.moralis.io/api/v2/$address/balance?chain=$chain"
+      endpoint: "https://deep-index.moralis.io/api/v2/$address/balance?chain=eth"
       headers: [{ name: "X-API-Key", value: "$apikey" }]
     )
 
@@ -582,12 +578,12 @@ type Query {
   Querys for Lens
   """
   challenge(request: ChallengeRequest!): Challenge
-    @graphql(endpoint: "https://api.lens.dev")
+    @graphql(endpoint: "https://api-mumbai.lens.dev")
 
   recommendedProfiles: [Profile!]! @graphql(endpoint: "https://api.lens.dev/")
 }
 
 type Mutation {
   authenticate(request: SignedAuthChallenge!): AuthenticationResult!
-    @graphql(endpoint: "https://api.lens.dev/")
+    @graphql(endpoint: "https://api-mumbai.lens.dev/")
 }
