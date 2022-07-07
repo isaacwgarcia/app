@@ -24,12 +24,14 @@ export default function Navbar() {
   const [logged, setLogged] = useState(false);
 
   async function login() {
-    void (await coinbaseWallet.connectEagerly());
+    void (await coinbaseWallet.activate());
+
     if (provider) {
       const signer = provider.getSigner();
-      const challenge = await generateChallenge(accounts[0]);
+      const challenge = await generateChallenge(accounts);
+
       const signedMessage = await signer.signMessage(challenge.challenge.text);
-      const response = await authenticate(accounts[0], signedMessage);
+      const response = await authenticate(accounts, signedMessage);
       const lens_token = response.authenticate as LensToken;
       if (lens_token) setLogged(true);
       dispatch(loadToken(lens_token));

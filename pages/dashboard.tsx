@@ -1,20 +1,44 @@
 import React from "react";
 import { Box, Grid } from "@mui/material";
+import { hooks } from "../components/connectors/coinbaseWallet";
+import { getProfile } from "../components/lib/api";
+import { User } from "../components/lib/types";
+
+const { useAccounts } = hooks;
 
 export default function Dashboard() {
+  let user: User = {
+    id: "",
+    handle: "",
+    bio: "",
+    name: "",
+    picture: "",
+    cover_picture: "",
+  };
+  const accounts = useAccounts();
+  async function loadData() {
+    const profile = await getProfile(accounts);
+
+    user.bio = profile.profiles.items[0].bio;
+    user.handle = profile.profiles.items[0].handle;
+    user.id = profile.profiles.items[0].id;
+    user.name = profile.profiles.items[0].name;
+    user.cover_picture = profile.profiles.items[0].coverPicture.original.url;
+    user.picture = profile.profiles.items[0].picture.original.url;
+  }
+
+  loadData();
   return (
     <div>
-      <Grid container spacing={3} width="auto" height="85vh" padding="1vw">
-        <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
-          <Box>
-            <Box padding={2} overflow="true" fontSize="0.6rem">
-              Dashboard
-              <br />
-              <br />
-              <br />
-              <br />
-            </Box>
-          </Box>
+      <Grid container spacing={1} width="auto" height="85vh" padding="1vw">
+        <Grid item xs={3} sm={3} md={6} lg={12} xl={12}>
+          <Box>Twitter</Box>
+        </Grid>
+        <Grid item xs={3} sm={3} md={6} lg={12} xl={12}>
+          <Box>Lens Posts</Box>
+        </Grid>
+        <Grid item xs={3} sm={3} md={6} lg={12} xl={12}>
+          Spotify Profile
         </Grid>
       </Grid>
 

@@ -36,11 +36,9 @@ export interface User {
   bio: "";
   handle: "";
   id: "";
-  location: "";
   name: "";
-  twitterUrl: "";
-  website: "";
   picture: "";
+  cover_picture: "";
 }
 
 export interface FormData {

@@ -419,23 +419,6 @@ type Balance {
   balance: String
 }
 
-type Tweet {
-  id: String
-  text: String
-}
-
-type Meta {
-  newest_id: String
-  next_token: String
-  oldest_id: String
-  result_count: Int
-}
-
-type Tweets {
-  data: [Tweet]
-  meta: Meta
-}
-
 type DataCryptoCompareTX {
   active_addresses: Int
   average_transaction_value: Float
@@ -548,13 +531,6 @@ type Query {
       method: GET
       endpoint: "https://deep-index.moralis.io/api/v2/$address/balance?chain=eth"
       headers: [{ name: "X-API-Key", value: "$apikey" }]
-    )
-
-  get_tweets(query: String!, authorization: Secret!): Tweets
-    @rest(
-      method: GET
-      endpoint: "https://api.twitter.com/2/tweets/search/recent?query=$query"
-      headers: [{ name: "authorization", value: "$authorization" }]
     )
 
   list_of_transactions_pool(

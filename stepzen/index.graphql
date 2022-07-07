@@ -1,3 +1,11 @@
-schema @sdl(files: ["rest.graphql", "thegraph.graphql", "lens.graphql"]) {
+schema
+  @sdl(
+    files: [
+      "rest.graphql"
+      "thegraph.graphql"
+      "lens.graphql"
+      "twitter.graphql"
+    ]
+  ) {
   query: Query
 }

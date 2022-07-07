@@ -14,10 +14,8 @@ export const initialAppOwnerState: AppOwnerState = {
     bio: "",
     handle: "",
     id: "",
-    location: "",
     name: "",
-    twitterUrl: "",
-    website: "",
     picture: "",
+    cover_picture: "",
   },
 };

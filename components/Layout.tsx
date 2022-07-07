@@ -3,9 +3,16 @@ import Navbar from "../components/Navbar";
 import { Box, Grid } from "@mui/material";
 import { useRouter } from "next/router";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
+import { CHAINS } from "./chains";
+import { hooks } from "./connectors/coinbaseWallet";
+const { useChainId, useAccounts, useIsActive } = hooks;
 
 export default function Layout({ children }) {
   const router = useRouter();
+  const accounts = useAccounts();
+  const isActive = useIsActive();
+  const chainId = useChainId();
+
   return (
     <>
       <Navbar />
@@ -18,14 +25,20 @@ export default function Layout({ children }) {
             width="90%"
           >
             <Box padding={2} overflow="true" fontSize="0.6rem">
-              BetaPhase Data Analysis <br />
+              <b>{accounts}</b>
+              <br />
+              {isActive ? CHAINS[chainId]!.name : ""}
             </Box>
           </Box>
           <Box border={1} borderRadius={3} mt={2} width="90%">
             <Box padding={2} overflow="true" fontSize="0.6rem">
-              USER ADDRESS
+              <Box display="flex" width="75%" justifyContent="center">
+                Profile Picture
+              </Box>
               <br />
-              CONNECTED TO: NETWORK
+              Name <br />
+              Handle <br />
+              <br />
             </Box>
           </Box>
           <Box mt={2} width="90%">

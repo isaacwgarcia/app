@@ -226,21 +226,20 @@ export async function getProfile(address) {
               id
               name
               handle
+              bio
               attributes {
-                displayType
                 key
                 traitType
                 value
               }
-              coverPicture {
-                ... on NftImage {
-                  __typename
-                  chainId
-                  contractAddress
-                  tokenId
-                  uri
-                  verified
+              picture {
+                ... on MediaSet {
+                  original {
+                    url
+                  }
                 }
+              }
+              coverPicture {
                 ... on MediaSet {
                   original {
                     url
@@ -250,6 +249,7 @@ export async function getProfile(address) {
             }
           }
         }
+        
         
     `,
       }),
