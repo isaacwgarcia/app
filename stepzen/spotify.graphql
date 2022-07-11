@@ -1,0 +1,219 @@
+type Artists {
+  href: String
+  items: [Artist_ItemsEntry]
+  limit: Int
+  next: JSON
+  offset: Int
+  previous: JSON
+  total: Int
+}
+type Artist_ExternalUrls {
+  spotify: String
+}
+
+type Artist_Followers {
+  href: JSON
+  total: Int
+}
+type Artist_ImagesEntry {
+  height: Int
+  url: String
+  width: Int
+}
+type Artist_ItemsEntry {
+  external_urls: Artist_ExternalUrls
+  followers: Artist_Followers
+  genres: [String]
+  href: String
+  id: String
+  images: [Artist_ImagesEntry]
+  name: String
+  popularity: Int
+  type: String
+  uri: String
+}
+type Artists_Result {
+  artists: Artists
+}
+
+type Auth {
+  access_token: String
+  expires_in: Int
+  token_type: String
+}
+
+"""
+Song Details Types
+"""
+type ExternalUrls {
+  spotify: String
+}
+
+type Artist {
+  external_urls: ExternalUrls
+  href: String
+  id: String
+  name: String
+  type: String
+  uri: String
+}
+
+type External_urls1 {
+  spotify: String
+}
+
+type Image {
+  height: Int
+  url: String
+  width: Int
+}
+
+type Album {
+  album_type: String
+  artists: [Artist]
+  available_markets: [String]
+  external_urls: External_urls1
+  href: String
+  id: String
+  images: [Image]
+  name: String
+  release_date: String
+  release_date_precision: String
+  total_tracks: Int
+  type: String
+  uri: String
+}
+
+type External_urls3 {
+  spotify: String
+}
+
+type Artist2 {
+  external_urls: External_urls3
+  href: String
+  id: String
+  name: String
+  type: String
+  uri: String
+}
+
+type ExternalIds {
+  isrc: String
+}
+
+type External_urls4 {
+  spotify: String
+}
+
+type SongDetails {
+  album: Album
+  artists: [Artist2]
+  available_markets: [String]
+  disc_number: Int
+  duration_ms: Int
+  explicit: Boolean
+  external_ids: ExternalIds
+  external_urls: External_urls4
+  href: String
+  id: String
+  is_local: Boolean
+  name: String
+  popularity: Int
+  preview_url: String
+  track_number: Int
+  type: String
+  uri: String
+}
+
+"""
+End Song Details Types
+"""
+type Item {
+  album_type: String
+  artists: [Artist]
+  available_markets: [String]
+  external_urls: External_urls1
+  href: String
+  id: String
+  images: [Image]
+  name: String
+  release_date: String
+  release_date_precision: String
+  total_tracks: Int
+  type: String
+  uri: String
+}
+
+type Albums {
+  href: String
+  items: [Item]
+  limit: Int
+  next: String
+  offset: Int
+  previous: JSON
+  total: Int
+}
+
+type Releases {
+  albums: Albums
+}
+
+type Query {
+  get_new_releases(access_token: Secret!): Releases
+    @rest(
+      method: GET
+      contenttype: "application/json"
+      endpoint: "https://api.spotify.com/v1/browse/new-releases"
+      headers: [{ name: "Authorization", value: "Bearer $access_token" }]
+    )
+
+  get_song_info(id: String!, access_token: Secret!): SongDetails
+    @rest(
+      method: GET
+      contenttype: "application/json"
+      endpoint: "https://api.spotify.com/v1/tracks/$id"
+      headers: [{ name: "Authorization", value: "Bearer $access_token" }]
+    )
+  """
+  Returns a newly created company via a sequence that
+  generates a new token and then queries the data
+  with the new $access_token provided
+  """
+  get_song_info_with_artist(id: String!): SongDetails
+    @sequence(
+      steps: [
+        { query: "get_auth" }
+        { query: "get_song_info", arguments: [{ name: "id", argument: "id" }] }
+      ]
+    )
+
+  get_artists_with_auth(q: String, type: String = "artist"): Artists_Result
+    @sequence(
+      steps: [
+        { query: "get_auth" }
+        {
+          query: "artists"
+          arguments: [
+            { name: "q", argument: "q" }
+            { name: "type", argument: "type" }
+          ]
+        }
+      ]
+    )
+  get_auth: Auth
+    @rest(
+      method: POST
+      contenttype: "application/x-www-form-urlencoded"
+      endpoint: "https://accounts.spotify.com/api/token?grant_type=client_credentials&client_id={{.Get \"client_id\" }}&client_secret={{.Get \"client_secret\" }}"
+      configuration: "spotify_auth"
+    )
+  artists(
+    access_token: Secret!
+    q: String
+    type: String = "artist"
+  ): Artists_Result
+    @rest(
+      endpoint: "https://api.spotify.com/v1/search"
+      headers: [{ name: "Authorization", value: "Bearer $access_token" }]
+    )
+}

@@ -1,0 +1,12 @@
+configurationset:
+  - configuration:
+      name:
+        spotify_auth
+        #Authorization: Basic This is a different (and better) way of providing username:password of https://username:password@accounts.spotify.com/api/token
+      client_id: 7e3908ac63b545ad8fc5d15c80a94725
+      client_secret: cca350d2bb5348b9be1d609cc00612ca
+ruleset:
+  - query: "[ALL]"
+    rules:
+      - predicate: true
+        action: allow

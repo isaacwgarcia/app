@@ -5,6 +5,8 @@ schema
       "thegraph.graphql"
       "lens.graphql"
       "twitter.graphql"
+      "spotify.graphql"
+      "newsapi.graphql"
     ]
   ) {
   query: Query

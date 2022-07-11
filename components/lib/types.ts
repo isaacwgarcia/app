@@ -33,12 +33,12 @@ export interface LensToken {
 }
 
 export interface User {
-  bio: "";
-  handle: "";
-  id: "";
-  name: "";
-  picture: "";
-  cover_picture: "";
+  bio: String;
+  handle: String;
+  id: String;
+  name: String;
+  picture: String;
+  cover_picture: String;
 }
 
 export interface FormData {

@@ -15,16 +15,19 @@ export default function Dashboard() {
     picture: "",
     cover_picture: "",
   };
+
   const accounts = useAccounts();
   async function loadData() {
     const profile = await getProfile(accounts);
-
-    user.bio = profile.profiles.items[0].bio;
-    user.handle = profile.profiles.items[0].handle;
-    user.id = profile.profiles.items[0].id;
-    user.name = profile.profiles.items[0].name;
-    user.cover_picture = profile.profiles.items[0].coverPicture.original.url;
-    user.picture = profile.profiles.items[0].picture.original.url;
+    if (profile) {
+      let handle = profile?.profiles?.items[0]?.handle.split(".");
+      user.bio = profile.profiles.items[0].bio;
+      user.id = profile.profiles.items[0].id;
+      user.handle = handle[0];
+      user.name = profile.profiles.items[0].name;
+      user.cover_picture = profile.profiles.items[0].coverPicture.original.url;
+      user.picture = profile.profiles.items[0].picture.original.url;
+    }
   }
 
   loadData();
