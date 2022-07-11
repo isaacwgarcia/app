@@ -7,6 +7,5 @@ export const [coinbaseWallet, hooks] = initializeConnector<CoinbaseWallet>(
     // @ts-ignore: TS2345
     new CoinbaseWallet(actions, {
       url: URLS[1][0],
-      appName: "StepZenData",
     })
 );
