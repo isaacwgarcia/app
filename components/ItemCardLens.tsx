@@ -6,7 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-export default function ItemCard({
+export default function ItemCardLens({
   appId,
   createdAt,
   description,
@@ -24,7 +24,7 @@ export default function ItemCard({
       />
       <CardContent>
         <Typography gutterBottom variant="body2" component="div">
-          {appId}- {description}
+          {appId} - {description}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {content}

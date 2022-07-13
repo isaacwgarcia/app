@@ -10,8 +10,8 @@ import {
   getHeadlinesNewsApi,
 } from "../components/lib/api";
 import { useRouter } from "next/router";
-import ItemCard from "../components/ItemCard";
-import Divider from "@mui/material/Divider";
+import ItemCardLens from "../components/ItemCardLens";
+import ItemCardNews from "../components/ItemCardNews";
 
 const { useAccounts } = hooks;
 
@@ -21,6 +21,10 @@ function Dashboard(props) {
 
   const lens_publications =
     props.lens_publications.data.explorePublications.items;
+
+  const newsapi_articles =
+    props.news.data.get_technology_headlines_news.articles;
+
   let user: User = {
     id: "",
     handle: "",
@@ -66,18 +70,19 @@ function Dashboard(props) {
 
   return (
     <Box display="flex">
-      <Box width="33%">
+      <Box width="30%">
         <b>Twitter</b>{" "}
       </Box>
-      <Box width="33%">
+      <Box width="40%">
         <b>Lens Posts</b>{" "}
         <Box padding="1vw">
-          {lens_publications.map((post) => {
+          {lens_publications.map((post, i) => {
             if (post) {
               var date = new Date(post.createdAt);
               return (
                 <>
-                  <ItemCard
+                  <ItemCardLens
+                    key={i}
                     appId={post.appId}
                     createdAt={date}
                     description={post.description}
@@ -93,8 +98,29 @@ function Dashboard(props) {
           })}
         </Box>
       </Box>
-      <Box width="33%">
-        <b>News Api</b>{" "}
+      <Box width="30%">
+        <b>News Api</b>
+        <Box padding="1vw">
+          {newsapi_articles.map((news, i) => {
+            if (news) {
+              var date = new Date(news.publishedAt);
+              return (
+                <>
+                  <ItemCardNews
+                    key={i}
+                    source={news.source.name}
+                    publishedAt={date}
+                    description={news.description}
+                    content={news.content}
+                    image={news.urlToImage}
+                    url={news.url}
+                  />
+                  <br />
+                </>
+              );
+            }
+          })}
+        </Box>
       </Box>
     </Box>
   );

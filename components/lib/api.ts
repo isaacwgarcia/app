@@ -266,6 +266,7 @@ export async function getHeadlinesNewsApi() {
                 name
               }
               urlToImage
+              url
             }
           }
         }
