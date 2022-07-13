@@ -30,7 +30,6 @@ export default function NFTCard({ key, name, url, address }) {
   return (
     <Box width="100%" key={key}>
       <>
-        {key}
         {(result as unknown as Result).name}
         &nbsp;&nbsp;&nbsp;&nbsp;
         {(result as unknown as Result).description}

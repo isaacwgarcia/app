@@ -1,6 +1,5 @@
 import { Box, TextField, Button } from "@mui/material";
 
-import { getNfts } from "../components/lib/api";
 import { FormData } from "../components/lib/types";
 import { useState, useEffect } from "react";
 import NFTCard from "../components/NFTCard";
@@ -12,7 +11,26 @@ function FindAddress() {
   const [loaded, setLoaded] = useState(false);
 
   async function getListNfts() {
-    const list_nfts = await getNfts(formState.ethaddress);
+    // const list_nfts = await getNfts(formState.ethaddress);
+
+    const list_nfts = await fetch(
+      `/api/user/nfts/${formState.ethaddress}?chain=eth`,
+      {
+        method: `GET`,
+      }
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json().then((data) => {
+            return data;
+          });
+        }
+        throw new Error("Api is not available");
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+
     setNfts(list_nfts.list_nft.result);
     setLoaded(true);
   }

@@ -5,10 +5,18 @@ import { User } from "../components/lib/types";
 import { useContext, useEffect } from "react";
 import { AppContext } from "../components/state/context";
 import { loadUser } from "../components/state/reducer";
+import {
+  exploreLensPublications,
+  getHeadlinesNewsApi,
+} from "../components/lib/api";
+import { useRouter } from "next/router";
 
 const { useAccounts } = hooks;
 
-export default function Dashboard() {
+function Dashboard(props) {
+  const router = useRouter();
+  const session = useContext(AppContext);
+
   let user: User = {
     id: "",
     handle: "",
@@ -47,6 +55,8 @@ export default function Dashboard() {
   }
 
   useEffect(() => {
+    if (!session.state.token.accessToken) router.push("/");
+
     loadData();
   }, []);
 
@@ -67,8 +77,16 @@ export default function Dashboard() {
 
 Dashboard.layout = true;
 
-export const getStaticProps = async (context: any, locale: any) => {
+export async function getServerSideProps(context) {
+  let publications = await exploreLensPublications();
+  let news_headlines = await getHeadlinesNewsApi();
+
   return {
-    props: {},
+    props: {
+      lens_publications: publications,
+      news: news_headlines,
+    },
   };
-};
+}
+
+export default Dashboard;

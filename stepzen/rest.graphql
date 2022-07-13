@@ -214,17 +214,17 @@ type Query {
       endpoint: "https://deep-index.moralis.io/api/v2/transaction/$txhash?chain=eth"
       headers: [{ name: "X-API-Key", value: "$apikey" }]
     )
-  list_nft(address: String!, apikey: String!): NFTList
+  list_nft(address: String!, apikey: String!, chain: String!): NFTList
     @rest(
       method: GET
-      endpoint: "https://deep-index.moralis.io/api/v2/$address/nft?chain=eth&format=decimal"
+      endpoint: "https://deep-index.moralis.io/api/v2/$address/nft?chain=$chain&format=decimal"
       headers: [{ name: "X-API-Key", value: "$apikey" }]
     )
 
-  get_balance(address: String!, apikey: String!): Balance
+  get_balance(address: String!, apikey: String!, chain: String!): Balance
     @rest(
       method: GET
-      endpoint: "https://deep-index.moralis.io/api/v2/$address/balance?chain=eth"
+      endpoint: "https://deep-index.moralis.io/api/v2/$address/balance?chain=$chain"
       headers: [{ name: "X-API-Key", value: "$apikey" }]
     )
 

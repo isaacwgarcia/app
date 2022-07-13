@@ -48,7 +48,7 @@ export default function PricesBar() {
       });
   }
   useEffect(() => {
-    const interval = setInterval(() => prices(), 1000); //Update in 1 seconds
+    const interval = setInterval(() => prices(), 10000); //Update in 1 seconds
     return () => {
       clearInterval(interval);
     };

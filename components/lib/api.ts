@@ -166,7 +166,7 @@ export async function authenticate(address, signature) {
   }
 }
 
-export async function getNfts(address) {
+export async function getNfts(address, chain) {
   try {
     const auth = await fetch(`${process.env.STEPZEN_API_URL}`, {
       method: "POST",
@@ -178,7 +178,7 @@ export async function getNfts(address) {
         query: `
         {
           list_nft(
-            address: "${address}", apikey: "${process.env.STEPZEN_MORALIS_API_KEY}"
+            address: "${address}", apikey: "${process.env.STEPZEN_MORALIS_API_KEY}", chain: "${chain}"
           ) {
             cursor
             page
@@ -207,6 +207,75 @@ export async function getNfts(address) {
   } catch (e) {
     return e.message;
   }
+}
+
+export async function exploreLensPublications() {
+  const lens_explore_publications = await fetch(
+    `${process.env.STEPZEN_API_URL}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+      body: JSON.stringify({
+        query: `
+      query MyQuery {
+        explorePublications(request: {sortCriteria: LATEST}) {
+          items {
+            ... on Post {
+               createdAt
+              profile {
+                handle
+              }
+              metadata {
+                content
+                image
+              }
+             
+            }
+          }
+        }
+      }
+      
+      
+    `,
+      }),
+    }
+  );
+  return lens_explore_publications.json();
+}
+
+export async function getHeadlinesNewsApi() {
+  const headlines_newsapi = await fetch(`${process.env.STEPZEN_API_URL}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+    },
+    body: JSON.stringify({
+      query: `
+        query MyQuery {
+          get_technology_headlines_news {
+            articles {
+              content
+              description
+              publishedAt
+              source {
+                name
+              }
+              urlToImage
+            }
+          }
+        }
+        
+        
+      
+      
+    `,
+    }),
+  });
+  return headlines_newsapi.json();
 }
 
 export async function getProfile(address) {

@@ -14,12 +14,6 @@ type Article {
   urlToImage: String
 }
 
-type NewsRoot {
-  articles: [Article]
-  status: String
-  totalResults: Int
-}
-
 type News {
   articles: [Article]
   status: String
@@ -27,10 +21,16 @@ type News {
 }
 
 type Query {
-  get_news(query: String!): NewsRoot
+  get_news(query: String!): News
     @rest(
       method: GET
       endpoint: "https://newsapi.org/v2/everything?q=$query&apikey=$apiKey"
+      configuration: "news_config"
+    )
+  get_technology_headlines_news: News
+    @rest(
+      method: GET
+      endpoint: "https://newsapi.org/v2/top-headlines?country=us&category=technology&apikey=$apiKey"
       configuration: "news_config"
     )
 }
