@@ -7,7 +7,6 @@ import { loadToken } from "./state/reducer";
 import { useContext, useState } from "react";
 import { AppContext } from "../components/state/context";
 import { coinbaseWallet, hooks } from "../components/connectors/coinbaseWallet";
-import { generateChallenge, authenticate } from "../components/lib/api";
 
 const { useChainId, useAccounts, useError, useIsActivating, useProvider } =
   hooks;
@@ -28,11 +27,43 @@ export default function Navbar() {
 
     if (provider) {
       const signer = provider.getSigner();
-      const challenge = await generateChallenge(accounts);
 
+      const options = {
+        method: `GET`,
+      };
+      const challenge = await fetch(`/api/auth/${accounts}`, options)
+        .then((response) => {
+          if (response.ok) {
+            return response.json().then((data) => {
+              return data;
+            });
+          }
+          throw new Error("Api is not available");
+        })
+        .catch((error) => {
+          console.error("Error fetching data: ", error);
+        });
       const signedMessage = await signer.signMessage(challenge.challenge.text);
-      const response = await authenticate(accounts, signedMessage);
-      const lens_token = response.authenticate as LensToken;
+
+      const authenticate = await fetch(
+        `/api/auth/${accounts}?signedMessage=${signedMessage}`,
+        {
+          method: `POST`,
+        }
+      )
+        .then((response) => {
+          if (response.ok) {
+            return response.json().then((data) => {
+              return data;
+            });
+          }
+          throw new Error("Api is not available");
+        })
+        .catch((error) => {
+          console.error("Error fetching data: ", error);
+        });
+
+      const lens_token = authenticate.authenticate as LensToken;
       if (lens_token) setLogged(true);
       dispatch(loadToken(lens_token));
     } else {

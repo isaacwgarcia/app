@@ -119,7 +119,7 @@ export async function generateChallenge(address) {
       },
       body: JSON.stringify({
         query: `
-          query TestQuery {
+          query {
             challenge(
                 request: {address: "${address}"}
               ) {

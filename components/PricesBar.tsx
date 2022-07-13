@@ -1,33 +1,54 @@
 import { Box } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { getPrice } from "./lib/api";
 
 export default function PricesBar() {
-  const [loaded, setLoaded] = useState(false);
   const [eth, setEth] = useState(0);
   const [btc, setBtc] = useState(0);
-  const [ltc, setLtc] = useState(0);
+  const [matic, setMatic] = useState(0);
 
   async function prices() {
-    setEth(
-      await getPrice("ETH-USD").then((res) => {
-        return res.get_price.data.amount;
+    const options = {
+      method: `GET`,
+    };
+    fetch(`/api/price/ETH-USD`, options)
+      .then((response) => {
+        if (response.ok) {
+          return response.json().then((data) => {
+            setEth(data.get_price.data.amount);
+          });
+        }
+        throw new Error("Api Price is not available");
       })
-    );
-    setBtc(
-      await getPrice("MATIC-USD").then((res) => {
-        return res.get_price.data.amount;
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+    fetch(`/api/price/MATIC-USD`, options)
+      .then((response) => {
+        if (response.ok) {
+          return response.json().then((data) => {
+            setMatic(data.get_price.data.amount);
+          });
+        }
+        throw new Error("Api Price is not available");
       })
-    );
-    setLtc(
-      await getPrice("BTC-USD").then((res) => {
-        return res.get_price.data.amount;
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+    fetch(`/api/price/BTC-USD`, options)
+      .then((response) => {
+        if (response.ok) {
+          return response.json().then((data) => {
+            setBtc(data.get_price.data.amount);
+          });
+        }
+        throw new Error("Api Price is not available");
       })
-    );
-    setLoaded(true);
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
   }
   useEffect(() => {
-    const interval = setInterval(() => prices(), 10000); //Update in 10 seconds
+    const interval = setInterval(() => prices(), 1000); //Update in 1 seconds
     return () => {
       clearInterval(interval);
     };
@@ -36,8 +57,8 @@ export default function PricesBar() {
   return (
     <Box display="flex">
       <Box padding="0.5rem">ETH ${eth} </Box>
-      <Box padding="0.5rem">MATIC ${btc} </Box>
-      <Box padding="0.5rem">BTC ${ltc} </Box>
+      <Box padding="0.5rem">MATIC ${matic} </Box>
+      <Box padding="0.5rem">BTC ${btc} </Box>
     </Box>
   );
 }
