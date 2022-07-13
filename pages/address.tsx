@@ -3,11 +3,14 @@ import { Box, TextField, Button } from "@mui/material";
 import { FormData } from "../components/lib/types";
 import { useState, useEffect } from "react";
 import NFTCard from "../components/NFTCard";
+import { formatEther } from "ethers/lib/utils";
 
 function FindAddress() {
   const data: FormData = { form_data: {} };
   const [formState, setFormState] = useState(data.form_data);
   const [nfts, setNfts] = useState([]);
+  const [balance, setBalance] = useState("");
+
   const [loaded, setLoaded] = useState(false);
 
   async function getListNfts() {
@@ -32,6 +35,24 @@ function FindAddress() {
       });
 
     setNfts(list_nfts.list_nft.result);
+    const balance = await fetch(
+      `/api/user/balance/${formState.ethaddress}?chain=eth`,
+      {
+        method: `GET`,
+      }
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json().then((data) => {
+            return data.get_balance.balance;
+          });
+        }
+        throw new Error("Api is not available");
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+    setBalance(formatEther(balance).toString());
     setLoaded(true);
   }
 
@@ -63,7 +84,11 @@ function FindAddress() {
       <br />
       {loaded ? (
         <Box display="flex" flexDirection="column" width="100%">
-          <Box width="25%">Account Balance: Call Balance API</Box>
+          <Box width="25%">
+            Account Balance: {balance}
+            <br />
+            <br />
+          </Box>
           <Box width="75%">
             NFTs List:
             {nfts.map((nft, index) => {

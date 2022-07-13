@@ -330,3 +330,32 @@ export async function getProfile(address) {
     return profile_response?.data;
   } catch (e) {}
 }
+
+export async function getBalance(address, chain) {
+  try {
+    const balance = await fetch(`${process.env.STEPZEN_API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+      body: JSON.stringify({
+        query: `
+        query MyQuery {
+          get_balance(
+            address: "${address}", apikey: "${process.env.STEPZEN_MORALIS_API_KEY}", chain: "${chain}"
+          ) {
+            balance
+          }
+        }
+      `,
+      }),
+    });
+
+    const price = await balance.json();
+
+    return price?.data;
+  } catch (e) {
+    return e.message;
+  }
+}

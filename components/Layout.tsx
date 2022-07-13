@@ -50,10 +50,21 @@ export default function Layout({ children }) {
             <Box overflow="true" fontSize="0.6rem">
               <a
                 onClick={() => {
+                  router.push("/dashboard");
+                }}
+              >
+                <ClearAllIcon />
+                Dashboard
+              </a>
+            </Box>
+            <Box overflow="true" fontSize="0.6rem">
+              <a
+                onClick={() => {
                   router.push("/pools");
                 }}
               >
-                <ClearAllIcon /> All Pools
+                <ClearAllIcon />
+                All Pools
               </a>
             </Box>
             <Box overflow="true" fontSize="0.6rem">
