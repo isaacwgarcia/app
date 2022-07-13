@@ -18,7 +18,7 @@ export default function Dashboard() {
 
   const accounts = useAccounts();
   async function loadData() {
-    const profile = await getProfile(accounts);
+    const profile = await getProfile(accounts[0]);
     if (profile) {
       let handle = profile?.profiles?.items[0]?.handle.split(".");
       user.bio = profile.profiles.items[0].bio;
@@ -32,21 +32,17 @@ export default function Dashboard() {
 
   loadData();
   return (
-    <div>
-      <Grid container spacing={1} width="auto" height="85vh" padding="1vw">
-        <Grid item xs={3} sm={3} md={6} lg={12} xl={12}>
-          <Box>Twitter</Box>
-        </Grid>
-        <Grid item xs={3} sm={3} md={6} lg={12} xl={12}>
-          <Box>Lens Posts</Box>
-        </Grid>
-        <Grid item xs={3} sm={3} md={6} lg={12} xl={12}>
-          Spotify Profile
-        </Grid>
-      </Grid>
-
-      <br />
-    </div>
+    <Box display="flex">
+      <Box width="33%">
+        <b>Twitter</b>{" "}
+      </Box>
+      <Box width="33%">
+        <b>Lens Posts</b>{" "}
+      </Box>
+      <Box width="33%">
+        <b>News Api</b>{" "}
+      </Box>
+    </Box>
   );
 }
 

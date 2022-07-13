@@ -72,10 +72,6 @@ type PriceRoot {
   data: Price
 }
 
-type Challenge {
-  text: String
-}
-
 type Data {
   challenge: Challenge
 }
@@ -88,308 +84,7 @@ type Request {
   address: String
 }
 
-input ChallengeRequest {
-  address: String!
-}
-
-scalar Signature
-
-input SignedAuthChallenge {
-  """
-  The ethereum address you signed the signature with
-  """
-  address: String!
-  """
-  The signature
-  """
-  signature: Signature!
-}
-scalar Jwt
-
-type AuthenticationResult {
-  """
-  The access token
-  """
-  accessToken: Jwt!
-  """
-  The refresh token
-  """
-  refreshToken: Jwt!
-}
-scalar ProfileId
-scalar Url
-scalar Handle
-scalar EthereumAddress
-union ProfileMedia = NftImage | MediaSet
-
-"""
-The NFT image
-"""
-type NftImage {
-  """
-  The contract address
-  """
-  contractAddress: ContractAddress!
-  """
-  The token id of the nft
-  """
-  tokenId: String!
-  """
-  The token image nft
-  """
-  uri: Url!
-  """
-  The token image nft
-  """
-  chainId: Int!
-  """
-  If the NFT is verified
-  """
-  verified: Boolean!
-}
-
-"""
-Contract address custom scalar type
-"""
-scalar ContractAddress
-
-"""
-The Media Set
-"""
-type MediaSet {
-  """
-  Original media
-  """
-  original: Media!
-  """
-  Small media - will always be null on the public API
-  """
-  small: Media
-  """
-  Medium media - will always be null on the public API
-  """
-  medium: Media
-}
-
-"""
-The Media url
-"""
-type Media {
-  """
-  The token image nft
-  """
-  url: Url!
-  """
-  Width - will always be null on the public API
-  """
-  width: Int
-  """
-  Height - will always be null on the public API
-  """
-  height: Int
-  """
-  Size - will always be null on the public API
-  """
-  size: Int
-  """
-  The image/audio/video mime type for the publication
-  """
-  mimeType: MimeType
-}
-
-"""
-mimetype custom scalar type
-"""
-scalar MimeType
-
-"""
-The dispatcher
-"""
-type Dispatcher {
-  """
-  The dispatcher address
-  """
-  address: EthereumAddress!
-  """
-  If the dispatcher can use the relay
-  """
-  canUseRelay: Boolean!
-}
-
-type Profile {
-  # The profile id
-  id: ProfileId!
-
-  # Name of the profile
-  name: String
-
-  # Bio of the profile
-  bio: String
-
-  # Follow nft address
-  followNftAddress: ContractAddress
-
-  # Metadata url
-  metadata: Url
-
-  # The profile handle
-  handle: Handle!
-  # The picture for the profile
-  picture: ProfileMedia
-  # The cover picture for the profile
-  coverPicture: ProfileMedia
-
-  # Who owns the profile
-  ownedBy: String!
-
-  nftlist(apikey: String): NFTList
-    @materializer(
-      query: "list_nft"
-      arguments: [
-        { name: "address", field: "ownedBy" }
-        { name: "apikey", argument: "apikey" }
-      ]
-    )
-
-  # The dispatcher
-  dispatcher: Dispatcher
-
-  # Profile stats
-  stats: ProfileStats!
-
-  # The follow module
-  followModule: FollowModule
-
-  # Is the profile default
-  isDefault: Boolean!
-
-  # Optionals param to add extra attributes on the metadata
-  attributes: [Attribute!]
-  isFollowedByMe: Boolean!
-  isFollowing(who: ProfileId): Boolean!
-}
-
-type ProfileStats {
-  """
-  Total follower count
-  """
-  totalFollowers: Int!
-  """
-  Total following count (remember the wallet follows not profile so will be same for every profile they own)
-  """
-  totalFollowing: Int!
-  """
-  Total post count
-  """
-  totalPosts: Int!
-  """
-  Total comment count
-  """
-  totalComments: Int!
-  """
-  Total mirror count
-  """
-  totalMirrors: Int!
-  """
-  Total publication count
-  """
-  totalPublications: Int!
-  """
-  Total collects count
-  """
-  totalCollects: Int!
-}
-
-union FollowModule = FeeFollowModuleSettings
-
-type FeeFollowModuleSettings {
-  """
-  The follow modules enum
-  """
-  type: FollowModules!
-  contractAddress: ContractAddress!
-  """
-  The collect module amount info
-  """
-  amount: ModuleFeeAmount!
-  """
-  The collect module recipient address
-  """
-  recipient: EthereumAddress!
-}
-
-"""
-The follow module types
-"""
-enum FollowModules {
-  FeeFollowModule
-}
-
-type ModuleFeeAmount {
-  """
-  The erc20 token info
-  """
-  asset: Erc20!
-  """
-  Floating point number as string (e.g. 42.009837). It could have the entire precision of the Asset or be truncated to the last significant decimal.
-  """
-  value: String!
-}
-
-"""
-The erc20 type
-"""
-type Erc20 {
-  """
-  Name of the symbol
-  """
-  name: String!
-  """
-  Symbol for the token
-  """
-  symbol: String!
-  """
-  Decimal places for the token
-  """
-  decimals: Int!
-  """
-  The erc20 address
-  """
-  address: ContractAddress!
-}
-
-"""
-The Profile
-"""
-type Attribute {
-  """
-  The display type
-  """
-  displayType: MetadataDisplayType
-  """
-  The trait type - can be anything its the name it will render so include spaces
-  """
-  traitType: String!
-  """
-  identifier of this attribute, we will update by this id
-  """
-  key: String!
-  """
-  Value attribute
-  """
-  value: String!
-}
-
-"""
-The metadata display types
-"""
-enum MetadataDisplayType {
-  number
-  string
-  date
-}
-
-type NFT {
+type MORALISNFT {
   amount: String
   block_number: String
   block_number_minted: String
@@ -410,7 +105,7 @@ type NFTList {
   cursor: String
   page: Int
   page_size: Int
-  result: [NFT]
+  result: [MORALISNFT]
   status: String
   total: Int
 }
@@ -455,7 +150,7 @@ type CryptoCompare {
   Type: Int
 }
 
-type Log {
+type TXLog {
   address: String
   block_hash: String
   block_number: String
@@ -481,7 +176,7 @@ type TXDetail {
   gas_price: String
   hash: String
   input: String
-  logs: [Log]
+  logs: [TXLog]
   nonce: String
   receipt_contract_address: JSON
   receipt_cumulative_gas_used: String
@@ -549,17 +244,4 @@ type Query {
     @graphql(
       endpoint: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
     )
-
-  """
-  Querys for Lens
-  """
-  challenge(request: ChallengeRequest!): Challenge
-    @graphql(endpoint: "https://api-mumbai.lens.dev")
-
-  recommendedProfiles: [Profile!]! @graphql(endpoint: "https://api.lens.dev/")
-}
-
-type Mutation {
-  authenticate(request: SignedAuthChallenge!): AuthenticationResult!
-    @graphql(endpoint: "https://api-mumbai.lens.dev/")
 }

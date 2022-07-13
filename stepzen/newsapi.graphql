@@ -20,11 +20,17 @@ type NewsRoot {
   totalResults: Int
 }
 
+type News {
+  articles: [Article]
+  status: String
+  totalResults: Int
+}
+
 type Query {
-  get_news(query: String!, apiKey: Secret!): NewsRoot
+  get_news(query: String!): NewsRoot
     @rest(
       method: GET
       endpoint: "https://newsapi.org/v2/everything?q=$query&apikey=$apiKey"
-      arguments: []
+      configuration: "news_config"
     )
 }
