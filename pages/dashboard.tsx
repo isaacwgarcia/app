@@ -10,6 +10,8 @@ import {
   getHeadlinesNewsApi,
 } from "../components/lib/api";
 import { useRouter } from "next/router";
+import ItemCard from "../components/ItemCard";
+import Divider from "@mui/material/Divider";
 
 const { useAccounts } = hooks;
 
@@ -17,6 +19,8 @@ function Dashboard(props) {
   const router = useRouter();
   const session = useContext(AppContext);
 
+  const lens_publications =
+    props.lens_publications.data.explorePublications.items;
   let user: User = {
     id: "",
     handle: "",
@@ -67,6 +71,27 @@ function Dashboard(props) {
       </Box>
       <Box width="33%">
         <b>Lens Posts</b>{" "}
+        <Box padding="1vw">
+          {lens_publications.map((post) => {
+            if (post) {
+              var date = new Date(post.createdAt);
+              return (
+                <>
+                  <ItemCard
+                    appId={post.appId}
+                    createdAt={date}
+                    description={post.description}
+                    content={post.metadata.content}
+                    image={post.metadata.image}
+                    handle={post.profile.handle}
+                    ownedBy={post.profile.ownedBy}
+                  />
+                  <br />
+                </>
+              );
+            }
+          })}
+        </Box>
       </Box>
       <Box width="33%">
         <b>News Api</b>{" "}

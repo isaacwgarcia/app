@@ -220,25 +220,26 @@ export async function exploreLensPublications() {
       },
       body: JSON.stringify({
         query: `
-      query MyQuery {
-        explorePublications(request: {sortCriteria: LATEST}) {
-          items {
-            ... on Post {
-               createdAt
-              profile {
-                handle
+        query MyQuery {
+          explorePublications(request: {sortCriteria: LATEST}) {
+            items {
+              ... on Post {
+                appId
+                createdAt
+                metadata {
+                  description
+                  content
+                  image
+                }
+                profile {
+                  handle
+                  ownedBy
+                }
               }
-              metadata {
-                content
-                image
-              }
-             
             }
           }
         }
-      }
-      
-      
+            
     `,
       }),
     }
