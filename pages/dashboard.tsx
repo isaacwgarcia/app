@@ -1,8 +1,11 @@
 import React from "react";
-import { Box, Grid } from "@mui/material";
+import { Box } from "@mui/material";
 import { hooks } from "../components/connectors/coinbaseWallet";
 import { getProfile } from "../components/lib/api";
 import { User } from "../components/lib/types";
+import { useContext } from "react";
+import { AppContext } from "../components/state/context";
+import { loadUser } from "../components/state/reducer";
 
 const { useAccounts } = hooks;
 
@@ -15,10 +18,11 @@ export default function Dashboard() {
     picture: "",
     cover_picture: "",
   };
+  const { dispatch } = useContext(AppContext);
 
   const accounts = useAccounts();
   async function loadData() {
-    const profile = await getProfile(accounts[0]);
+    const profile = await getProfile(accounts);
     if (profile) {
       let handle = profile?.profiles?.items[0]?.handle.split(".");
       user.bio = profile.profiles.items[0].bio;
@@ -27,6 +31,7 @@ export default function Dashboard() {
       user.name = profile.profiles.items[0].name;
       user.cover_picture = profile.profiles.items[0].coverPicture.original.url;
       user.picture = profile.profiles.items[0].picture.original.url;
+      dispatch(loadUser(user));
     }
   }
 

@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "../components/Navbar";
 import { Box, Grid } from "@mui/material";
 import { useRouter } from "next/router";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
 import { CHAINS } from "./chains";
 import { hooks } from "./connectors/coinbaseWallet";
+import { AppContext } from "../components/state/context";
+import { Avatar } from "@nextui-org/react";
+
 const { useChainId, useAccounts, useIsActive } = hooks;
 
 export default function Layout({ children }) {
+  const session = useContext(AppContext);
   const router = useRouter();
   const accounts = useAccounts();
   const isActive = useIsActive();
@@ -33,11 +37,12 @@ export default function Layout({ children }) {
           <Box border={1} borderRadius={3} mt={2} width="90%">
             <Box padding={2} overflow="true" fontSize="0.6rem">
               <Box display="flex" width="75%" justifyContent="center">
-                Profile Picture
+                <Avatar squared src={session.state.user.picture as string} />{" "}
+                &nbsp;&nbsp;
               </Box>
               <br />
-              Name <br />
-              Handle <br />
+              {session.state.user.name} <br />
+              {session.state.user.handle} <br />
               <br />
             </Box>
           </Box>
