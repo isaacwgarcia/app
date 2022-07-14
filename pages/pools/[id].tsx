@@ -40,13 +40,12 @@ function Pool(props) {
 
   return (
     <div className={styles.container}>
-      <b> {pool_id}</b>
-      <br />
-      <br /> {pool_token0}/{pool_token1}
-      <br />
-      <br />
+      <b>
+        {" "}
+        Liquidity Pool {pool_token0}/{pool_token1} {pool_id}
+      </b>
+      <br /> <br />
       Latest Transactions:
-      <br />
       <Table tableHead={headersTable} tableData={dataTable} /> <br />
       <br />
       Minimum amount

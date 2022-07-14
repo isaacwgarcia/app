@@ -8,6 +8,14 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
 export default function BasicTable({ tableHead, tableData }) {
+  async function copyTextToClipboard(text) {
+    if ("clipboard" in navigator) {
+      return await navigator.clipboard.writeText(text);
+    } else {
+      return document.execCommand("copy", true, text);
+    }
+  }
+
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -23,10 +31,38 @@ export default function BasicTable({ tableHead, tableData }) {
         <TableBody>
           {tableData.map((tx, i) => (
             <TableRow key={i}>
-              <TableCell>{tx.transaction_hash.slice(0, 10)}...</TableCell>
+              <TableCell>
+                <a
+                  onClick={() => {
+                    copyTextToClipboard(tx.transaction_hash);
+                  }}
+                  style={{ color: "blue" }}
+                >
+                  {tx.transaction_hash.slice(0, 4)}...
+                  {tx.transaction_hash.slice(60, tx.transaction_hash.length)}
+                </a>
+              </TableCell>
               <TableCell>{Number(tx.amount).toFixed(2)}</TableCell>
-              <TableCell>{tx.from.slice(0, 10)}...</TableCell>
-              <TableCell>{tx.to.slice(0, 10)}...</TableCell>
+              <TableCell>
+                <a
+                  onClick={() => {
+                    copyTextToClipboard(tx.from);
+                  }}
+                  style={{ color: "blue" }}
+                >
+                  {tx.from.slice(0, 6)}... {tx.from.slice(35, tx.from.length)}
+                </a>
+              </TableCell>
+              <TableCell>
+                <a
+                  onClick={() => {
+                    copyTextToClipboard(tx.to);
+                  }}
+                  style={{ color: "blue" }}
+                >
+                  {tx.to.slice(0, 6)}...{tx.to.slice(35, tx.from.length)}
+                </a>
+              </TableCell>
               <TableCell>{tx.block_timestamp}</TableCell>
             </TableRow>
           ))}

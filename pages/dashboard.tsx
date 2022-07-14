@@ -22,11 +22,12 @@ function Dashboard(props) {
   const session = useContext(AppContext);
 
   let lens_publications =
-    props.lens_publications.data.explorePublications.items;
+    props.lens_publications.data.explorePublications?.items;
 
-  let newsapi_articles = props.news.data.get_technology_headlines_news.articles;
+  let newsapi_articles =
+    props.news.data.get_technology_headlines_news?.articles;
 
-  let twitter_timeline = props.twitter_timeline.get_tweets.data;
+  let twitter_timeline = props.twitter_timeline.get_tweets?.data;
 
   let user: User = {
     id: "",
@@ -74,75 +75,87 @@ function Dashboard(props) {
       <Box width="30%">
         <b>Twitter</b>{" "}
         <Box padding="1vw">
-          {twitter_timeline.map((tweet, i) => {
-            if (tweet) {
-              var date = new Date(tweet.tweetLink.data.created_at);
-              return (
-                <>
-                  <ItemCardTweet
-                    key={i}
-                    source={tweet.tweetLink.data.source}
-                    created_at={date}
-                    text={tweet.text}
-                    profile_image_url={
-                      tweet.tweetLink.data.authorLink.data.profile_image_url
-                    }
-                    username={tweet.tweetLink.data.authorLink.data.username}
-                  />
-                  <br />
-                </>
-              );
-            }
-          })}
+          {twitter_timeline ? (
+            twitter_timeline?.map((tweet, i) => {
+              if (tweet) {
+                var date = new Date(tweet.tweetLink.data.created_at);
+                return (
+                  <>
+                    <ItemCardTweet
+                      key={i}
+                      source={tweet.tweetLink.data.source}
+                      created_at={date}
+                      text={tweet.text}
+                      profile_image_url={
+                        tweet.tweetLink.data.authorLink.data.profile_image_url
+                      }
+                      username={tweet.tweetLink.data.authorLink.data.username}
+                    />
+                    <br />
+                  </>
+                );
+              }
+            })
+          ) : (
+            <>Twitter API Down</>
+          )}
         </Box>
       </Box>
       <Box width="40%">
         <b>Lens Posts</b>{" "}
         <Box padding="1vw">
-          {lens_publications.map((post, i) => {
-            if (post) {
-              var date = new Date(post.createdAt);
-              return (
-                <>
-                  <ItemCardLens
-                    key={i}
-                    appId={post.appId}
-                    createdAt={date}
-                    description={post.description}
-                    content={post.metadata.content}
-                    image={post.metadata.image}
-                    handle={post.profile.handle}
-                    ownedBy={post.profile.ownedBy}
-                  />
-                  <br />
-                </>
-              );
-            }
-          })}
+          {lens_publications ? (
+            lens_publications?.map((post, i) => {
+              if (post) {
+                var date = new Date(post.createdAt);
+                return (
+                  <>
+                    <ItemCardLens
+                      key={i}
+                      appId={post.appId}
+                      createdAt={date}
+                      description={post.description}
+                      content={post.metadata.content}
+                      image={post.metadata.image}
+                      handle={post.profile.handle}
+                      ownedBy={post.profile.ownedBy}
+                    />
+                    <br />
+                  </>
+                );
+              }
+            })
+          ) : (
+            <>Lens API Down</>
+          )}
         </Box>
       </Box>
       <Box width="30%">
         <b>Technology News</b>
         <Box padding="1vw">
-          {newsapi_articles.map((news, i) => {
-            if (news) {
-              var date = new Date(news.publishedAt);
-              return (
-                <>
-                  <ItemCardNews
-                    key={i}
-                    source={news.source.name}
-                    publishedAt={date}
-                    description={news.description}
-                    content={news.content}
-                    image={news.urlToImage}
-                    url={news.url}
-                  />
-                  <br />
-                </>
-              );
-            }
-          })}
+          {newsapi_articles ? (
+            newsapi_articles?.map((news, i) => {
+              if (news) {
+                var date = new Date(news.publishedAt);
+                return (
+                  <>
+                    <ItemCardNews
+                      key={i}
+                      source={news.source.name}
+                      publishedAt={date}
+                      description={news.description}
+                      content={news.content}
+                      image={news.urlToImage}
+                      url={news.url}
+                    />
+                    <br />
+                  </>
+                );
+              }
+            })
+          ) : (
+            <>News API Down</>
+          )}
         </Box>
       </Box>
     </Box>

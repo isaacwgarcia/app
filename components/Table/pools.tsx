@@ -16,9 +16,15 @@ export default function PoolTable({ tableData }) {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Pool ID</TableCell>
-            <TableCell align="left">Token Pair</TableCell>
-            <TableCell align="left">volumeUSD</TableCell>
+            <TableCell>
+              <b>Pool Address</b>
+            </TableCell>
+            <TableCell align="left">
+              <b>Token Pair</b>
+            </TableCell>
+            <TableCell align="left">
+              <b>volumeUSD</b>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
