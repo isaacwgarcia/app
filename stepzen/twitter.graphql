@@ -1,6 +1,11 @@
 type Tweet {
   id: String
   text: String
+  tweetLink: RootDetail
+    @materializer(
+      query: "get_tweet_detail"
+      arguments: [{ name: "id", field: "id" }]
+    )
 }
 
 type Meta {
@@ -25,18 +30,99 @@ type RootUserInfo {
   data: [UserInfo]
 }
 
+type PublicMetrics {
+  like_count: Int
+  quote_count: Int
+  reply_count: Int
+  retweet_count: Int
+}
+
+type ReferencedTweet {
+  id: String
+  type: String
+}
+
+type DataDetail {
+  author_id: String
+  conversation_id: String
+  created_at: DateTime
+  id: String
+  lang: String
+  possibly_sensitive: Boolean
+  public_metrics: PublicMetrics
+  referenced_tweets: [ReferencedTweet]
+  reply_settings: String
+  source: String
+  text: String
+  authorLink: RootUser
+    @materializer(
+      query: "get_user_by_id"
+      arguments: [{ name: "id", field: "author_id" }]
+    )
+}
+
+type RootDetail {
+  data: DataDetail
+}
+
+"""
+USER INFO
+"""
+type PublicMetricsUser {
+  followers_count: Int
+  following_count: Int
+  listed_count: Int
+  tweet_count: Int
+}
+
+type DataUser {
+  created_at: DateTime
+  description: String
+  id: String
+  location: String
+  name: String
+  profile_image_url: String
+  protected: Boolean
+  public_metrics: PublicMetrics
+  url: String
+  username: String
+  verified: Boolean
+}
+
+type RootUser {
+  data: DataUser
+}
+
 type Query {
-  get_tweets(query: String!, authorization: Secret!): Tweets
+  get_tweets(query: String!): Tweets
     @rest(
       method: GET
       endpoint: "https://api.twitter.com/2/tweets/search/recent?query=$query"
-      headers: [{ name: "authorization", value: "$authorization" }]
+      headers: [{ name: "authorization", value: "Bearer $bearer_token" }]
+      configuration: "twitter_conf"
     )
 
-  getid(authorization: Secret!, usernames: String): RootUserInfo
+  get_tweet_detail(id: String!): RootDetail
     @rest(
       method: GET
-      endpoint: "https://api.twitter.com/2/users/by"
-      headers: [{ name: "authorization", value: "$authorization" }]
+      endpoint: "https://api.twitter.com/2/tweets/$id?tweet.fields=author_id,conversation_id,created_at,lang,possibly_sensitive,public_metrics,referenced_tweets,reply_settings,source,text"
+      headers: [{ name: "authorization", value: "Bearer $bearer_token" }]
+      configuration: "twitter_conf"
+    )
+
+  get_id_by_user(usernames: String): RootUserInfo
+    @rest(
+      method: GET
+      endpoint: "https://api.twitter.com/2/users/by?usernames=$usernames"
+      headers: [{ name: "authorization", value: "Bearer $bearer_token" }]
+      configuration: "twitter_conf"
+    )
+
+  get_user_by_id(id: String!): RootUser
+    @rest(
+      method: GET
+      endpoint: "https://api.twitter.com/2/users/$id?user.fields=created_at,description,id,location,name,pinned_tweet_id,profile_image_url,protected,public_metrics,url,username,verified"
+      headers: [{ name: "authorization", value: "Bearer $bearer_token" }]
+      configuration: "twitter_conf"
     )
 }

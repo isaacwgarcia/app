@@ -8,6 +8,7 @@ import { loadUser } from "../components/state/reducer";
 import {
   exploreLensPublications,
   getHeadlinesNewsApi,
+  getTwitterTimeline,
 } from "../components/lib/api";
 import { useRouter } from "next/router";
 import ItemCardLens from "../components/ItemCardLens";
@@ -24,6 +25,8 @@ function Dashboard(props) {
 
   const newsapi_articles =
     props.news.data.get_technology_headlines_news.articles;
+
+  const twitter_timeline = props.twitter_timeline.get_tweets.data;
 
   let user: User = {
     id: "",
@@ -131,11 +134,13 @@ Dashboard.layout = true;
 export async function getServerSideProps(context) {
   let publications = await exploreLensPublications();
   let news_headlines = await getHeadlinesNewsApi();
+  let twitter_timeline = await getTwitterTimeline();
 
   return {
     props: {
       lens_publications: publications,
       news: news_headlines,
+      twitter_timeline: twitter_timeline,
     },
   };
 }

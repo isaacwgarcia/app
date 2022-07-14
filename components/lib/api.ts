@@ -359,3 +359,48 @@ export async function getBalance(address, chain) {
     return e.message;
   }
 }
+
+export async function getTwitterTimeline() {
+  try {
+    const balance = await fetch(`${process.env.STEPZEN_API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+      body: JSON.stringify({
+        query: `
+        query MyQuery {
+          get_tweets(query: "ETH") {
+            data {
+              id
+              tweetLink {
+                data {
+                  author_id
+                  authorLink {
+                    data {
+                      profile_image_url
+                      username
+                    }
+                  }
+                  created_at
+                  source
+                }
+              }
+              text
+            }
+          }
+        }
+        
+        
+      `,
+      }),
+    });
+
+    const price = await balance.json();
+
+    return price?.data;
+  } catch (e) {
+    return e.message;
+  }
+}
