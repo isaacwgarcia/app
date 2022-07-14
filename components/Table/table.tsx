@@ -15,13 +15,19 @@ export default function BasicTable({ tableHead, tableData }) {
           <TableRow>
             <TableCell>TX Hash</TableCell>
             <TableCell align="left">Amount USD</TableCell>
+            <TableCell align="left">From</TableCell>
+            <TableCell align="left">To</TableCell>
+            <TableCell align="left">At</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {tableData.map((tx, i) => (
             <TableRow key={i}>
-              <TableCell>{tx.transaction_hash}</TableCell>
+              <TableCell>{tx.transaction_hash.slice(0, 10)}...</TableCell>
               <TableCell>{Number(tx.amount).toFixed(2)}</TableCell>
+              <TableCell>{tx.from.slice(0, 10)}...</TableCell>
+              <TableCell>{tx.to.slice(0, 10)}...</TableCell>
+              <TableCell>{tx.block_timestamp}</TableCell>
             </TableRow>
           ))}
         </TableBody>

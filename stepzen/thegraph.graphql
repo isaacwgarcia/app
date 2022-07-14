@@ -1,5 +1,10 @@
 type TransactionGQ {
   id: String
+  txLink: TXDetail
+    @materializer(
+      query: "tx_details"
+      arguments: [{ name: "txhash", field: "id" }]
+    )
 }
 
 type SwapGQ {
@@ -7,12 +12,25 @@ type SwapGQ {
   transaction: TransactionGQ
 }
 
+type Token0GQ {
+  id: String
+  name: String
+}
+
+type Token1GQ {
+  id: String
+  name: String
+}
+
 type PoolGQ {
-  swaps: [SwapGQ]
+  id: String
+  token0: Token0GQ
+  token1: Token1GQ
 }
 
 input Swap_filter {
   pool_contains: String
+  amountUSD_gt: String
 }
 
 type Query {
@@ -20,7 +38,12 @@ type Query {
     @graphql(
       endpoint: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
     )
-  swaps(where: Swap_filter, orderBy: String, orderDirection: String): [SwapGQ]
+  swaps(
+    where: Swap_filter
+    orderBy: String
+    orderDirection: String
+    first: Int
+  ): [SwapGQ]
     @graphql(
       endpoint: "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3"
     )

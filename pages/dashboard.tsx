@@ -21,13 +21,12 @@ function Dashboard(props) {
   const router = useRouter();
   const session = useContext(AppContext);
 
-  const lens_publications =
+  let lens_publications =
     props.lens_publications.data.explorePublications.items;
 
-  const newsapi_articles =
-    props.news.data.get_technology_headlines_news.articles;
+  let newsapi_articles = props.news.data.get_technology_headlines_news.articles;
 
-  const twitter_timeline = props.twitter_timeline.get_tweets.data;
+  let twitter_timeline = props.twitter_timeline.get_tweets.data;
 
   let user: User = {
     id: "",
@@ -41,10 +40,9 @@ function Dashboard(props) {
 
   const accounts = useAccounts();
   async function loadData() {
-    const options = {
+    fetch(`/api/user/${accounts}`, {
       method: `GET`,
-    };
-    fetch(`/api/user/${accounts}`, options)
+    })
       .then((response) => {
         if (response.ok) {
           return response.json().then((data) => {
@@ -68,7 +66,6 @@ function Dashboard(props) {
 
   useEffect(() => {
     if (!session.state.token.accessToken) router.push("/");
-
     loadData();
   }, []);
 

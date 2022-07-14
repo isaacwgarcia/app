@@ -1,18 +1,12 @@
-import { APIConnection } from "../../stepzen/stepzenTypes";
-import { LensToken } from "../lib/types";
-import Web3Modal from "web3modal";
-import { BigNumber, ethers, utils } from "ethers";
-import { coinbaseWallet } from "../connectors/coinbaseWallet";
-
 export async function queryTXs(id) {
   try {
-    const moralis_query = await fetch(`${process.env.STEPZEN_API_URL}`, {
+    const thegraph_query = await fetch(`${process.env.STEPZEN_API_URL}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
       },
-      body: JSON.stringify({
+      /* body: JSON.stringify({
         query: `
         query MyQuery {
           list_of_transactions_pool(address: "${id}", apikey: "${process.env.STEPZEN_MORALIS_API_KEY}") {
@@ -30,18 +24,80 @@ export async function queryTXs(id) {
             }
           }
         }
+      `, */
+
+      body: JSON.stringify({
+        query: `
+        query MyQuery {
+          swaps(
+            where: {pool_contains: "${id}"}
+            orderBy: "timestamp"
+            orderDirection: "desc"
+            first:10
+          ) {
+            amountUSD
+            transaction {
+              id
+              txLink {
+                from_address
+                to_address
+                block_timestamp
+              }
+            }
+          }
+        }
+        
+        
       `,
       }),
     });
 
-    const values = await moralis_query.json();
-
-    return values?.data.list_of_transactions_pool;
+    const txs = await thegraph_query.json();
+    return txs?.data.swaps;
   } catch (e) {
     return e.message;
   }
 }
 
+export async function getPoolInfo(id) {
+  try {
+    const pool_info = await fetch(`${process.env.STEPZEN_API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+
+      body: JSON.stringify({
+        query: `
+        query MyQuery {
+          pool(
+            id: "${id}"
+            
+          ) {
+            id
+            token0 {
+              id
+              name
+            }
+            token1 {
+              id
+              name
+            }
+          }
+        }
+
+      `,
+      }),
+    });
+
+    const info = await pool_info.json();
+
+    return info?.data.pool;
+  } catch (e) {
+    return e.message;
+  }
+}
 export async function getPools() {
   try {
     const pools_query = await fetch(`${process.env.STEPZEN_API_URL}`, {

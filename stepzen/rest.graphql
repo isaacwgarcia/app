@@ -8,10 +8,7 @@ type Tx {
   detail(apikey: String!): TXDetail
     @materializer(
       query: "tx_details"
-      arguments: [
-        { name: "txhash", field: "transaction_hash" }
-        { name: "apikey", argument: "apikey" }
-      ]
+      arguments: [{ name: "txhash", field: "transaction_hash" }]
     )
 }
 
@@ -208,11 +205,12 @@ type Query {
       endpoint: "https://api.coinbase.com/v2/prices/$pair/spot"
     )
 
-  tx_details(txhash: String!, apikey: String!): TXDetail
+  tx_details(txhash: String!): TXDetail
     @rest(
       method: GET
       endpoint: "https://deep-index.moralis.io/api/v2/transaction/$txhash?chain=eth"
       headers: [{ name: "X-API-Key", value: "$apikey" }]
+      configuration: "moralis_config"
     )
   list_nft(address: String!, apikey: String!, chain: String!): NFTList
     @rest(
@@ -231,12 +229,11 @@ type Query {
   list_of_transactions_pool(
     address: String!
     after: String = ""
-    first: Int! = 20
     apikey: String!
   ): Root
     @rest(
       method: GET
-      endpoint: "https://deep-index.moralis.io/api/v2/$address/logs?chain=eth&cursor=$after"
+      endpoint: "https://deep-index.moralis.io/api/v2/$address/logs?chain=eth&cursor=$after&limit=10"
       headers: [{ name: "X-API-Key", value: "$apikey" }]
     )
 
