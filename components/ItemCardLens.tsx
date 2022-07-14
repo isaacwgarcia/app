@@ -15,6 +15,13 @@ export default function ItemCardLens({
   handle,
   ownedBy,
 }) {
+  async function copyTextToClipboard(text) {
+    if ("clipboard" in navigator) {
+      return await navigator.clipboard.writeText(text);
+    } else {
+      return document.execCommand("copy", true, text);
+    }
+  }
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
@@ -30,7 +37,16 @@ export default function ItemCardLens({
           {content}
         </Typography>
         <Typography gutterBottom variant="body2" component="div">
-          {handle} - {ownedBy}
+          {handle}&nbsp;
+          <a
+            onClick={() => {
+              copyTextToClipboard(ownedBy);
+            }}
+            style={{ color: "blue" }}
+          >
+            {ownedBy.slice(0, 4)}...
+            {ownedBy.slice(30, ownedBy.length)}
+          </a>
           <br />
           {createdAt.toString()}
         </Typography>
