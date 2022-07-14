@@ -27,23 +27,34 @@ export default function Layout({ children }) {
             borderRadius={3}
             justifyContent="space-around"
             width="90%"
+            bgcolor="#140035"
           >
-            <Box padding={2} overflow="true" fontSize="0.6rem">
+            <Box padding={2} overflow="true" fontSize="0.6rem" color="white">
               <b>{accounts}</b>
               <br />
-              {isActive ? CHAINS[chainId]!.name : ""}
+              {/*   {isActive ? CHAINS[chainId]!.name : ""} */}
             </Box>
           </Box>
           <Box border={1} borderRadius={3} mt={2} width="90%">
-            <Box padding={2} overflow="true" fontSize="0.6rem">
-              <Box display="flex" width="75%" justifyContent="center">
-                <Avatar squared src={session.state.user.picture as string} />{" "}
-                &nbsp;&nbsp;
+            <Box
+              padding={2}
+              overflow="true"
+              fontSize="0.8rem"
+              bgcolor="#140035"
+              borderRadius={3}
+              color="white"
+            >
+              <Box display="flex" width="100%" justifyContent="space-around">
+                <Avatar
+                  squared
+                  src={session.state.user.picture as string}
+                  size="xl"
+                />
+                <Box width="50%" fontSize="0.8rem">
+                  {session.state.user.name} <br />@{session.state.user.handle}
+                  <br />
+                </Box>
               </Box>
-              <br />
-              {session.state.user.name} <br />
-              {session.state.user.handle} <br />
-              <br />
             </Box>
           </Box>
           <Box mt={2} width="90%">

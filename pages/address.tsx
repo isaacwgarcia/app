@@ -80,17 +80,19 @@ function FindAddress() {
           Search{" "}
         </Button>
       </Box>
+
       <br />
       <br />
       {loaded ? (
-        <Box display="flex" flexDirection="column" width="100%">
+        <Box display="flex" flexDirection="row" width="100%">
           <Box width="25%">
-            Account Balance: {balance}
+            <b>Balance</b> <br />
             <br />
-            <br />
+            {balance} Ξ
           </Box>
           <Box width="75%">
-            NFTs List:
+            <b>NFTs</b>
+            <br /> <br />
             {nfts.map((nft, index) => {
               return (
                 <NFTCard

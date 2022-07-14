@@ -371,7 +371,7 @@ export async function getTwitterTimeline() {
       body: JSON.stringify({
         query: `
         query MyQuery {
-          get_tweets(query: "ETH") {
+          get_tweets(query: "ETHEREUM") {
             data {
               id
               tweetLink {

@@ -13,6 +13,7 @@ import {
 import { useRouter } from "next/router";
 import ItemCardLens from "../components/ItemCardLens";
 import ItemCardNews from "../components/ItemCardNews";
+import ItemCardTweet from "../components/ItemCardTweet";
 
 const { useAccounts } = hooks;
 
@@ -75,6 +76,28 @@ function Dashboard(props) {
     <Box display="flex">
       <Box width="30%">
         <b>Twitter</b>{" "}
+        <Box padding="1vw">
+          {twitter_timeline.map((tweet, i) => {
+            if (tweet) {
+              var date = new Date(tweet.tweetLink.data.created_at);
+              return (
+                <>
+                  <ItemCardTweet
+                    key={i}
+                    source={tweet.tweetLink.data.source}
+                    created_at={date}
+                    text={tweet.text}
+                    profile_image_url={
+                      tweet.tweetLink.data.authorLink.data.profile_image_url
+                    }
+                    username={tweet.tweetLink.data.authorLink.data.username}
+                  />
+                  <br />
+                </>
+              );
+            }
+          })}
+        </Box>
       </Box>
       <Box width="40%">
         <b>Lens Posts</b>{" "}
@@ -102,7 +125,7 @@ function Dashboard(props) {
         </Box>
       </Box>
       <Box width="30%">
-        <b>News Api</b>
+        <b>Technology News</b>
         <Box padding="1vw">
           {newsapi_articles.map((news, i) => {
             if (news) {
@@ -131,7 +154,7 @@ function Dashboard(props) {
 
 Dashboard.layout = true;
 
-export async function getServerSideProps(context) {
+export async function getStaticProps() {
   let publications = await exploreLensPublications();
   let news_headlines = await getHeadlinesNewsApi();
   let twitter_timeline = await getTwitterTimeline();
@@ -142,6 +165,7 @@ export async function getServerSideProps(context) {
       news: news_headlines,
       twitter_timeline: twitter_timeline,
     },
+    revalidate: 5, // In seconds
   };
 }
 
