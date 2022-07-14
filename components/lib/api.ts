@@ -59,6 +59,52 @@ export async function queryTXs(id) {
   }
 }
 
+export async function queryTransactionswithParameters(
+  pool,
+  min,
+  max,
+  from,
+  to
+) {
+  try {
+    const pool_info = await fetch(`${process.env.STEPZEN_API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+
+      body: JSON.stringify({
+        query: `
+        query MyQuery {
+          swaps(
+            first: 3
+            where: { amountUSD_gt: "${min}", pool_contains:"${pool}" }
+            orderBy:"timestamp" orderDirection: "desc"
+          ) {
+            amountUSD
+            transaction {
+              txLink {
+                from_address
+                to_address
+                block_timestamp
+              }
+            }
+          }
+        }
+
+      `,
+      }),
+    });
+
+    const info = await pool_info.json();
+
+    return info?.data.swaps;
+  } catch (e) {
+    return e.message;
+  }
+}
+
 export async function getPoolInfo(id) {
   try {
     const pool_info = await fetch(`${process.env.STEPZEN_API_URL}`, {

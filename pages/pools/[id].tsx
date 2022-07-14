@@ -1,8 +1,9 @@
 import { getPoolInfo, queryTXs } from "../../components/lib/api";
-import styles from "../../styles/Home.module.css";
+import { FormData } from "../../components/lib/types";
 import { Transaction } from "../../components/lib/types";
 import dynamic from "next/dynamic";
-import { Input, Button } from "@mui/material";
+import { useState } from "react";
+import { Button, Box, TextField } from "@mui/material";
 
 const Table = dynamic(() => import("../../components/Table/table"), {
   ssr: false,
@@ -10,6 +11,9 @@ const Table = dynamic(() => import("../../components/Table/table"), {
 const headersTable = ["Transaction ID", "amount USD", "From", "To", "At"];
 
 function Pool(props) {
+  const data: FormData = { form_data: {} };
+  const [formState, setFormState] = useState(data.form_data);
+
   let dataTable: any[] = [];
 
   let pool_id;
@@ -27,9 +31,9 @@ function Pool(props) {
       let txData = {
         transaction_hash: tx.transaction.id,
         amount: tx.amountUSD,
-        from: tx.transaction.txLink.from_address,
-        to: tx.transaction.txLink.to_address,
-        block_timestamp: tx.transaction.txLink.block_timestamp,
+        from: tx.transaction.txLink?.from_address,
+        to: tx.transaction.txLink?.to_address,
+        block_timestamp: tx.transaction.txLink?.block_timestamp,
       };
 
       if (tx.amountUSD > 0) dataTable.push(txData);
@@ -38,8 +42,29 @@ function Pool(props) {
 
   fillData(txs);
 
+  async function getTransactions(pool, min, max, from, to) {
+    const options = {
+      method: `GET`,
+    };
+    const txs = await fetch(
+      `/api/transactions?pool=${pool}&min=${min}&max=${max}&from=${from}&to=${to}`,
+      options
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json().then((data) => {
+            return data;
+          });
+        }
+        throw new Error("Api is not available getTransactions ");
+      })
+      .catch((error) => {
+        console.error("Error fetching data getTransactions: ", error);
+      });
+  }
+
   return (
-    <div className={styles.container}>
+    <Box display="flex" flexDirection="column" height="100vh">
       <b>
         {" "}
         Liquidity Pool {pool_token0}/{pool_token1} {pool_id}
@@ -48,11 +73,72 @@ function Pool(props) {
       Latest Transactions:
       <Table tableHead={headersTable} tableData={dataTable} /> <br />
       <br />
-      Minimum amount
-      <br />
-      <Input /> <Button>Search</Button>
+      <Box display="flex">
+        {" "}
+        Minimum &nbsp;
+        <TextField
+          id="min_amount"
+          label="eg. 10"
+          variant="standard"
+          onChange={(ev) =>
+            setFormState({
+              ...formState,
+              ["min_amount"]: ev.target.value,
+            })
+          }
+        />{" "}
+        Max &nbsp;
+        <TextField
+          id="max_amount"
+          label="eg. 100000000"
+          variant="standard"
+          onChange={(ev) =>
+            setFormState({
+              ...formState,
+              ["max_amount"]: ev.target.value,
+            })
+          }
+        />{" "}
+        From &nbsp;
+        <TextField
+          id="from_address"
+          label="eg. 0x..."
+          variant="standard"
+          onChange={(ev) =>
+            setFormState({
+              ...formState,
+              ["from_address"]: ev.target.value,
+            })
+          }
+        />{" "}
+        To &nbsp;
+        <TextField
+          id="to_address"
+          label="eg. 0x..."
+          variant="standard"
+          onChange={(ev) =>
+            setFormState({
+              ...formState,
+              ["to_address"]: ev.target.value,
+            })
+          }
+        />
+        <Button
+          onClick={() => {
+            getTransactions(
+              pool_id,
+              formState.min_amount,
+              formState.max_amount,
+              formState.from_address,
+              formState.to_address
+            );
+          }}
+        >
+          Search
+        </Button>
+      </Box>
       {/*  <Table tableHead={headersTable} tableData={dataTable} /> */}
-    </div>
+    </Box>
   );
 }
 

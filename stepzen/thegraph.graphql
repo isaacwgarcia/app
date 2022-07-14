@@ -31,6 +31,9 @@ type PoolGQ {
 input Swap_filter {
   pool_contains: String
   amountUSD_gt: String
+  amount0_lt: String
+  sender: String
+  recipient: String
 }
 
 type Query {
