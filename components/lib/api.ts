@@ -84,6 +84,7 @@ export async function queryTransactionswithParameters(
           ) {
             amountUSD
             transaction {
+              id
               txLink {
                 from_address
                 to_address

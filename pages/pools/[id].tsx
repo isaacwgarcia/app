@@ -8,11 +8,18 @@ import { Button, Box, TextField } from "@mui/material";
 const Table = dynamic(() => import("../../components/Table/table"), {
   ssr: false,
 });
+const ResultTable = dynamic(
+  () => import("../../components/Table/resultTable"),
+  {
+    ssr: false,
+  }
+);
 const headersTable = ["Transaction ID", "amount USD", "From", "To", "At"];
 
 function Pool(props) {
   const data: FormData = { form_data: {} };
   const [formState, setFormState] = useState(data.form_data);
+  const [items, setItems] = useState([]);
 
   let dataTable: any[] = [];
 
@@ -26,7 +33,7 @@ function Pool(props) {
     pool_token0 = props.pool_info.token0.name;
     pool_token1 = props.pool_info.token1.name;
   }
-  async function fillData(txs) {
+  async function fillDataResults(txs, table) {
     txs?.map((tx) => {
       let txData = {
         transaction_hash: tx.transaction.id,
@@ -36,13 +43,29 @@ function Pool(props) {
         block_timestamp: tx.transaction.txLink?.block_timestamp,
       };
 
-      if (tx.amountUSD > 0) dataTable.push(txData);
+      if (tx.amountUSD > 0) table?.push(txData);
+    });
+    setItems(table);
+    //return table;
+  }
+  async function fillData(txs, table) {
+    txs?.map((tx) => {
+      let txData = {
+        transaction_hash: tx.transaction.id,
+        amount: tx.amountUSD,
+        from: tx.transaction.txLink?.from_address,
+        to: tx.transaction.txLink?.to_address,
+        block_timestamp: tx.transaction.txLink?.block_timestamp,
+      };
+
+      if (tx.amountUSD > 0) table?.push(txData);
     });
   }
 
-  fillData(txs);
+  fillData(txs, dataTable);
 
   async function getTransactions(pool, min, max, from, to) {
+    let resultsTable: any[] = [];
     const options = {
       method: `GET`,
     };
@@ -61,6 +84,8 @@ function Pool(props) {
       .catch((error) => {
         console.error("Error fetching data getTransactions: ", error);
       });
+
+    await fillDataResults(txs, resultsTable);
   }
 
   return (
@@ -78,7 +103,7 @@ function Pool(props) {
         Minimum &nbsp;
         <TextField
           id="min_amount"
-          label="eg. 10"
+          label="eg. $10"
           variant="standard"
           onChange={(ev) =>
             setFormState({
@@ -90,7 +115,7 @@ function Pool(props) {
         Max &nbsp;
         <TextField
           id="max_amount"
-          label="eg. 100000000"
+          label="eg. $100000000"
           variant="standard"
           onChange={(ev) =>
             setFormState({
@@ -137,7 +162,9 @@ function Pool(props) {
           Search
         </Button>
       </Box>
-      {/*  <Table tableHead={headersTable} tableData={dataTable} /> */}
+      <br /> <br />
+      <ResultTable tableHead={headersTable} tableData={items} />
+      <br /> <br /> <br /> <br />
     </Box>
   );
 }
