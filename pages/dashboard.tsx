@@ -180,7 +180,6 @@ export async function getServerSideProps({ req, res }) {
       news: news_headlines,
       twitter_timeline: twitter_timeline,
     },
-    revalidate: 5, // In seconds
   };
 }
 

@@ -42,7 +42,6 @@ export async function getServerSideProps({ req, res }) {
     props: {
       data: response,
     },
-    revalidate: 3, // In seconds
   };
 }
 Pools.layout = true;

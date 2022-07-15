@@ -6,6 +6,9 @@ const nextConfig = {
     STEPZEN_API_URL: process.env.STEPZEN_API_URL,
     STEPZEN_MORALIS_API_KEY: process.env.STEPZEN_MORALIS_API_KEY,
   },
+  images: {
+    domains: ["stepzen.com"],
+  },
 };
 
 module.exports = nextConfig;
