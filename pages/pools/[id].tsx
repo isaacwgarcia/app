@@ -163,7 +163,11 @@ function Pool(props) {
         </Button>
       </Box>
       <br /> <br />
-      <ResultTable tableHead={headersTable} tableData={items} />
+      {items.length > 0 ? (
+        <ResultTable tableHead={headersTable} tableData={items} />
+      ) : (
+        <></>
+      )}
       <br /> <br /> <br /> <br />
     </Box>
   );
@@ -178,6 +182,7 @@ export async function getStaticPaths() {
 
 export const getStaticProps = async (context) => {
   const txs = await queryTXs(context.params.id);
+  console.log("txs", txs);
   const pool_info = await getPoolInfo(context.params.id);
 
   return {

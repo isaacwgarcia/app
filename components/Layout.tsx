@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar";
 import { Box, Grid } from "@mui/material";
 import { useRouter } from "next/router";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
-import { CHAINS } from "./chains";
 import { hooks } from "./connectors/coinbaseWallet";
 import { AppContext } from "../components/state/context";
 import { Avatar } from "@nextui-org/react";
@@ -32,7 +31,6 @@ export default function Layout({ children }) {
             <Box padding={2} overflow="true" fontSize="0.6rem" color="white">
               <b>{accounts}</b>
               <br />
-              {/*   {isActive ? CHAINS[chainId]!.name : ""} */}
             </Box>
           </Box>
           <Box border={1} borderRadius={3} mt={2} width="90%">

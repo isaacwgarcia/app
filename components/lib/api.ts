@@ -178,6 +178,78 @@ export async function getTimeline() {
     return e.message;
   }
 }
+
+export async function searchAsset(query) {
+  try {
+    const asset_results = await fetch(`${process.env.STEPZEN_API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+
+      body: JSON.stringify({
+        query: `
+        query MyQuery {
+          search(request: {query: "${query}", type: PUBLICATION}) {
+            ... on PublicationSearchResult {
+              __typename
+              items {
+                ... on Post {
+                  id
+                  appId
+                  createdAt
+                  metadata {
+                    content
+                    image
+                  }
+                  profile {
+                    handle
+                    ownedBy
+                  }
+                }
+                ... on Comment {
+                  id
+                  metadata {
+                    content
+                    image
+                  }
+                }
+              }
+            }
+          }
+          get_tweets(query: "${query}") {
+            data {
+              id
+              tweetLink {
+                data {
+                  author_id
+                  authorLink {
+                    data {
+                      profile_image_url
+                      username
+                    }
+                  }
+                  created_at
+                  source
+                }
+              }
+              text
+            }
+          }
+        }
+      `,
+      }),
+    });
+
+    const assetresults = await asset_results.json();
+
+    return assetresults?.data;
+  } catch (e) {
+    return e.message;
+  }
+}
+
 export async function getPoolInfo(id) {
   try {
     const pool_info = await fetch(`${process.env.STEPZEN_API_URL}`, {

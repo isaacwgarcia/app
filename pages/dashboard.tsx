@@ -11,6 +11,7 @@ import ItemCardLens from "../components/ItemCardLens";
 import ItemCardNews from "../components/ItemCardNews";
 import ItemCardTweet from "../components/ItemCardTweet";
 import useSWR, { SWRConfig } from "swr";
+import LinearProgress from "@mui/material/LinearProgress";
 
 const { useAccounts } = hooks;
 
@@ -79,20 +80,20 @@ function Dashboard({ fallback }) {
               {data.get_tweets ? (
                 data.get_tweets?.data?.map((tweet, i) => {
                   if (tweet) {
-                    var date = new Date(tweet.tweetLink.data.created_at);
+                    var date = new Date(tweet.tweetLink?.data.created_at);
                     return (
                       <div key={i}>
                         <ItemCardTweet
                           key={i}
-                          source={tweet.tweetLink.data.source}
+                          source={tweet.tweetLink?.data.source}
                           created_at={date}
                           text={tweet.text}
                           profile_image_url={
-                            tweet.tweetLink.data.authorLink.data
+                            tweet.tweetLink?.data.authorLink.data
                               .profile_image_url
                           }
                           username={
-                            tweet.tweetLink.data.authorLink.data.username
+                            tweet.tweetLink?.data.authorLink.data.username
                           }
                         />
                         <br />
@@ -164,7 +165,9 @@ function Dashboard({ fallback }) {
           </Box>
         </Box>
       ) : (
-        <>Loading</>
+        <Box sx={{ width: "100%" }} mt="25%">
+          <LinearProgress />
+        </Box>
       )}
     </SWRConfig>
   );
