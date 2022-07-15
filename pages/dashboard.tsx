@@ -22,7 +22,7 @@ function Dashboard({ fallback }) {
   const session = useContext(AppContext);
 
   const revalidationOptions = {
-    refreshInterval: 10000, //refresh every 10 seconds
+    refreshInterval: 15000, //refresh every 10 seconds
   };
 
   const { data, error } = useSWR("api/timeline", fetcher, revalidationOptions);
@@ -64,7 +64,7 @@ function Dashboard({ fallback }) {
   }
 
   useEffect(() => {
-    // if (!session.state.token.accessToken) router.push("/");
+    if (!session.state.token.accessToken) router.push("/");
     loadData();
   }, []);
 

@@ -38,8 +38,11 @@ export default function BasicTable({ tableHead, tableData }) {
                   }}
                   style={{ color: "blue" }}
                 >
-                  {tx.transaction_hash.slice(0, 4)}...
-                  {tx.transaction_hash.slice(60, tx.transaction_hash.length)}
+                  {tx.transaction_hash ? tx.transaction_hash.slice(0, 4) : ""}
+                  ...
+                  {tx.transaction_hash
+                    ? tx.transaction_hash.slice(60, tx.transaction_hash.length)
+                    : ""}
                 </a>
               </TableCell>
               <TableCell>{Number(tx.amount).toFixed(2)}</TableCell>
@@ -50,7 +53,8 @@ export default function BasicTable({ tableHead, tableData }) {
                   }}
                   style={{ color: "blue" }}
                 >
-                  {tx.from.slice(0, 6)}... {tx.from.slice(35, tx.from.length)}
+                  {tx ? tx.from.slice(0, 6) : ""}...{" "}
+                  {tx ? tx.from.slice(35, tx.from.length) : ""}
                 </a>
               </TableCell>
               <TableCell>
@@ -60,7 +64,8 @@ export default function BasicTable({ tableHead, tableData }) {
                   }}
                   style={{ color: "blue" }}
                 >
-                  {tx.to.slice(0, 6)}...{tx.to.slice(35, tx.from.length)}
+                  {tx ? tx.to.slice(0, 6) : ""}...
+                  {tx ? tx.to.slice(35, tx.from.length) : ""}
                 </a>
               </TableCell>
               <TableCell>{tx.block_timestamp}</TableCell>
