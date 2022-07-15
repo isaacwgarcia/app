@@ -91,7 +91,7 @@ function Home() {
         >
           &nbsp;
           <a href={"https://www.github.com/isaacwgarcia"}>
-            <GithubIcon style={{ fontSize: "2.5vw" }} />
+            <GitHubIcon style={{ fontSize: "2.5vw" }} />
           </a>
           &nbsp;
           <a href={"https://twitter.com/isaacwgarcia"}>
