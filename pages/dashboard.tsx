@@ -164,7 +164,12 @@ function Dashboard(props) {
 
 Dashboard.layout = true;
 
-export async function getServerSideProps() {
+export async function getServerSideProps({ req, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=30"
+  );
+
   let publications = await exploreLensPublications();
   let news_headlines = await getHeadlinesNewsApi();
   let twitter_timeline = await getTwitterTimeline();

@@ -31,7 +31,11 @@ function Pools(data) {
   );
 }
 
-export const getServerSideProps = async (context) => {
+export async function getServerSideProps({ req, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=30"
+  );
   const response = await getPools();
 
   return {
@@ -40,7 +44,7 @@ export const getServerSideProps = async (context) => {
     },
     revalidate: 3, // In seconds
   };
-};
+}
 Pools.layout = true;
 
 export default Pools;
