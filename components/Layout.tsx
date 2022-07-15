@@ -58,41 +58,45 @@ export default function Layout({ children }) {
             </Box>
           </Box>
           <Box mt={2} width="90%">
-            <Box overflow="true" fontSize="0.6rem">
+            <Box overflow="true" fontSize="1rem">
               <a
                 onClick={() => {
                   router.push("/dashboard");
                 }}
+                style={{ color: "#140035", cursor: "pointer" }}
               >
                 <ClearAllIcon />
                 Dashboard
               </a>
             </Box>
-            <Box overflow="true" fontSize="0.6rem">
+            <Box overflow="true" fontSize="1rem">
               <a
                 onClick={() => {
                   router.push("/pools");
                 }}
+                style={{ color: "#140035", cursor: "pointer" }}
               >
                 <ClearAllIcon />
                 All Pools
               </a>
             </Box>
-            <Box overflow="true" fontSize="0.6rem">
+            <Box overflow="true" fontSize="1rem">
               <a
                 onClick={() => {
                   router.push("/address");
                 }}
+                style={{ color: "#140035", cursor: "pointer" }}
               >
                 <ClearAllIcon />
                 Search By Address
               </a>
             </Box>
-            <Box overflow="true" fontSize="0.6rem">
+            <Box overflow="true" fontSize="1rem">
               <a
                 onClick={() => {
                   router.push("/asset");
                 }}
+                style={{ color: "#140035", cursor: "pointer" }}
               >
                 <ClearAllIcon />
                 Search By Asset

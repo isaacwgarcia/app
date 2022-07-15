@@ -35,6 +35,7 @@ export default function PoolTable({ tableData }) {
                   onClick={() => {
                     router.push("/pools/" + `${pool.poolid}`);
                   }}
+                  style={{ color: "blue", cursor: "pointer" }}
                 >
                   {pool.poolid}
                 </a>
