@@ -31,7 +31,7 @@ function Pools(data) {
   );
 }
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
   const response = await getPools();
 
   return {

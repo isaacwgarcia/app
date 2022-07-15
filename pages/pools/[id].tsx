@@ -176,7 +176,7 @@ export async function getStaticPaths() {
   };
 }
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
   const txs = await queryTXs(context.params.id);
   const pool_info = await getPoolInfo(context.params.id);
 

@@ -164,7 +164,7 @@ function Dashboard(props) {
 
 Dashboard.layout = true;
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let publications = await exploreLensPublications();
   let news_headlines = await getHeadlinesNewsApi();
   let twitter_timeline = await getTwitterTimeline();

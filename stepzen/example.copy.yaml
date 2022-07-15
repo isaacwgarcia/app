@@ -1,0 +1,17 @@
+configurationset:
+  - configuration:
+      name: news_config
+      apiKey:
+  - configuration:
+      name: twitter_conf
+      bearer_token:
+      client_id:
+      client_secret:
+  - configuration:
+      name: moralis_config
+      apikey:
+ruleset:
+  - query: "[ALL]"
+    rules:
+      - predicate: true
+        action: allow
