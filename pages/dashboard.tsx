@@ -12,15 +12,20 @@ import ItemCardNews from "../components/ItemCardNews";
 import ItemCardTweet from "../components/ItemCardTweet";
 import useSWR, { SWRConfig } from "swr";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
 const { useAccounts } = hooks;
 
 function Dashboard({ fallback }) {
+  const fetcher = (url) => fetch(url).then((res) => res.json());
+
   const accounts = useAccounts();
   const router = useRouter();
   const session = useContext(AppContext);
 
-  const { data, error } = useSWR("api/timeline", fetcher);
+  const revalidationOptions = {
+    refreshInterval: 10000, //refresh every 10 seconds
+  };
+
+  const { data, error } = useSWR("api/timeline", fetcher, revalidationOptions);
 
   let user: User = {
     id: "",
@@ -65,7 +70,7 @@ function Dashboard({ fallback }) {
 
   if (!session.state.token.accessToken) return <>Please SignIn</>;
   return (
-    <SWRConfig value={{ fallback, refreshInterval: 1000 }}>
+    <SWRConfig value={{ fallback }}>
       {data ? (
         <Box display="flex">
           <Box width="30%">
