@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import { useContext } from "react";
 import { AppContext } from "../components/state/context";
 import { useRouter } from "next/router";
-import GithubIcon from "@mui/icons-material/Github";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
 function Home() {
