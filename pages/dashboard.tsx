@@ -2,32 +2,25 @@ import React from "react";
 import { Box } from "@mui/material";
 import { hooks } from "../components/connectors/coinbaseWallet";
 import { User } from "../components/lib/types";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AppContext } from "../components/state/context";
 import { loadUser } from "../components/state/reducer";
-import {
-  exploreLensPublications,
-  getHeadlinesNewsApi,
-  getTwitterTimeline,
-} from "../components/lib/api";
+import { getTimeline } from "../components/lib/api";
 import { useRouter } from "next/router";
 import ItemCardLens from "../components/ItemCardLens";
 import ItemCardNews from "../components/ItemCardNews";
 import ItemCardTweet from "../components/ItemCardTweet";
+import useSWR, { SWRConfig } from "swr";
 
+const fetcher = (url) => fetch(url).then((res) => res.json());
 const { useAccounts } = hooks;
 
-function Dashboard(props) {
+function Dashboard({ fallback }) {
+  const accounts = useAccounts();
   const router = useRouter();
   const session = useContext(AppContext);
 
-  let lens_publications =
-    props.lens_publications.data.explorePublications?.items;
-
-  let newsapi_articles =
-    props.news.data.get_technology_headlines_news?.articles;
-
-  let twitter_timeline = props.twitter_timeline.get_tweets?.data;
+  const { data, error } = useSWR("api/timeline", fetcher);
 
   let user: User = {
     id: "",
@@ -37,9 +30,9 @@ function Dashboard(props) {
     picture: "",
     cover_picture: "",
   };
+
   const { dispatch } = useContext(AppContext);
 
-  const accounts = useAccounts();
   async function loadData() {
     fetch(`/api/user/${accounts}`, {
       method: `GET`,
@@ -66,119 +59,121 @@ function Dashboard(props) {
   }
 
   useEffect(() => {
-    if (!session.state.token.accessToken) router.push("/");
+    // if (!session.state.token.accessToken) router.push("/");
     loadData();
   }, []);
 
+  if (!session.state.token.accessToken) return <>Please SignIn</>;
   return (
-    <Box display="flex">
-      <Box width="30%">
-        <b>Twitter</b>{" "}
-        <Box padding="1vw">
-          {twitter_timeline ? (
-            twitter_timeline?.map((tweet, i) => {
-              if (tweet) {
-                var date = new Date(tweet.tweetLink.data.created_at);
-                return (
-                  <div key={i}>
-                    <ItemCardTweet
-                      key={i}
-                      source={tweet.tweetLink.data.source}
-                      created_at={date}
-                      text={tweet.text}
-                      profile_image_url={
-                        tweet.tweetLink.data.authorLink.data.profile_image_url
-                      }
-                      username={tweet.tweetLink.data.authorLink.data.username}
-                    />
-                    <br />
-                  </div>
-                );
-              }
-            })
-          ) : (
-            <>Twitter API Down</>
-          )}
+    <SWRConfig value={{ fallback, refreshInterval: 1000 }}>
+      {data ? (
+        <Box display="flex">
+          <Box width="30%">
+            <b>Twitter</b>{" "}
+            <Box padding="1vw">
+              {data.get_tweets ? (
+                data.get_tweets?.data?.map((tweet, i) => {
+                  if (tweet) {
+                    var date = new Date(tweet.tweetLink.data.created_at);
+                    return (
+                      <div key={i}>
+                        <ItemCardTweet
+                          key={i}
+                          source={tweet.tweetLink.data.source}
+                          created_at={date}
+                          text={tweet.text}
+                          profile_image_url={
+                            tweet.tweetLink.data.authorLink.data
+                              .profile_image_url
+                          }
+                          username={
+                            tweet.tweetLink.data.authorLink.data.username
+                          }
+                        />
+                        <br />
+                      </div>
+                    );
+                  }
+                })
+              ) : (
+                <>Twitter API Down</>
+              )}
+            </Box>
+          </Box>
+          <Box width="40%">
+            <b>Lens Posts</b>{" "}
+            <Box padding="1vw">
+              {data.explorePublications ? (
+                data.explorePublications?.items?.map((post, i) => {
+                  if (post) {
+                    var date = new Date(post.createdAt);
+                    return (
+                      <div key={i}>
+                        <ItemCardLens
+                          key={i}
+                          appId={post.appId}
+                          createdAt={date}
+                          description={post.description}
+                          content={post.metadata.content}
+                          image={post.metadata.image}
+                          handle={post.profile.handle}
+                          ownedBy={post.profile.ownedBy}
+                        />
+                        <br />
+                      </div>
+                    );
+                  }
+                })
+              ) : (
+                <>Lens API Down</>
+              )}
+            </Box>
+          </Box>
+          <Box width="30%">
+            <b>Technology News</b>
+            <Box padding="1vw">
+              {data.get_technology_headlines_news ? (
+                data.get_technology_headlines_news?.articles?.map((news, i) => {
+                  if (news) {
+                    var date = new Date(news.publishedAt);
+                    return (
+                      <div key={i}>
+                        <ItemCardNews
+                          key={i}
+                          source={news.source.name}
+                          publishedAt={date}
+                          description={news.description}
+                          content={news.content}
+                          image={news.urlToImage}
+                          url={news.url}
+                        />
+                        <br />
+                      </div>
+                    );
+                  }
+                })
+              ) : (
+                <>News API Down</>
+              )}
+            </Box>
+          </Box>
         </Box>
-      </Box>
-      <Box width="40%">
-        <b>Lens Posts</b>{" "}
-        <Box padding="1vw">
-          {lens_publications ? (
-            lens_publications?.map((post, i) => {
-              if (post) {
-                var date = new Date(post.createdAt);
-                return (
-                  <div key={i}>
-                    <ItemCardLens
-                      key={i}
-                      appId={post.appId}
-                      createdAt={date}
-                      description={post.description}
-                      content={post.metadata.content}
-                      image={post.metadata.image}
-                      handle={post.profile.handle}
-                      ownedBy={post.profile.ownedBy}
-                    />
-                    <br />
-                  </div>
-                );
-              }
-            })
-          ) : (
-            <>Lens API Down</>
-          )}
-        </Box>
-      </Box>
-      <Box width="30%">
-        <b>Technology News</b>
-        <Box padding="1vw">
-          {newsapi_articles ? (
-            newsapi_articles?.map((news, i) => {
-              if (news) {
-                var date = new Date(news.publishedAt);
-                return (
-                  <div key={i}>
-                    <ItemCardNews
-                      key={i}
-                      source={news.source.name}
-                      publishedAt={date}
-                      description={news.description}
-                      content={news.content}
-                      image={news.urlToImage}
-                      url={news.url}
-                    />
-                    <br />
-                  </div>
-                );
-              }
-            })
-          ) : (
-            <>News API Down</>
-          )}
-        </Box>
-      </Box>
-    </Box>
+      ) : (
+        <>Loading</>
+      )}
+    </SWRConfig>
   );
 }
 
 Dashboard.layout = true;
 
-export async function getServerSideProps({ req, res }) {
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=10, stale-while-revalidate=30"
-  );
-
-  let publications = await exploreLensPublications();
-  let news_headlines = await getHeadlinesNewsApi();
-  let twitter_timeline = await getTwitterTimeline();
-
+export async function getServerSideProps() {
+  const timeline = await getTimeline();
   return {
     props: {
-      lens_publications: publications,
-      news: news_headlines,
-      twitter_timeline: twitter_timeline,
+      fallback: {
+        "api/timeline": timeline,
+      },
     },
   };
 }

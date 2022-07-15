@@ -106,6 +106,78 @@ export async function queryTransactionswithParameters(
   }
 }
 
+export async function getTimeline() {
+  try {
+    const timeline = await fetch(`${process.env.STEPZEN_API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+
+      body: JSON.stringify({
+        query: `
+        query MyQuery {
+          explorePublications(request: {sortCriteria: LATEST}) {
+            items {
+              ... on Post {
+                appId
+                createdAt
+                metadata {
+                  description
+                  content
+                  image
+                }
+                profile {
+                  handle
+                  ownedBy
+                }
+              }
+            }
+          }
+          get_technology_headlines_news {
+            articles {
+              content
+              description
+              publishedAt
+              source {
+                name
+              }
+              urlToImage
+              url
+            }
+          }
+          get_tweets(query: "ETHEREUM") {
+            data {
+              id
+              tweetLink {
+                data {
+                  author_id
+                  authorLink {
+                    data {
+                      profile_image_url
+                      username
+                    }
+                  }
+                  created_at
+                  source
+                }
+              }
+              text
+            }
+          }
+        }
+      `,
+      }),
+    });
+
+    const info = await timeline.json();
+
+    return info?.data;
+  } catch (e) {
+    return e.message;
+  }
+}
 export async function getPoolInfo(id) {
   try {
     const pool_info = await fetch(`${process.env.STEPZEN_API_URL}`, {
@@ -373,6 +445,9 @@ export async function getHeadlinesNewsApi() {
             }
           }
         }
+
+         
+
         
         
       
