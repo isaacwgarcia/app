@@ -44,8 +44,8 @@ export default function ItemCardLens({
             }}
             style={{ color: "blue" }}
           >
-            {ownedBy ? ownedBy.slice(0, 4) : ""}...
-            {ownedBy ? ownedBy.slice(30, ownedBy.length) : ""}
+            {ownedBy ? ownedBy?.slice(0, 4) : ""}...
+            {ownedBy ? ownedBy?.slice(30, ownedBy.length) : ""}
           </a>
           <br />
           {createdAt.toString()}
