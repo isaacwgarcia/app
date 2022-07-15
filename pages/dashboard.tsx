@@ -80,7 +80,7 @@ function Dashboard(props) {
               if (tweet) {
                 var date = new Date(tweet.tweetLink.data.created_at);
                 return (
-                  <>
+                  <div key={i}>
                     <ItemCardTweet
                       key={i}
                       source={tweet.tweetLink.data.source}
@@ -92,7 +92,7 @@ function Dashboard(props) {
                       username={tweet.tweetLink.data.authorLink.data.username}
                     />
                     <br />
-                  </>
+                  </div>
                 );
               }
             })
@@ -109,7 +109,7 @@ function Dashboard(props) {
               if (post) {
                 var date = new Date(post.createdAt);
                 return (
-                  <>
+                  <div key={i}>
                     <ItemCardLens
                       key={i}
                       appId={post.appId}
@@ -121,7 +121,7 @@ function Dashboard(props) {
                       ownedBy={post.profile.ownedBy}
                     />
                     <br />
-                  </>
+                  </div>
                 );
               }
             })
@@ -138,7 +138,7 @@ function Dashboard(props) {
               if (news) {
                 var date = new Date(news.publishedAt);
                 return (
-                  <>
+                  <div key={i}>
                     <ItemCardNews
                       key={i}
                       source={news.source.name}
@@ -149,7 +149,7 @@ function Dashboard(props) {
                       url={news.url}
                     />
                     <br />
-                  </>
+                  </div>
                 );
               }
             })
