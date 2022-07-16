@@ -18,6 +18,11 @@ export default function NFTCard({ name, url, address, metadata }) {
     const val = image.replace("ipfs://", "https://ipfs.infura.io/ipfs/");
     result.image = val;
   }
+  if (image?.indexOf("ipfs://ipfs/") == 0) {
+    //IPFS CID RARIBLE
+    const val = image.replace("ipfs://ipfs/", "https://ipfs.infura.io/ipfs/");
+    result.image = val;
+  }
 
   if (metadata_json?.image_url) {
     //ENS DOMAIN SERVICE

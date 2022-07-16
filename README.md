@@ -77,4 +77,16 @@ What can you do with the app?
   - Get Wallet Balance
   - Get NFTS (Uniswap Positions, IPFS Hosted, ENS among others)
 - Browse by asset
-  - Get Timeline about a specific asset from Twitter and from Lens.
+  - Get a Timeline about a specific asset from Twitter and from Lens.
+
+## Compare this app vs etherscan or uniswap dashboard
+
+https://etherscan.io/address/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640
+
+Even with the ID of the smart contract you can not see the swaps.
+
+https://info.uniswap.org/#/pools/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640
+
+You can see where money comes but you can not see where the money goes, unless you click on the etherscan link.
+
+You can not filter transactions by amount.
