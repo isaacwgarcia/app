@@ -62,3 +62,19 @@ The structure for the project uses NextJs framework and is as follows:
     .env.local Stepzen Private Key and Endpoint
 
 In the repository you will find a example.env.local and example.config.yaml to use your own keys.
+
+## Getting Started
+
+What can you do with the app?
+
+- Browse Twitter, Lens Protocol and news timeline at the same time.
+- Check Owner and App that published information.
+- For news you can click on headline.
+- Check Liquidity pools
+  - Latest Transactions with details (Tx Hash - Amount - Address Sender - Address Receiver - Date and Time) and you can copy them.
+  - Browse by minimum amount per transaction. (other filters are not implemented yet.)
+- Browse by wallet address
+  - Get Wallet Balance
+  - Get NFTS (Uniswap Positions, IPFS Hosted, ENS among others)
+- Browse by asset
+  - Get Timeline about a specific asset from Twitter and from Lens.

@@ -14,8 +14,6 @@ function FindAddress() {
   const [loaded, setLoaded] = useState(false);
 
   async function getListNfts() {
-    // const list_nfts = await getNfts(formState.ethaddress);
-
     const list_nfts = await fetch(
       `/api/user/nfts/${formState.ethaddress}?chain=eth`,
       {
@@ -33,7 +31,6 @@ function FindAddress() {
       .catch((error) => {
         console.error("Error fetching data: ", error);
       });
-
     setNfts(list_nfts.list_nft.result);
     const balance = await fetch(
       `/api/user/balance/${formState.ethaddress}?chain=eth`,
@@ -98,8 +95,9 @@ function FindAddress() {
                 <NFTCard
                   key={index}
                   name={nft.name}
-                  url={nft.token_uri ? nft.token_uri : "empty"}
+                  url={nft.token_uri ? nft.token_uri : ""}
                   address={nft.token_address}
+                  metadata={nft.metadata}
                 />
               );
             })}

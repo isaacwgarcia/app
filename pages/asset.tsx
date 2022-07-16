@@ -33,8 +33,6 @@ function Asset() {
     setTweets(results.get_tweets.data);
     setLensitems(results.search.items);
     setLoaded(true);
-
-    console.log("results", results);
   }
 
   useEffect(() => {}, [loaded]);

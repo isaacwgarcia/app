@@ -6,7 +6,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 
-export default function BasicTable({ tableHead, tableData }) {
+export default function BasicTable({ tableData }) {
   async function copyTextToClipboard(text) {
     if ("clipboard" in navigator) {
       return await navigator.clipboard.writeText(text);
@@ -28,45 +28,61 @@ export default function BasicTable({ tableHead, tableData }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {tableData?.map((tx, i) => (
+          {tableData.swaps?.map((tx, i) => (
             <TableRow key={i}>
               <TableCell>
                 <a
                   onClick={() => {
-                    copyTextToClipboard(tx.transaction_hash);
+                    copyTextToClipboard(tx.transaction.id);
                   }}
                   style={{ color: "blue" }}
                 >
-                  {tx ? tx.transaction_hash?.slice(0, 4) : ""}...
+                  {tx ? tx.transaction.id?.slice(0, 4) : ""}...
                   {tx
-                    ? tx.transaction_hash?.slice(60, tx.transaction_hash.length)
+                    ? tx.transaction.id?.slice(60, tx.transaction.id.length)
                     : ""}
                 </a>
               </TableCell>
-              <TableCell>{Number(tx.amount).toFixed(2)}</TableCell>
+              <TableCell>{Number(tx.amountUSD).toFixed(2)}</TableCell>
               <TableCell>
                 <a
                   onClick={() => {
-                    copyTextToClipboard(tx.from);
+                    copyTextToClipboard(tx.transaction.txLink.from_address);
                   }}
                   style={{ color: "blue" }}
                 >
-                  {tx ? tx.from?.slice(0, 6) : ""}...{" "}
-                  {tx ? tx.from?.slice(35, tx.from.length) : ""}
+                  {tx.transaction.txLink?.from_address
+                    ? tx.transaction.txLink?.from_address?.slice(0, 6)
+                    : ""}
+                  ...{" "}
+                  {tx.transaction.txLink?.from_address
+                    ? tx.transaction.txLink.from_address?.slice(
+                        35,
+                        tx.transaction.txLink.from_address.length
+                      )
+                    : ""}
                 </a>
               </TableCell>
               <TableCell>
                 <a
                   onClick={() => {
-                    copyTextToClipboard(tx.to);
+                    copyTextToClipboard(tx.transaction.txLink.to_address);
                   }}
                   style={{ color: "blue" }}
                 >
-                  {tx ? tx.to?.slice(0, 6) : ""}...
-                  {tx ? tx.to?.slice(35, tx.from.length) : ""}
+                  {tx.transaction.txLink?.to_address
+                    ? tx.transaction.txLink.to_address?.slice(0, 6)
+                    : ""}
+                  ...
+                  {tx.transaction.txLink?.to_address
+                    ? tx.transaction.txLink.to_address?.slice(
+                        35,
+                        tx.transaction.txLink.to_address.length
+                      )
+                    : ""}
                 </a>
               </TableCell>
-              <TableCell>{tx.block_timestamp}</TableCell>
+              <TableCell>{tx.transaction.txLink?.block_timestamp}</TableCell>
             </TableRow>
           ))}
         </TableBody>

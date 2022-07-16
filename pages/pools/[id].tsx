@@ -1,38 +1,31 @@
 import { getPoolInfo, queryTXs } from "../../components/lib/api";
 import { FormData } from "../../components/lib/types";
-import { Transaction } from "../../components/lib/types";
-import dynamic from "next/dynamic";
 import { useState } from "react";
 import { Button, Box, TextField } from "@mui/material";
+import useSWR, { SWRConfig } from "swr";
+import Table from "../../components/Table/table";
+import ResultTable from "../../components/Table/resultTable";
+import LinearProgress from "@mui/material/LinearProgress";
 
-const Table = dynamic(() => import("../../components/Table/table"), {
-  ssr: false,
-});
-const ResultTable = dynamic(
-  () => import("../../components/Table/resultTable"),
-  {
-    ssr: false,
-  }
-);
-const headersTable = ["Transaction ID", "amount USD", "From", "To", "At"];
-
-function Pool(props) {
-  const data: FormData = { form_data: {} };
-  const [formState, setFormState] = useState(data.form_data);
+function Pool({ fallback }) {
+  const form: FormData = { form_data: {} };
+  const [formState, setFormState] = useState(form.form_data);
   const [items, setItems] = useState([]);
 
-  let dataTable: any[] = [];
+  const revalidationOptions = {
+    refreshInterval: 10000,
+  };
+  const API = "../api/pool/";
+  const id = fallback.pool_info?.id;
 
-  let pool_id;
-  let pool_token0;
-  let pool_token1;
+  const fetcher = (url) => fetch(url).then((res) => res.json());
 
-  const txs = props.txs as Transaction[];
-  if (props.pool_info) {
-    pool_id = props.pool_info.id;
-    pool_token0 = props.pool_info.token0.name;
-    pool_token1 = props.pool_info.token1.name;
-  }
+  const { data, error } = useSWR(
+    id ? API + id : API,
+    fetcher,
+    revalidationOptions
+  );
+
   async function fillDataResults(txs, table) {
     txs?.map((tx) => {
       let txData = {
@@ -46,23 +39,7 @@ function Pool(props) {
       if (tx.amountUSD > 0) table?.push(txData);
     });
     setItems(table);
-    //return table;
   }
-  async function fillData(txs, table) {
-    txs?.map((tx) => {
-      let txData = {
-        transaction_hash: tx.transaction.id,
-        amount: tx.amountUSD,
-        from: tx.transaction.txLink?.from_address,
-        to: tx.transaction.txLink?.to_address,
-        block_timestamp: tx.transaction.txLink?.block_timestamp,
-      };
-
-      if (tx.amountUSD > 0) table?.push(txData);
-    });
-  }
-
-  fillData(txs, dataTable);
 
   async function getTransactions(pool, min, max, from, to) {
     let resultsTable: any[] = [];
@@ -89,108 +66,105 @@ function Pool(props) {
   }
 
   return (
-    <Box display="flex" flexDirection="column" height="100vh">
-      <b>
-        {" "}
-        Liquidity Pool {pool_token0}/{pool_token1} {pool_id}
-      </b>
-      <br /> <br />
-      Latest Transactions:
-      <Table tableHead={headersTable} tableData={dataTable} /> <br />
-      <br />
-      <Box display="flex">
-        {" "}
-        Minimum &nbsp;
-        <TextField
-          id="min_amount"
-          label="eg. $10"
-          variant="standard"
-          onChange={(ev) =>
-            setFormState({
-              ...formState,
-              ["min_amount"]: ev.target.value,
-            })
-          }
-        />{" "}
-        Max &nbsp;
-        <TextField
-          id="max_amount"
-          label="eg. $100000000"
-          variant="standard"
-          onChange={(ev) =>
-            setFormState({
-              ...formState,
-              ["max_amount"]: ev.target.value,
-            })
-          }
-        />{" "}
-        From &nbsp;
-        <TextField
-          id="from_address"
-          label="eg. 0x..."
-          variant="standard"
-          onChange={(ev) =>
-            setFormState({
-              ...formState,
-              ["from_address"]: ev.target.value,
-            })
-          }
-        />{" "}
-        To &nbsp;
-        <TextField
-          id="to_address"
-          label="eg. 0x..."
-          variant="standard"
-          onChange={(ev) =>
-            setFormState({
-              ...formState,
-              ["to_address"]: ev.target.value,
-            })
-          }
-        />
-        <Button
-          onClick={() => {
-            getTransactions(
-              pool_id,
-              formState.min_amount,
-              formState.max_amount,
-              formState.from_address,
-              formState.to_address
-            );
-          }}
-        >
-          Search
-        </Button>
-      </Box>
-      <br /> <br />
-      {items.length > 0 ? (
-        <ResultTable tableHead={headersTable} tableData={items} />
+    <SWRConfig value={{ fallback }}>
+      {data ? (
+        <Box display="flex" flexDirection="column" height="100vh">
+          <b>
+            {" "}
+            Liquidity Pool {fallback.pool_info.token0.name}/
+            {fallback.pool_info.token1.name} {fallback.pool_info.id}
+          </b>
+          <br /> <br />
+          Latest Transactions:
+          <Table tableData={data} />
+          <br />
+          <br />
+          <Box display="flex">
+            {" "}
+            Minimum &nbsp;
+            <TextField
+              id="min_amount"
+              label="eg. $10"
+              variant="standard"
+              onChange={(ev) =>
+                setFormState({
+                  ...formState,
+                  ["min_amount"]: ev.target.value,
+                })
+              }
+            />{" "}
+            Max &nbsp;
+            <TextField
+              id="max_amount"
+              label="eg. $100000000"
+              variant="standard"
+              onChange={(ev) =>
+                setFormState({
+                  ...formState,
+                  ["max_amount"]: ev.target.value,
+                })
+              }
+            />{" "}
+            From &nbsp;
+            <TextField
+              id="from_address"
+              label="eg. 0x..."
+              variant="standard"
+              onChange={(ev) =>
+                setFormState({
+                  ...formState,
+                  ["from_address"]: ev.target.value,
+                })
+              }
+            />{" "}
+            To &nbsp;
+            <TextField
+              id="to_address"
+              label="eg. 0x..."
+              variant="standard"
+              onChange={(ev) =>
+                setFormState({
+                  ...formState,
+                  ["to_address"]: ev.target.value,
+                })
+              }
+            />
+            <Button
+              onClick={() => {
+                getTransactions(
+                  fallback.pool_info.id,
+                  formState.min_amount,
+                  formState.max_amount,
+                  formState.from_address,
+                  formState.to_address
+                );
+              }}
+            >
+              Search
+            </Button>
+          </Box>
+          <br /> <br />
+          {items.length > 0 ? <ResultTable tableData={items} /> : <></>}
+          <br /> <br /> <br /> <br />
+        </Box>
       ) : (
-        <></>
+        <LinearProgress />
       )}
-      <br /> <br /> <br /> <br />
-    </Box>
+    </SWRConfig>
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [{ params: { id: "0x5777d92f208679db4b9778590fa3cab3ac9e2168" } }],
-    fallback: true,
-  };
-}
-
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
   const txs = await queryTXs(context.params.id);
-  console.log("txs", txs);
   const pool_info = await getPoolInfo(context.params.id);
-
+  const id = pool_info?.id;
   return {
     props: {
-      txs: txs,
-      pool_info: pool_info,
+      fallback: {
+        pool_info: pool_info,
+        "../api/pool": txs,
+      },
     },
-    revalidate: 10, // In seconds
   };
 };
 

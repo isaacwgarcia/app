@@ -1,43 +1,43 @@
 import React from "react";
 import { Box } from "@mui/material";
+import Card from "@mui/material/Card";
+import CardMedia from "@mui/material/CardMedia";
 
-interface Result {
-  name: string;
-  description: string;
-  image: string;
-}
+export default function NFTCard({ name, url, address, metadata }) {
+  let result = { name: "", description: "", metadata: "", image: "" };
+  const metadata_json = JSON.parse(metadata);
+  const image: string = metadata_json?.image;
 
-export default function NFTCard({ key, name, url, address }) {
-  const url_string = url as string;
-  let json = "";
-  let result: Result = { name: "", description: "", image: "" };
-  let image_json = "";
+  result.name = name;
+  result.description = address;
+  result.metadata = url;
+  result.image = metadata_json?.image;
 
-  if (url_string.length > 1000) {
-    json = Buffer.from(url_string.substring(29), "base64").toString();
-    result = JSON.parse(json);
+  if (image?.indexOf("ipfs://") == 0) {
+    //IPFS CID
+    const val = image.replace("ipfs://", "https://ipfs.infura.io/ipfs/");
+    result.image = val;
+  }
 
-    image_json = Buffer.from(
-      (result as unknown as Result).image.substring(25),
-      "base64"
-    ).toString();
-  } else {
-    result.name = name;
-    result.description = address;
-    result.image = url;
+  if (metadata_json?.image_url) {
+    //ENS DOMAIN SERVICE
+    result.image = metadata_json.image_url;
   }
 
   return (
-    <Box width="100%">
-      <>
-        {(result as unknown as Result).name}
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        {(result as unknown as Result).description}
-        <br />
-      </>
-      &nbsp;&nbsp;&nbsp;&nbsp;
-      {/*   <Image src={image_json} height={30} width={30} /> */}
-      &nbsp;&nbsp;&nbsp;&nbsp;
+    <Box width="100%" flexDirection="row">
+      {result.name}
+      {/* {result .description} */}
+      {/*  {result.metadata} */}
+      {/*  {result.image} */}
+      <Card sx={{ maxWidth: 150 }}>
+        <CardMedia
+          component="img"
+          height="90%"
+          image={result.image ? result.image : "https://picsum.photos/200"}
+        />
+      </Card>
+      <br />
     </Box>
   );
 }

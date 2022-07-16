@@ -6,25 +6,6 @@ export async function queryTXs(id) {
         "Content-Type": "application/json",
         Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
       },
-      /* body: JSON.stringify({
-        query: `
-        query MyQuery {
-          list_of_transactions_pool(address: "${id}", apikey: "${process.env.STEPZEN_MORALIS_API_KEY}") {
-            cursor
-            page
-            result {
-              transaction_hash
-              txLink {
-                swaps {
-                  amount0
-                  amount1
-                  amountUSD
-                }
-              }
-            }
-          }
-        }
-      `, */
 
       body: JSON.stringify({
         query: `
@@ -53,7 +34,7 @@ export async function queryTXs(id) {
     });
 
     const txs = await thegraph_query.json();
-    return txs?.data.swaps;
+    return txs?.data;
   } catch (e) {
     return e.message;
   }
@@ -439,6 +420,7 @@ export async function getNfts(address, chain) {
               token_address
               token_id
               token_uri
+              metadata
             }
           }
         }
