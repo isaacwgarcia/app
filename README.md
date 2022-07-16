@@ -13,8 +13,8 @@ Liquidity Pools are one of the most important concepts of decentralized finance.
 There are 3 versions of them. And here we are going to use Uniswap.
 v1 was created with the main objective of exchanging coins let's say I have USDC and I want to receive ETH, so I would go to a liquidity pool, to make the exchange. The caveat was that you always needed ETH as a collateral either to buy or sell.
 V2s allows us to trade coins without the need of ETH, I can go from USDC to DAI (instead of USDC-ETH > ETH-DAI) or from USDT to WBTC (This is a wrapped token, but we can explain this concept later.)
-Now at this point, I can either use the Liquidity to swap my coins or I can provide liquidity to receive a % from all the transactions made there.
-V3s was created to be able to set a range for the capital that we provide to the pool. There is a very good explanation here: (https://medium.com/coinmonks/uniswap-v3-explained-57e0cdf86719).
+Now at this point, I can either use the Liquidity to swap my coins or I can provide liquidity to receive a % from all the transactions.
+V3s was created to be able to set a range for our capital inthe pool. There is a very good explanation here: (https://medium.com/coinmonks/uniswap-v3-explained-57e0cdf86719).
 
 Let's dive into the solution I built...
 
@@ -50,8 +50,8 @@ The structure for the project uses NextJs framework and is as follows:
       price API Route to retrieve prices
       transactions API Route to query transactions
       user API Route to query users
-      balance
-      nfts
+      - balance
+      - nfts
   - stepzen
     config.yaml Define your apiKeys and secret as configurations for your querys
     index.graphql Define your graphql files here
@@ -68,7 +68,7 @@ In the repository you will find a example.env.local and example.config.yaml to u
 What can you do with the app?
 
 - Browse Twitter, Lens Protocol and news timeline at the same time.
-- Check Owner and App that published information.
+- Check Owner and App that published the information.
 - For news you can click on headline.
 - Check Liquidity pools
   - Latest Transactions with details (Tx Hash - Amount - Address Sender - Address Receiver - Date and Time) and you can copy them.
@@ -78,15 +78,15 @@ What can you do with the app?
   - Get NFTS (Uniswap Positions, IPFS Hosted, ENS among others)
 - Browse by asset
   - Get a Timeline about a specific asset from Twitter and from Lens.
+- Explore Mode - Access to the app without connecting your wallet.
 
 ## Compare this app vs etherscan or uniswap dashboard
 
 https://etherscan.io/address/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640
 
-Even with the ID of the smart contract you can not see the swaps.
+- Even with the ID of the smart contract you can not see the swaps.
 
 https://info.uniswap.org/#/pools/0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640
 
-You can see where money comes but you can not see where the money goes, unless you click on the etherscan link.
-
-You can not filter transactions by amount.
+- You can see where money comes but you can not see where the money goes, unless you click on the etherscan link.
+- You can not filter transactions by amount or any other parameter.

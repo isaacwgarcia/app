@@ -102,6 +102,13 @@ export default function Navbar() {
             >
               Connect Wallet
             </button>
+            <button
+              onClick={() => {
+                router.push("/dashboard");
+              }}
+            >
+              Explore mode
+            </button>
           </Box>
         )}
       </Box>

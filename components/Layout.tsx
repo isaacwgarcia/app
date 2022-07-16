@@ -15,7 +15,7 @@ export default function Layout({ children }) {
   const accounts = useAccounts();
   const isActive = useIsActive();
   const chainId = useChainId();
-
+  console.log("Session", session);
   return (
     <>
       <Navbar />
@@ -29,7 +29,11 @@ export default function Layout({ children }) {
             bgcolor="#140035"
           >
             <Box padding={2} overflow="true" fontSize="0.6rem" color="white">
-              <b>{accounts}</b>
+              {session.state.token.accessToken !== "" ? (
+                <b>{accounts}</b>
+              ) : (
+                <></>
+              )}
               <br />
             </Box>
           </Box>
@@ -43,15 +47,22 @@ export default function Layout({ children }) {
               color="white"
             >
               <Box display="flex" width="100%" justifyContent="space-around">
-                <Avatar
-                  squared
-                  src={session.state.user.picture as string}
-                  size="xl"
-                />
-                <Box width="50%" fontSize="0.8rem">
-                  {session.state.user.name} <br />@{session.state.user.handle}
-                  <br />
-                </Box>
+                {session.state.token.accessToken !== "" ? (
+                  <>
+                    <Avatar
+                      squared
+                      src={session.state.user.picture as string}
+                      size="xl"
+                    />
+                    <Box width="50%" fontSize="0.8rem">
+                      {session.state.user.name} <br />@
+                      {session.state.user.handle}
+                      <br />
+                    </Box>
+                  </>
+                ) : (
+                  <>Please sign In</>
+                )}
               </Box>
             </Box>
           </Box>

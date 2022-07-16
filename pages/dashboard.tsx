@@ -65,11 +65,11 @@ function Dashboard({ fallback }) {
   }
 
   useEffect(() => {
-    if (!session.state.token.accessToken) router.push("/");
+    // if (!session.state.token.accessToken) router.push("/");
     loadData();
-  }, []);
+  }, [session.state.token.accessToken]);
 
-  if (!session.state.token.accessToken) return <>Please SignIn</>;
+  // if (!session.state.token.accessToken) return <>Please SignIn</>;
   return (
     <SWRConfig value={{ fallback }}>
       {data ? (
