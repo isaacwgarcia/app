@@ -18,11 +18,23 @@ export default function PricesBar() {
 
   return (
     <Box display="flex">
-      <Box padding="0.5rem">ETH ${data_eth.data?.get_price.data.amount} </Box>
-      <Box padding="0.5rem">
-        MATIC ${data_matic.data?.get_price.data.amount}{" "}
-      </Box>
-      <Box padding="0.5rem">BTC ${data_btc.data?.get_price.data.amount} </Box>
+      {data_eth ? (
+        <Box padding="0.5rem">ETH ${data_eth.data?.get_price.data.amount} </Box>
+      ) : (
+        <></>
+      )}
+      {data_matic ? (
+        <Box padding="0.5rem">
+          MATIC ${data_matic.data?.get_price.data.amount}{" "}
+        </Box>
+      ) : (
+        <></>
+      )}
+      {data_btc ? (
+        <Box padding="0.5rem">BTC ${data_btc.data?.get_price.data.amount} </Box>
+      ) : (
+        <></>
+      )}
     </Box>
   );
 }

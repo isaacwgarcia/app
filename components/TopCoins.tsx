@@ -20,11 +20,12 @@ export default function TopCoins() {
         data.map((coin, i) => (
           <Box key={i}>
             <b>
-              {coin.detail_coin.data.coins[0].symbol}&nbsp;{coin.name}
+              {coin?.detail_coin?.data?.coins[0]?.symbol}&nbsp;{coin.name}
             </b>
-            &nbsp; ${Number(coin.detail_coin.data.coins[0].price).toFixed(2)}
+            &nbsp; $
+            {Number(coin?.detail_coin?.data?.coins[0]?.price).toFixed(2)}
             &nbsp;
-            {coin.detail_coin.data.coins[0].change}%
+            {coin?.detail_coin?.data?.coins[0]?.change}%
           </Box>
         ))
       ) : (

@@ -6,12 +6,6 @@ import { formatEther } from "ethers/lib/utils";
 import { useState, useEffect } from "react";
 
 function Address(props) {
-  const [balance, setBalance] = useState("");
-
-  useEffect(() => {
-    setBalance(formatEther(props?.balance?.get_balance?.balance).toString());
-  }, []);
-
   return (
     <>
       {props ? (
@@ -20,7 +14,7 @@ function Address(props) {
             <Box>
               <b>Balance</b> <br />
               <br />
-              {balance} Ξ
+              {formatEther(props?.balance?.get_balance?.balance).toString()} Ξ
             </Box>
             {
               <Box height="100vh">
@@ -61,7 +55,6 @@ export const getServerSideProps = async (context) => {
   const list_nfts = await getNfts(context.params.id, "eth");
   const balance = await getBalance(context.params.id, "eth");
 
-  console.log("getServerSideProps> ", list_nfts, " balance ", balance);
   return {
     props: {
       list_nfts,

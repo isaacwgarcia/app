@@ -11,50 +11,48 @@ export default function InfoCard() {
   const accounts = useAccounts();
 
   return (
-    <>
+    <Box width="90%">
       <Box
-        border={1}
-        borderRadius={3}
-        justifyContent="space-around"
-        width="90%"
+        padding={2}
+        overflow="true"
+        fontSize="0.8rem"
         bgcolor="#140035"
+        borderRadius={3}
+        color="white"
       >
-        <Box padding={2} overflow="true" fontSize="0.6rem" color="white">
-          {session.state.token.accessToken !== "" ? <b>{accounts}</b> : <></>}
-          <br />
-        </Box>
-      </Box>
-      <Box border={1} borderRadius={3} mt={2} width="90%">
         <Box
-          padding={2}
-          overflow="true"
-          fontSize="0.8rem"
-          bgcolor="#140035"
-          borderRadius={3}
-          color="white"
+          display="flex"
+          width="100%"
+          justifyContent="space-around"
+          flexWrap="wrap"
         >
-          <Box display="flex" width="100%" justifyContent="space-around">
-            {session.state.token.accessToken !== "" ? (
-              <>
-                <Avatar
-                  squared
-                  src={session.state.user.picture as string}
-                  size="xl"
-                />
-                <Box width="50%" fontSize="0.8rem">
-                  {session.state.user.name} <br />@{session.state.user.handle}
-                  <br />
-                </Box>
-              </>
-            ) : (
-              <Box display="flex" justifyContent="center">
-                <FlareIcon />
-                &nbsp;&nbsp;Please sign In
+          {session.state.token.accessToken !== "" ? (
+            <>
+              <Avatar
+                squared
+                src={session.state.user.picture as string}
+                size="xl"
+              />
+              <Box width="50%" fontSize="0.8rem">
+                {session.state.user.name} <br />@{session.state.user.handle}
+                <br />
               </Box>
+            </>
+          ) : (
+            <Box display="flex" justifyContent="center">
+              <FlareIcon />
+              &nbsp;&nbsp;Please sign In
+            </Box>
+          )}
+          <h6>
+            {session.state.token.accessToken !== "" ? (
+              <b>{accounts} </b>
+            ) : (
+              <></>
             )}
-          </Box>
+          </h6>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }
