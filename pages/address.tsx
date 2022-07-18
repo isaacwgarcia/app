@@ -78,13 +78,15 @@ function FindAddress() {
       <br />
       <br />
       {loaded ? (
-        <Box display="flex" flexDirection="row" width="100%">
-          <Box width="25%">
+        <Box display="flex" flexDirection="column" width="100%">
+          <Box>
             <b>Balance</b> <br />
             <br />
             {balance} Ξ
           </Box>
-          <Box width="75%">
+          <Box>
+            <br />
+            <br />
             <b>NFTs</b>
             <br /> <br />
             <Box

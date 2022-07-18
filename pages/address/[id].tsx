@@ -16,14 +16,15 @@ function Address(props) {
     <>
       {props ? (
         <Box display="flex" flexDirection="column" height="100vh">
-          <Box display="flex" flexDirection="row" width="100%">
-            <Box width="25%">
+          <Box display="flex" flexDirection="column" width="100%">
+            <Box>
               <b>Balance</b> <br />
               <br />
               {balance} Ξ
             </Box>
             {
-              <Box width="75%" height="100vh">
+              <Box height="100vh">
+                <br /> <br />
                 <b>NFTs</b>
                 <br /> <br />
                 <Box
