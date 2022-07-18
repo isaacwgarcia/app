@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -6,8 +5,10 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { useRouter } from "next/router";
 
 export default function BasicTable({ tableData }) {
+  const router = useRouter();
   async function copyTextToClipboard(text) {
     if ("clipboard" in navigator) {
       return await navigator.clipboard.writeText(text);
@@ -50,8 +51,9 @@ export default function BasicTable({ tableData }) {
                 <a
                   onClick={() => {
                     copyTextToClipboard(tx.from);
+                    router.push("/address/" + tx.from);
                   }}
-                  style={{ color: "blue" }}
+                  style={{ color: "blue", cursor: "pointer" }}
                 >
                   {tx ? tx.from?.slice(0, 6) : ""}...{" "}
                   {tx ? tx.from?.slice(35, tx.from.length) : ""}
@@ -61,8 +63,9 @@ export default function BasicTable({ tableData }) {
                 <a
                   onClick={() => {
                     copyTextToClipboard(tx.to);
+                    router.push("/address/" + tx.to);
                   }}
-                  style={{ color: "blue" }}
+                  style={{ color: "blue", cursor: "pointer" }}
                 >
                   {tx ? tx.to?.slice(0, 6) : ""}...
                   {tx ? tx.to?.slice(35, tx.from.length) : ""}

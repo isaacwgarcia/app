@@ -1,10 +1,9 @@
 import * as React from "react";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { useRouter } from "next/router";
 
 export default function ItemCardLens({
   appId,
@@ -15,6 +14,7 @@ export default function ItemCardLens({
   handle,
   ownedBy,
 }) {
+  const router = useRouter();
   async function copyTextToClipboard(text) {
     if ("clipboard" in navigator) {
       return await navigator.clipboard.writeText(text);
@@ -41,8 +41,9 @@ export default function ItemCardLens({
           <a
             onClick={() => {
               copyTextToClipboard(ownedBy);
+              router.push("/address/" + ownedBy);
             }}
-            style={{ color: "blue" }}
+            style={{ color: "blue", cursor: "pointer" }}
           >
             {ownedBy ? ownedBy?.slice(0, 4) : ""}...
             {ownedBy ? ownedBy?.slice(30, ownedBy.length) : ""}

@@ -2,11 +2,10 @@ import React from "react";
 import { Box } from "@mui/material";
 import { hooks } from "../components/connectors/coinbaseWallet";
 import { User } from "../components/lib/types";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { AppContext } from "../components/state/context";
 import { loadUser } from "../components/state/reducer";
 import { getTimeline } from "../components/lib/api";
-import { useRouter } from "next/router";
 import ItemCardLens from "../components/ItemCardLens";
 import ItemCardNews from "../components/ItemCardNews";
 import ItemCardTweet from "../components/ItemCardTweet";
@@ -19,14 +18,13 @@ function Dashboard({ fallback }) {
   const fetcher = (url) => fetch(url).then((res) => res.json());
 
   const accounts = useAccounts();
-  const router = useRouter();
   const session = useContext(AppContext);
 
   const revalidationOptions = {
     refreshInterval: 15000, //refresh every 10 seconds
   };
 
-  const { data, error } = useSWR("api/timeline", fetcher, revalidationOptions);
+  const { data } = useSWR("api/timeline", fetcher, revalidationOptions);
 
   let user: User = {
     id: "",
@@ -65,11 +63,9 @@ function Dashboard({ fallback }) {
   }
 
   useEffect(() => {
-    // if (!session.state.token.accessToken) router.push("/");
-    loadData();
+    if (session.state.token.accessToken) loadData();
   }, [session.state.token.accessToken]);
 
-  // if (!session.state.token.accessToken) return <>Please SignIn</>;
   return (
     <SWRConfig value={{ fallback }}>
       {data ? (

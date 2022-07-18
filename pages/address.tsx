@@ -1,7 +1,6 @@
 import { Box, TextField, Button } from "@mui/material";
-
 import { FormData } from "../components/lib/types";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import NFTCard from "../components/NFTCard";
 import { formatEther } from "ethers/lib/utils";
 
@@ -53,8 +52,6 @@ function FindAddress() {
     setLoaded(true);
   }
 
-  useEffect(() => {}, [loaded]);
-
   return (
     <Box width="100%" height="85%" display="flex" flexDirection="column">
       <Box display="flex" flexDirection="column" width="25%">
@@ -90,17 +87,25 @@ function FindAddress() {
           <Box width="75%">
             <b>NFTs</b>
             <br /> <br />
-            {nfts.map((nft, index) => {
-              return (
-                <NFTCard
-                  key={index}
-                  name={nft.name}
-                  url={nft.token_uri ? nft.token_uri : ""}
-                  address={nft.token_address}
-                  metadata={nft.metadata}
-                />
-              );
-            })}
+            <Box
+              display="flex"
+              flexDirection="row"
+              width="100%"
+              justifyContent="space-around"
+              flexWrap="wrap"
+            >
+              {nfts.map((nft, index) => {
+                return (
+                  <NFTCard
+                    key={index}
+                    name={nft.name}
+                    url={nft.token_uri ? nft.token_uri : ""}
+                    address={nft.token_address}
+                    metadata={nft.metadata}
+                  />
+                );
+              })}
+            </Box>
           </Box>
         </Box>
       ) : (

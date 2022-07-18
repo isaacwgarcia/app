@@ -5,8 +5,9 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-
+import { useRouter } from "next/router";
 export default function BasicTable({ tableData }) {
+  const router = useRouter();
   async function copyTextToClipboard(text) {
     if ("clipboard" in navigator) {
       return await navigator.clipboard.writeText(text);
@@ -48,8 +49,11 @@ export default function BasicTable({ tableData }) {
                 <a
                   onClick={() => {
                     copyTextToClipboard(tx.transaction.txLink.from_address);
+                    router.push(
+                      "/address/" + tx.transaction.txLink.from_address
+                    );
                   }}
-                  style={{ color: "blue" }}
+                  style={{ color: "blue", cursor: "pointer" }}
                 >
                   {tx.transaction.txLink?.from_address
                     ? tx.transaction.txLink?.from_address?.slice(0, 6)
@@ -67,8 +71,9 @@ export default function BasicTable({ tableData }) {
                 <a
                   onClick={() => {
                     copyTextToClipboard(tx.transaction.txLink.to_address);
+                    router.push("/address/" + tx.transaction.txLink.to_address);
                   }}
-                  style={{ color: "blue" }}
+                  style={{ color: "blue", cursor: "pointer" }}
                 >
                   {tx.transaction.txLink?.to_address
                     ? tx.transaction.txLink.to_address?.slice(0, 6)

@@ -396,7 +396,7 @@ export async function authenticate(address, signature) {
 
 export async function getNfts(address, chain) {
   try {
-    const auth = await fetch(`${process.env.STEPZEN_API_URL}`, {
+    const nfts = await fetch(`${process.env.STEPZEN_API_URL}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -431,7 +431,7 @@ export async function getNfts(address, chain) {
       }),
     });
 
-    const nfts_response = await auth.json();
+    const nfts_response = await nfts.json();
     return nfts_response?.data;
   } catch (e) {
     return e.message;
