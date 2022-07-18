@@ -2,28 +2,24 @@ import React from "react";
 import { Box } from "@mui/material";
 import { useRouter } from "next/router";
 import PricesBar from "./PricesBar";
-import { LensToken } from "./lib/types";
+import { LensToken, User } from "./lib/types";
 import { loadToken } from "./state/reducer";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AppContext } from "../components/state/context";
 import { coinbaseWallet, hooks } from "../components/connectors/coinbaseWallet";
+import { loadUser } from "../components/state/reducer";
 
-const { useChainId, useAccounts, useError, useIsActivating, useProvider } =
-  hooks;
+const { useAccounts, useProvider } = hooks;
 
 export default function Navbar() {
-  const chainId = useChainId();
   const accounts = useAccounts();
-  const error = useError();
-  const isActivating = useIsActivating();
   const provider = useProvider();
   const { dispatch } = useContext(AppContext);
   const context = useContext(AppContext);
   const router = useRouter();
-  const [logged, setLogged] = useState(false);
 
   async function login() {
-    void (await coinbaseWallet.activate());
+    coinbaseWallet.activate();
 
     if (provider) {
       const signer = provider.getSigner();
@@ -64,13 +60,48 @@ export default function Navbar() {
         });
 
       const lens_token = authenticate.authenticate as LensToken;
-      if (lens_token) setLogged(true);
-      dispatch(loadToken(lens_token));
+      if (lens_token) {
+        await loadData();
+        dispatch(loadToken(lens_token));
+      }
     } else {
       console.log("Please wait for Coinbase to connect...");
     }
   }
 
+  let user: User = {
+    id: "",
+    handle: "",
+    bio: "",
+    name: "",
+    picture: "",
+    cover_picture: "",
+  };
+
+  async function loadData() {
+    fetch(`/api/user/${accounts}`, {
+      method: `GET`,
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json().then((data) => {
+            let handle = data?.profiles?.items[0]?.handle.split(".");
+            user.bio = data.profiles.items[0].bio;
+            user.id = data.profiles.items[0].id;
+            user.handle = handle[0];
+            user.name = data.profiles.items[0].name;
+            user.cover_picture =
+              data.profiles.items[0].coverPicture.original.url;
+            user.picture = data.profiles.items[0].picture.original.url;
+            dispatch(loadUser(user));
+          });
+        }
+        throw new Error("Api is not available");
+      })
+      .catch((error) => {
+        console.error("Error fetching data: ", error);
+      });
+  }
   return (
     <>
       <Box

@@ -1,10 +1,5 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { hooks } from "../components/connectors/coinbaseWallet";
-import { User } from "../components/lib/types";
-import { useContext, useEffect } from "react";
-import { AppContext } from "../components/state/context";
-import { loadUser } from "../components/state/reducer";
 import { getTimeline } from "../components/lib/api";
 import ItemCardLens from "../components/ItemCardLens";
 import ItemCardNews from "../components/ItemCardNews";
@@ -12,59 +7,14 @@ import ItemCardTweet from "../components/ItemCardTweet";
 import useSWR, { SWRConfig } from "swr";
 import LinearProgress from "@mui/material/LinearProgress";
 
-const { useAccounts } = hooks;
-
 function Dashboard({ fallback }) {
   const fetcher = (url) => fetch(url).then((res) => res.json());
 
-  const accounts = useAccounts();
-  const session = useContext(AppContext);
-
   const revalidationOptions = {
-    refreshInterval: 15000, //refresh every 10 seconds
+    refreshInterval: 20000, //refresh every 20 seconds
   };
 
   const { data } = useSWR("api/timeline", fetcher, revalidationOptions);
-
-  let user: User = {
-    id: "",
-    handle: "",
-    bio: "",
-    name: "",
-    picture: "",
-    cover_picture: "",
-  };
-
-  const { dispatch } = useContext(AppContext);
-
-  async function loadData() {
-    fetch(`/api/user/${accounts}`, {
-      method: `GET`,
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json().then((data) => {
-            let handle = data?.profiles?.items[0]?.handle.split(".");
-            user.bio = data.profiles.items[0].bio;
-            user.id = data.profiles.items[0].id;
-            user.handle = handle[0];
-            user.name = data.profiles.items[0].name;
-            user.cover_picture =
-              data.profiles.items[0].coverPicture.original.url;
-            user.picture = data.profiles.items[0].picture.original.url;
-            dispatch(loadUser(user));
-          });
-        }
-        throw new Error("Api is not available");
-      })
-      .catch((error) => {
-        console.error("Error fetching data: ", error);
-      });
-  }
-
-  useEffect(() => {
-    if (session.state.token.accessToken) loadData();
-  }, [session.state.token.accessToken]);
 
   return (
     <SWRConfig value={{ fallback }}>
