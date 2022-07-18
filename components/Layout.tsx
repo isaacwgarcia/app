@@ -3,9 +3,9 @@ import Navbar from "../components/Navbar";
 import { Box, Grid } from "@mui/material";
 import { useRouter } from "next/router";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
-import { hooks } from "./connectors/coinbaseWallet";
-
+import { Divider } from "@nextui-org/react";
 import InfoCard from "./InfoCard";
+import TopCoins from "./TopCoins";
 
 export default function Layout({ children }) {
   const router = useRouter();
@@ -62,6 +62,10 @@ export default function Layout({ children }) {
               </a>
             </Box>
           </Box>
+          <br />
+          <Divider />
+          <br />
+          <TopCoins />
         </Grid>
 
         <Grid height="85vh" item xs={12} sm={12} md={9} lg={9} xl={9}>

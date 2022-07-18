@@ -1,4 +1,42 @@
-type StatsCoin {
+type BestCoin {
+  coinrankingUrl: String
+  iconUrl: String
+  name: String
+  symbol: String
+  uuid: String
+  detail_coin: RootDet
+    @materializer(
+      query: "detail_coin"
+      arguments: [{ name: "uuid", field: "uuid" }]
+    )
+}
+
+type NewestCoin {
+  coinrankingUrl: String
+  iconUrl: String
+  name: String
+  symbol: String
+  uuid: String
+}
+
+type DataCoin {
+  bestCoins: [BestCoin]
+  btcDominance: Float
+  newestCoins: [NewestCoin]
+  referenceCurrencyRate: Int
+  total24hVolume: String
+  totalCoins: Int
+  totalExchanges: Int
+  totalMarketCap: String
+  totalMarkets: Int
+}
+
+type RootCoin {
+  data: DataCoin
+  status: String
+}
+
+type StatsDetail {
   total: Int
   total24hVolume: String
   totalCoins: Int
@@ -7,21 +45,28 @@ type StatsCoin {
   totalMarkets: Int
 }
 
-type DataCoin {
+type DataDet {
   coins: [JSON]
-  stats: StatsCoin
+  stats: StatsDetail
 }
 
-type RootCoin {
-  data: DataCoin
+type RootDet {
+  data: DataDet
   status: String
 }
 
 type Query {
-  getcoins: RootCoin
+  get_stats_coins: RootCoin
     @rest(
       method: GET
-      endpoint: "https://api.coinranking.com/v2/coins"
+      endpoint: "https://api.coinranking.com/v2/stats"
+      headers: [{ name: "x-access-token", value: "$apikey" }]
+      configuration: "coinranking_config"
+    )
+  detail_coin(uuid: String): RootDet
+    @rest(
+      method: GET
+      endpoint: "    https://api.coinranking.com/v2/coins?uuids=$uuid"
       headers: [{ name: "x-access-token", value: "$apikey" }]
       configuration: "coinranking_config"
     )

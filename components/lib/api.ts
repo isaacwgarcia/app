@@ -636,3 +636,48 @@ export async function getTwitterTimeline() {
     return e.message;
   }
 }
+
+export async function getTopCoins() {
+  try {
+    const topCoins = await fetch(`${process.env.STEPZEN_API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+      body: JSON.stringify({
+        query: `
+                 
+        query MyQuery {
+          get_stats_coins {
+            data {
+              bestCoins {
+                name
+                symbol
+                coinrankingUrl
+                uuid
+                detail_coin {
+                  data {
+                    stats {
+                      total
+                    }
+                    coins
+                  }
+                }
+              }
+            }
+          }
+        }
+        
+        
+      `,
+      }),
+    });
+
+    const coins = await topCoins.json();
+
+    return coins;
+  } catch (e) {
+    return e.message;
+  }
+}
