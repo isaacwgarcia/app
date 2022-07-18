@@ -7,6 +7,7 @@ schema
       "twitter.graphql"
       "spotify.graphql"
       "newsapi.graphql"
+      "coinranking.graphql"
     ]
   ) {
   query: Query

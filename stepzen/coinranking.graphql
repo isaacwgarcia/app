@@ -1,0 +1,28 @@
+type StatsCoin {
+  total: Int
+  total24hVolume: String
+  totalCoins: Int
+  totalExchanges: Int
+  totalMarketCap: String
+  totalMarkets: Int
+}
+
+type DataCoin {
+  coins: [JSON]
+  stats: StatsCoin
+}
+
+type RootCoin {
+  data: DataCoin
+  status: String
+}
+
+type Query {
+  getcoins: RootCoin
+    @rest(
+      method: GET
+      endpoint: "https://api.coinranking.com/v2/coins"
+      headers: [{ name: "x-access-token", value: "$apikey" }]
+      configuration: "coinranking_config"
+    )
+}

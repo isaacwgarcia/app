@@ -36,15 +36,13 @@ function Address(props) {
                 >
                   {props.list_nfts.list_nft?.result?.map((nft, index) => {
                     return (
-                      <>
-                        <NFTCard
-                          key={index}
-                          name={nft.name}
-                          url={nft.token_uri ? nft.token_uri : ""}
-                          address={nft.token_address}
-                          metadata={nft.metadata}
-                        />
-                      </>
+                      <NFTCard
+                        key={index}
+                        name={nft.name}
+                        url={nft.token_uri ? nft.token_uri : ""}
+                        address={nft.token_address}
+                        metadata={nft.metadata}
+                      />
                     );
                   })}
                 </Box>
