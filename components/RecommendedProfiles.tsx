@@ -18,13 +18,13 @@ function Item(props) {
         }}
         style={{ color: "blue", cursor: "pointer" }}
       >
-        <Card sx={{ maxWidth: 345 }} elevation={20}>
+        <Card sx={{ maxWidth: 345, height: 500 }} elevation={20}>
           <CardMedia
             onError={(e) => {
               e.target.src = "/images/error_loading_image.png";
             }}
             component="img"
-            height="250"
+            height="200"
             image={
               props?.item?.picture?.original?.url
                 ? props?.item?.picture?.original?.url
