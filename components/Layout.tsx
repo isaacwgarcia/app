@@ -7,6 +7,7 @@ import { Divider } from "@nextui-org/react";
 import InfoCard from "./InfoCard";
 import TopCoins from "../components/TopCoins";
 import RecommendedProfiles from "../components/RecommendedProfiles";
+import NewsBox from "../components/NewsBox";
 
 export default function Layout({ children }) {
   const router = useRouter();
@@ -67,6 +68,9 @@ export default function Layout({ children }) {
           <Divider />
           <br />
           <TopCoins /> <br />
+          <Divider />
+          <br />
+          <NewsBox />
           <Divider />
           <br />
           <RecommendedProfiles />

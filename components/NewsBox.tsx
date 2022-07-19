@@ -6,63 +6,67 @@ import Card from "@mui/material/Card";
 import CardMedia from "@mui/material/CardMedia";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import { useRouter } from "next/router";
 
 function Item(props) {
-  const router = useRouter();
-  return (
+  return props.item.language == "en" ? (
     <Paper>
       <a
-        onClick={() => {
-          router.push("/address/" + props?.item?.ownedBy);
-        }}
+        rel="noopener noreferrer"
+        target="_blank"
+        href={props?.item?.link}
         style={{ color: "blue", cursor: "pointer" }}
       >
         <Card sx={{ maxWidth: 345 }} elevation={20}>
           <CardMedia
             component="img"
-            height="140"
+            height="100"
             image={
-              props?.item?.picture?.original?.url
-                ? props?.item?.picture?.original?.url
+              props?.item?.media
+                ? props?.item?.media
                 : "/images/error_loading_image.png"
             }
             alt={props?.item?.handle}
           />
           <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              @{props?.item?.handle}
+            <Typography gutterBottom variant="h6" component="div">
+              {props?.item?.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {props?.item?.bio}
+              {props?.item?.excerpt}
             </Typography>
           </CardContent>
         </Card>
       </a>
     </Paper>
+  ) : (
+    <></>
   );
 }
 
-export default function RecommendedProfiles() {
+export default function NewsBox() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("/api/user/recommendations")
+    fetch("/api/news")
       .then((res) => res.json())
       .then((data) => {
         setData(data as unknown as []);
+      })
+      .catch((e) => {
+        console.log("error ", e);
       });
   }, []);
 
   return (
     <div>
-      Recommended Profiles
+      Latest News
       <br /> <br />
       {data ? (
         <Carousel
-          height="35vh"
+          height="60vh"
           autoPlay={true}
           animation="fade"
+          duration={3000}
           IndicatorIcon=""
         >
           {data?.map((ma, i) => (

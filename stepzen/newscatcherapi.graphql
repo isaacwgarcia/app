@@ -1,0 +1,62 @@
+type ArticleCatcher {
+  _id: String
+  _score: Float
+  author: String
+  authors: String
+  clean_url: String
+  country: String
+  excerpt: String
+  is_opinion: Boolean
+  language: String
+  link: String
+  media: String
+  published_date: String
+  published_date_precision: String
+  rank: Int
+  rights: String
+  summary: String
+  title: String
+  topic: String
+  twitter_account: String
+}
+
+type UserInputCatcher {
+  countries: JSON
+  from: String
+  from_rank: JSON
+  lang: JSON
+  not_countries: JSON
+  not_lang: JSON
+  not_sources: JSON
+  page: Int
+  published_date_precision: JSON
+  q: String
+  ranked_only: String
+  search_in: [String]
+  size: Int
+  sort_by: String
+  sources: JSON
+  to: JSON
+  to_rank: JSON
+  topic: JSON
+}
+
+type RootCatcher {
+  articles: [ArticleCatcher]
+  page: Int
+  page_size: Int
+  status: String
+  total_hits: Int
+  total_pages: Int
+  user_input: UserInputCatcher
+}
+
+type Query {
+  get_newscatcherapi(query: String!): RootCatcher
+    @rest(
+      method: GET
+      endpoint: "https://api.newscatcherapi.com/v2/search?q=$query"
+      headers: [{ name: "x-api-key", value: "$apikey" }]
+      configuration: "newscatcherapi_config"
+    )
+}

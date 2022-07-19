@@ -728,3 +728,43 @@ export async function getRecommendedProfiles() {
     return e.message;
   }
 }
+
+export async function getNewsCatcher() {
+  try {
+    const news_catcher = await fetch(`${process.env.STEPZEN_API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+      body: JSON.stringify({
+        query: `
+                 
+        query MyQuery {
+ 
+          get_newscatcherapi(query: "ETH") {
+            articles
+            {
+              title
+              published_date
+              link
+              language
+              excerpt
+              media
+            }
+            
+          }
+        }
+        
+        
+        
+        
+      `,
+      }),
+    });
+
+    return await news_catcher.json();
+  } catch (e) {
+    return e.message;
+  }
+}

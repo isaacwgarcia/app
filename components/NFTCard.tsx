@@ -31,7 +31,7 @@ export default function NFTCard({ name, url, address, metadata }) {
   }
 
   return (
-    <Card sx={{ maxWidth: 200, marginBottom: "5%" }}>
+    <Card sx={{ maxWidth: 200, marginBottom: "5%" }} elevation={10}>
       {/* {result .description} */}
       {/*  {result.image} */}
       {/*  {result.metadata} */}
