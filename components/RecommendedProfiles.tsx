@@ -20,8 +20,11 @@ function Item(props) {
       >
         <Card sx={{ maxWidth: 345 }} elevation={20}>
           <CardMedia
+            onError={(e) => {
+              e.target.src = "/images/error_loading_image.png";
+            }}
             component="img"
-            height="140"
+            height="250"
             image={
               props?.item?.picture?.original?.url
                 ? props?.item?.picture?.original?.url

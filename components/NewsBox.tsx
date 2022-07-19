@@ -16,10 +16,13 @@ function Item(props) {
         href={props?.item?.link}
         style={{ color: "blue", cursor: "pointer" }}
       >
-        <Card sx={{ maxWidth: 345 }} elevation={20}>
+        <Card sx={{ maxWidth: 345, height: 400 }} elevation={20}>
           <CardMedia
+            onError={(e) => {
+              e.target.src = "/images/error_loading_image.png";
+            }}
             component="img"
-            height="100"
+            height="120"
             image={
               props?.item?.media
                 ? props?.item?.media

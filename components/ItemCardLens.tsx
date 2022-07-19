@@ -25,6 +25,9 @@ export default function ItemCardLens({
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia
+        onError={(e) => {
+          e.target.src = "/images/error_loading_image.png";
+        }}
         component="img"
         height="140"
         image={image ? image : "https://picsum.photos/200"}
