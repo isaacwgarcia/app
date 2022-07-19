@@ -1,4 +1,4 @@
-export async function queryTXs(id) {
+export async function queryTXs(id): Promise<[]> {
   try {
     const thegraph_query = await fetch(`${process.env.STEPZEN_API_URL}`, {
       method: "POST",
@@ -34,7 +34,7 @@ export async function queryTXs(id) {
     });
 
     const txs = await thegraph_query.json();
-    return txs?.data;
+    return txs?.data.swaps as [];
   } catch (e) {
     return e.message;
   }
@@ -677,6 +677,53 @@ export async function getTopCoins() {
     const coins = await topCoins.json();
 
     return coins;
+  } catch (e) {
+    return e.message;
+  }
+}
+
+export async function getRecommendedProfiles() {
+  try {
+    const profiles = await fetch(`${process.env.STEPZEN_API_URL}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Apikey ${process.env.STEPZEN_API_KEY}`,
+      },
+      body: JSON.stringify({
+        query: `
+                 
+        query MyQuery {
+          recommendedProfiles {
+            bio
+            handle
+            ownedBy
+            coverPicture {
+              ... on MediaSet {
+                __typename
+                original {
+                  url
+                }
+              }
+            }
+            picture {
+              ... on MediaSet {
+                __typename
+                original {
+                  url
+                }
+              }
+            }
+          }
+        }
+        
+        
+        
+      `,
+      }),
+    });
+
+    return await profiles.json();
   } catch (e) {
     return e.message;
   }

@@ -29,7 +29,7 @@ export default function BasicTable({ tableData }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {tableData.swaps?.map((tx, i) => (
+          {tableData?.map((tx, i) => (
             <TableRow key={i}>
               <TableCell>
                 <a

@@ -5,7 +5,8 @@ import { useRouter } from "next/router";
 import ClearAllIcon from "@mui/icons-material/ClearAll";
 import { Divider } from "@nextui-org/react";
 import InfoCard from "./InfoCard";
-import TopCoins from "./TopCoins";
+import TopCoins from "../components/TopCoins";
+import RecommendedProfiles from "../components/RecommendedProfiles";
 
 export default function Layout({ children }) {
   const router = useRouter();
@@ -65,7 +66,10 @@ export default function Layout({ children }) {
           <br />
           <Divider />
           <br />
-          <TopCoins />
+          <TopCoins /> <br />
+          <Divider />
+          <br />
+          <RecommendedProfiles />
         </Grid>
 
         <Grid height="85vh" item xs={12} sm={12} md={9} lg={9} xl={9}>

@@ -14,7 +14,7 @@ export default function TopCoins() {
   }, []);
   return (
     <div>
-      TOP COINS
+      Best cryptocurrencies in 24 hours
       <br /> <br />
       {data ? (
         data.map((coin, i) => (

@@ -157,7 +157,7 @@ function Pool({ fallback }) {
 export const getServerSideProps = async (context) => {
   const txs = await queryTXs(context.params.id);
   const pool_info = await getPoolInfo(context.params.id);
-  const id = pool_info?.id;
+
   return {
     props: {
       fallback: {
