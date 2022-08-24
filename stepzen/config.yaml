@@ -1,15 +1,18 @@
 configurationset:
   - configuration:
-      name:
-        spotify_auth
-        #Authorization: Basic This is a different (and better) way of providing username:password of https://username:password@accounts.spotify.com/api/token
-      client_id: SPOTIFY_CLIENT_ID
-      client_secret: SPOTIFY_CLIENT_SECRET
+      name: coinranking_config
+      apikey:
   - configuration:
-      name:
-        news_config
-        #Authorization: Basic This is a different (and better) way of providing username:password of https://username:password@accounts.spotify.com/api/token
-      apiKey: NEWSAPI_APIKEY
+      name: news_config
+      apiKey:
+  - configuration:
+      name: twitter_conf
+      bearer_token:
+      client_id:
+      client_secret:
+  - configuration:
+      name: moralis_config
+      apikey:
 ruleset:
   - query: "[ALL]"
     rules:
