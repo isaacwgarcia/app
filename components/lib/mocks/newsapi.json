@@ -1,0 +1,1306 @@
+{
+	"status": "ok",
+	"totalResults": 4126,
+	"articles": [
+		{
+			"source": {
+				"id": null,
+				"name": "Gizmodo.com"
+			},
+			"author": "Kyle Barr",
+			"title": "NFT Evoking Man Falling on 9/11 Removed from GameStop's Marketplace",
+			"description": "It’s one of the most horrifying representations of the 9/11 terror attacks, and somebody thought it could make them a quick buck. Users on GameStop’s fledgling NFT marketplace were flabbergasted over the weekend when they saw somebody was selling a non-fungib…",
+			"url": "https://gizmodo.com/nft-9-11-gamestop-crypto-1849326807",
+			"urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/4604d56f22af835e9381c276f36352f6.jpg",
+			"publishedAt": "2022-07-25T14:50:00Z",
+			"content": "Its one of the most horrifying representations of the 9/11 terror attacks, and somebody thought it could make them a quick buck. Users on GameStops fledgling NFT marketplace were flabbergasted over t… [+3417 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Slashdot.org"
+			},
+			"author": "msmash",
+			"title": "Babel Finance Lost Over $280 Million in Proprietary Trading With Customer Funds",
+			"description": "Babel Finance, the troubled Asian crypto lender that abruptly halted client withdrawals last month, suffered heavy losses due to proprietary trading with customer funds, according to its restructuring proposal deck obtained by The Block. From a report: The de…",
+			"url": "https://news.slashdot.org/story/22/07/29/1444220/babel-finance-lost-over-280-million-in-proprietary-trading-with-customer-funds",
+			"urlToImage": "https://a.fsdn.com/sd/topics/money_64.png",
+			"publishedAt": "2022-07-29T14:44:00Z",
+			"content": "The deck, dated July 2022, reveals that Babel Finance lost more than $280 million in bitcoin (BTC) and ether (ETH) due to its proprietary trading failure. Specifically, it lost around 8,000 BTC and 5… [+1081 chars]"
+		},
+		{
+			"source": {
+				"id": "wired",
+				"name": "Wired"
+			},
+			"author": "Jonathan O'Callaghan",
+			"title": "New Evidence Points to the Moon Once Being Part of Earth",
+			"description": "Gases trapped in lunar meteorites hint that the moon was formed out of material displaced from Earth after a planetary collision.",
+			"url": "https://www.wired.com/story/new-evidence-points-to-the-moon-once-being-part-of-earth/",
+			"urlToImage": "https://media.wired.com/photos/62fc0f5e3787a50a7ae8c994/191:100/w_1280,c_limit/moon_Science_pia02442-16.jpg",
+			"publishedAt": "2022-08-17T11:00:00Z",
+			"content": "Roughly 4.5 billion years ago, a primordial version of Earth covered in molten lava orbited the sun. Barely into its newfound existence, it was struck by a smaller object the size of Mars, referred t… [+2916 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Substack.com"
+			},
+			"author": "Yun-Fang Juan",
+			"title": "My ETH Wallet is wrongly sanctioned",
+			"description": "Why are DeFi victims being sanctioned?",
+			"url": "https://depression2022.substack.com/p/8172022-my-eth-wallet-is-wrongly",
+			"urlToImage": "https://substackcdn.com/image/fetch/w_1200,h_600,c_limit,f_jpg,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fbca7b2bc-f4e5-4e86-9bee-ab18fca66a15_2444x1214.png",
+			"publishedAt": "2022-08-17T20:39:06Z",
+			"content": "I never thought I would be in this position but I had $300K worth of crypto locked inside AAVE and I couldnt access it. Apparently, my ETH wallet with an ENS attached to it is being blocked by DeFi p… [+2251 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Treasury.gov"
+			},
+			"author": null,
+			"title": "OFAC Sanctions on Tornado Cash",
+			"description": "Comments",
+			"url": "https://home.treasury.gov/policy-issues/financial-sanctions/recent-actions/20220808",
+			"urlToImage": "https://home.treasury.gov/system/files/291/treasury-preview-1900x950.jpg",
+			"publishedAt": "2022-08-08T15:09:35Z",
+			"content": "SPECIALLY DESIGNATED NATIONALS LIST UPDATE\r\nThe following entity has been added to OFAC's SDN List: \r\nTORNADO CASH (a.k.a. TORNADO CASH CLASSIC; a.k.a. TORNADO CASH NOVA); Website tornado.cash; Digit… [+3634 chars]"
+		},
+		{
+			"source": {
+				"id": "business-insider",
+				"name": "Business Insider"
+			},
+			"author": "mfox@businessinsider.com (Matthew Fox)",
+			"title": "Traders expect the ether rally to fizzle out as upcoming merge to proof-of-stake system will be a ‘sell the news’ event",
+			"description": "The large buy side demand for ether call options that expire in September has led to a \"state of extreme bullish bias,\" Glassnode said.",
+			"url": "https://markets.businessinsider.com/news/currencies/ethereum-merge-sell-the-news-event-ether-prices-to-fizzle-2022-8",
+			"urlToImage": "https://i.insider.com/612f973512b9cc001963a752?width=1200&format=jpeg",
+			"publishedAt": "2022-08-12T15:05:55Z",
+			"content": "The highly anticipated Ethereum Merge that is expected next month could ultimately prove to be a \"sell the news\" event for ether prices, according to Glassnode.\r\nThe Ethereum blockchain is expected t… [+2277 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Ethz.ch"
+			},
+			"author": null,
+			"title": "One more clue to the Moon’s origin",
+			"description": "Researchers from ETH Zurich discover the first definitive proof that the Moon inherited indigenous noble gases from the Earth’s mantle.",
+			"url": "https://ethz.ch/en/news-and-events/eth-news/news/2022/08/one-more-clue-to-the-moons-origin.html",
+			"urlToImage": "https://ethz.ch/en/news-and-events/eth-news/news/2022/08/one-more-clue-to-the-moons-origin/_jcr_content/imageCarousel.imageformat.lightbox.jpg",
+			"publishedAt": "2022-08-12T13:34:36Z",
+			"content": "Humankind has maintained an enduring fascination with the Moon. It was not until Galileos time, however, that scientists really began study it. Over the course of nearly five centuries, researchers p… [+4109 chars]"
+		},
+		{
+			"source": {
+				"id": "the-verge",
+				"name": "The Verge"
+			},
+			"author": "Adi Robertson",
+			"title": "The Dune bible crypto collective wants to sell its Dune bible",
+			"description": "Spice DAO, a cryptocurrency decentralized autonomous organization (or DAO) built around a script bible for Alejandro Jodorowsky’s never-made adaptation of Frank Herbert’s Dune, is planning a radical shift in direction.",
+			"url": "https://www.theverge.com/2022/7/27/23280490/spice-dao-jodorowsky-dune-bible-crypto-sale-planned-liquidation",
+			"urlToImage": "https://cdn.vox-cdn.com/thumbor/5jIINdPeHGYeRydaWDJo5nWfsQk=/0x116:1066x674/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/23175021/FJKO3wxXoAMGhVE.jpeg",
+			"publishedAt": "2022-07-27T16:58:17Z",
+			"content": "Also, its no longer a collective\r\nImage: Spice DAO\r\nThe cryptocurrency collective built around a copy of Alejandro Jodorowskys Dune script bible will no longer be a collective and is trying to sell i… [+4094 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Disneyresearch.com"
+			},
+			"author": null,
+			"title": "Facial Hair Tracking for High Fidelity Performance Capture",
+			"description": "Comments",
+			"url": "https://studios.disneyresearch.com/2022/07/24/facial-hair-tracking-for-high-fidelity-performance-capture/",
+			"urlToImage": null,
+			"publishedAt": "2022-07-24T12:03:07Z",
+			"content": "Authors\r\nSebastian Winberg (DisneyResearch|Studios/ETH Zurich)\r\nGaspard Zoss (DisneyResearch|Studios/ETH Joint PhD)\r\nPrashanth Chandran (DisneyResearch|Studios/ETH Joint PhD)\r\nPaulo Gotardo (DisneyRe… [+54 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "heise online"
+			},
+			"author": "dpa",
+			"title": "Klimawandel: Volumen der Schweizer Gletscher zwischen 1931 und 2016 halbiert",
+			"description": "Viele Gletscher schmelzen durch die Klimaerwärmung – gut dokumentiert für das 21. Jahrhundert. Und vorher? Neue Daten aus der Schweiz malen ein düsteres Bild.",
+			"url": "https://www.heise.de/news/Klimawandel-Volumen-der-Schweizer-Gletscher-zwischen-1931-und-2016-halbiert-7239498.html",
+			"urlToImage": "https://heise.cloudimg.io/bound/1200x1200/q85.png-lossy-85.webp-lossy-85.foil1/_www-heise-de_/imgs/18/3/5/9/6/1/3/8/Bildschirmfoto_2022-08-22_um_14.37.45-d310199fbb901f87.png",
+			"publishedAt": "2022-08-22T12:45:00Z",
+			"content": "Die Schweiz hat zwischen 1931 und 2016 knapp die Hälfte ihres Gletschereises verloren. Das zeigen Forscher der ETH Zürich und der Eidgenössischen Forschungsanstalt für Wald, Schnee und Landschaft (WS… [+1557 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Gizmodo.com"
+			},
+			"author": "Kyle Barr",
+			"title": "Nomad Says Hackers Can Keep 10% of Stolen Crypto if They Return the Rest",
+			"description": "The sheriff of the Nomad decentralized finance project has plastered the walls of the internet with wanted posters over a recent $190 million hack of the company’s systems. Nomad is attempting to play nice about the heist, and it’s asking the dozens of ne’er …",
+			"url": "https://gizmodo.com/nomad-bridge-hack-10-bounty-returning-stolen-crypto-190-1849376129",
+			"urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/c_fill,f_auto,fl_progressive,g_center,h_675,pg_1,q_80,w_1200/04bae286c36d24b358ab847d0cbd6caa.jpg",
+			"publishedAt": "2022-08-05T15:01:02Z",
+			"content": "The sheriff of the Nomad decentralized finance project has plastered the walls of the internet with wanted posters over a recent $190 million hack of the companys systems. Nomad is attempting to play… [+3788 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Int3grity.com"
+			},
+			"author": null,
+			"title": "How much did YouTube pay for 10M views?",
+			"description": "Ali's $1,054,053.74 YouTube Adsense haul. YouTuber, entrepreneur, and former doctor Ali Abdaal. He began filming productivity and financial videos in 2017. Ali Abdaal has 3 million YouTube subscriber…",
+			"url": "https://www.int3grity.com/community/b1G4JPcAiN1Uh2iA89rpD/post/fx9u4nhwDuWfVV3yDTqY1",
+			"urlToImage": "https://www.int3grity.com/assets/uploads/social-banner.jpg?title=How%20much%20did%20YouTube%20pay%20for%2010%20million%20views%3F",
+			"publishedAt": "2022-07-29T14:29:25Z",
+			"content": "Decentralized perpetual may be the next crypto market boom; with tons of perpetual popping up, let's look at two protocols that offer organic, non-inflationary yields.\r\nDecentralized derivatives exch… [+8752 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Ethereum.org"
+			},
+			"author": null,
+			"title": "The Merge is approaching, and comes with changes to Ethereum",
+			"description": "Learn about The Merge - when Mainnet Ethereum joins the Beacon Chain coordinated proof-of-stake system.",
+			"url": "https://ethereum.org/en/upgrades/merge/",
+			"urlToImage": "https://ethereum.org/static/f10c484c43f983b3168265d2116fec29/b6177/upgrade_doge.png",
+			"publishedAt": "2022-08-20T20:51:08Z",
+			"content": "When's it shipping?\r\n~Q3/Q4 2022\r\nThe Merge is the most significant upgrade in the history of Ethereum. Extensive testing and bug bounties were undertaken to ensure a safe transition to proof-of-stak… [+20954 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Avc.com"
+			},
+			"author": "Fred Wilson",
+			"title": "The Merge",
+			"description": "In about a month, an important moment will happen in the world of crypto/web3. The Ethereum blockchain will move from a proof of work consensus mechanism to a proof of stake consensus mechanism. This event is known as “The Merge” in Ethereum land. There are m…",
+			"url": "https://avc.com/2022/08/the-merge/",
+			"urlToImage": null,
+			"publishedAt": "2022-08-15T10:17:50Z",
+			"content": "In about a month, an important moment will happen in the world of crypto/web3. The Ethereum blockchain will move from a proof of work consensus mechanism to a proof of stake consensus mechanism. This… [+3415 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Gigazine.net"
+			},
+			"author": "@GIGAZINE",
+			"title": "250億円相当の仮想通貨がNomadのトークンブリッジに対する攻撃で流出",
+			"description": "独立したブロックチェーン間でトークンを移動させて相互運用を可能にする「トークンブリッジ」を手がけるNomadが攻撃を受け、約1億9070万ドル(約253億円)相当の仮想通貨が盗み出されたことが明らかになりました。続きを読む...",
+			"url": "https://gigazine.net/news/20220803-nomad-crypto-exploit/",
+			"urlToImage": "https://i.gzn.jp/img/2022/08/03/nomad-crypto-exploit/00_m.jpg",
+			"publishedAt": "2022-08-03T08:20:00Z",
+			"content": "Nomad19070(253)\r\nHackers abuse chaotic Nomad exploit to drain almost $200M in crypto | TechCrunchhttps://techcrunch.com/2022/08/02/nomad-chaotic-exploit-crypto/\r\n1/ Nomad just got drained for over $1… [+1012 chars]"
+		},
+		{
+			"source": {
+				"id": "reuters",
+				"name": "Reuters"
+			},
+			"author": null,
+			"title": "Pomerantz set to forgo attorney fees after delaying settlement with biotech execs - Reuters",
+			"description": "Pomerantz has said that it will not seek payment for its work on a shareholder settlement with biotech company executives after a San Francisco federal judge threatened to sanction the plaintiffs' law firm for letting the case languish for nearly a year and a…",
+			"url": "https://www.reuters.com/legal/government/pomerantz-set-forgo-attorney-fees-after-delaying-settlement-with-biotech-execs-2022-08-05/",
+			"urlToImage": "https://www.reuters.com/resizer/Z0xAFhmPKKdB-Sacbh-4wrp_IUg=/728x381/smart/filters:quality(80)/cloudfront-us-east-2.images.arcpublishing.com/reuters/K3SQ4H73FRN6ZGV3VIZN6QPKUA.jpg",
+			"publishedAt": "2022-08-05T21:49:00Z",
+			"content": "(Reuters) - Pomerantz has said that it will not seek payment for its work on a shareholder settlement with biotech company executives after a San Francisco federal judge threatened to sanction the pl… [+2910 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Entrepreneur"
+			},
+			"author": "Ashley Armstrong",
+			"title": "How to Buy Real Estate in the Metaverse",
+			"description": "Who would have thought the day would come when the average person could own land next to their favorite celebrity with just a few clicks of a button from the comfort of their own home? The metaverse has made that a reality.",
+			"url": "https://www.entrepreneur.com/article/432480",
+			"urlToImage": "https://assets.entrepreneur.com/content/3x2/2000/1660581569-SS-MetaResidence-2.jpg",
+			"publishedAt": "2022-08-19T12:00:00Z",
+			"content": "Those who are interested in the metaverse know it provides a virtual reality to live, work and play with others. But even those who haven't fully dived into the pace are scooping up the opportunity t… [+10309 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Genbeta.com"
+			},
+			"author": "Bárbara Bécares",
+			"title": "El marketplace de NFT de GameStop vendió copias de juegos sin licencia: segunda polémica en su primer mes de vida por no moderar",
+			"description": "El marketplace de venta de NFT de GameStop ha sido utilizado para vender copias de videojuegos sin licencia. Este espacio apenas lleva un mes abierto y esta es su segunda gran polémica: no hace mucho, el marketplace tenía una versión NFT de una víctima del 11…",
+			"url": "https://www.genbeta.com/actualidad/marketplace-nft-gamestop-vendio-copias-juegos-licencia-segunda-polemica-su-primer-mes-vida-no-moderar",
+			"urlToImage": "https://i.blogs.es/7c1ceb/firefox_ylf7pfjuf3/840_560.jpg",
+			"publishedAt": "2022-08-10T09:52:19Z",
+			"content": "El marketplace de venta de NFT de GameStop ha sido utilizado para vender copias de videojuegos sin licencia. Este espacio apenas lleva un mes abierto y esta es su segunda gran polémica: no hace mucho… [+1807 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Cryptowiky.com"
+			},
+			"author": "https://www.facebook.com/cryptowikyofficial/",
+			"title": "Ethereum merge on schedule after successful Goerli test merge",
+			"description": "There is growing confidence that the Ethereum Merge, scheduled for mid-September, won't be postponed after the Goerli merge went smoothly.",
+			"url": "https://cryptowiky.com/ethereum-merge-on-schedule-after-successful-goerli-test-merge/",
+			"urlToImage": "https://i0.wp.com/cryptowiky.com/wp-content/uploads/2022/08/Untitled-design8-1.png",
+			"publishedAt": "2022-08-11T17:49:44Z",
+			"content": "There is growing confidence that the Ethereum Merge, scheduled for mid-September, won’t be postponed after the Goerli merge went smoothly.\r\nAfter Ropsten and Sepolia, Goerli was the final testnet lef… [+2411 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Techmeme.com"
+			},
+			"author": null,
+			"title": "A July 2022 proposal deck shows that Babel Finance lost 8K BTC and 56K ETH, worth $280M+, in proprietary trading of customer funds, as it seeks to raise money (Yogita Khatri/The Block)",
+			"description": "Yogita Khatri / The Block:\nA July 2022 proposal deck shows that Babel Finance lost 8K BTC and 56K ETH, worth $280M+, in proprietary trading of customer funds, as it seeks to raise money  —  - Babel Finance lost 8,000 BTC and 56,000 ETH in proprietary trading …",
+			"url": "https://www.techmeme.com/220729/p24",
+			"urlToImage": "https://www.tbstat.com/wp/uploads/2020/03/Babel-Finance.jpg",
+			"publishedAt": "2022-07-30T01:15:01Z",
+			"content": "The New Consumer— by Dan Frommer\r\nA publication about how and why people spend their time and money, focusing on the most interesting and innovative companies, people, products, and trends."
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "The Guardian"
+			},
+			"author": "Alex Hern",
+			"title": "How a major change to ethereum could split users – and cryptocurrency – forever",
+			"description": "Ethereum turning off its mining rigs and slashing the currency’s carbon emissions should be good news. But not everyone agrees<ul><li>Don’t get TechScape delivered to your inbox? Sign up here</li></ul>On 15 September, the ethereum blockchain is planning to sw…",
+			"url": "https://amp.theguardian.com/technology/2022/aug/24/techscape-ethereum-proof-of-work",
+			"urlToImage": "https://i.guim.co.uk/img/media/49ca6967922a4ad467e3fab922346f4b9c7c3308/0_63_4500_2702/master/4500.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=45c077940a79d1698425f6a726b815fd",
+			"publishedAt": "2022-08-24T10:45:33Z",
+			"content": "On 15 September, the ethereum blockchain is planning to switch off its mining rigs. If it happens, it should reduce the carbon emissions of the entire ethereum ecosystem by orders of magnitude overni… [+8773 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "CNET"
+			},
+			"author": "Daniel Van Boom",
+			"title": "Tiffany and Co. Is Selling NFTs for $50,000 Each - CNET",
+			"description": "The luxury brand will on Friday launch a collection of 250 NFTs, each priced at 30 ether -- the most expensive public sale in NFT history.",
+			"url": "https://www.cnet.com/personal-finance/tiffany-and-co-is-selling-nfts-for-50000-each/",
+			"urlToImage": "https://www.cnet.com/a/img/resize/d0e1e337030f2a72bc983949b1dd43dcdf1e1525/2022/08/01/ca1ef696-de1b-40db-8962-49c79bffc6b2/screenshot-2022-08-01-121023.png?auto=webp&fit=crop&height=630&width=1200",
+			"publishedAt": "2022-08-01T02:14:00Z",
+			"content": "Tiffany &amp; Co. is jumping into the NFT space with the launch of its own collection, called NFTiff. As should be no surprise for a luxury brand, these NFTs won't be cheap. There will be only 250 NF… [+2671 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Nature.com"
+			},
+			"author": "Ahsen Özcan, Rohan Krajeski, Eleonora Ioannidi, Brennan Lee, Apolonia Gardner, Kira S. Makarova, Eugene V. Koonin, Omar O. Abudayyeh, Jonathan S. Gootenberg",
+			"title": "Author Correction: Programmable RNA targeting with the single-protein CRISPR effector Cas7-11",
+			"description": "Nature - Author Correction: Programmable RNA targeting with the single-protein CRISPR effector Cas7-11",
+			"url": "https://www.nature.com/articles/s41586-022-05003-6",
+			"urlToImage": null,
+			"publishedAt": "2022-07-27T00:00:00Z",
+			"content": "<li>McGovern Institute for Brain Research at MIT, Massachusetts Institute of Technology, Cambridge, MA, USA\r\nAhsen Özcan, Rohan Krajeski, Eleonora Ioannidi, Brennan Lee, Apolonia Gardner, Omar O. Abu… [+385 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Cnbeta.com"
+			},
+			"author": "raymon725",
+			"title": "蒂芙尼推出NFTiff：总计250款NFT 单个定价高达5万美元",
+			"description": "作为一家知名奢侈品企业，Tiffany & Co. 正在推广自家的“非同质化代币”（NFT），并将之命名为“NFTiff”。上周五，该公司推出了总计 250 款 NFT 集合，且单价高达 30 ETH / 5 万美元 —— 算得上是 NFT 史上最昂贵的公开发售活动之一。 阅读全文",
+			"url": "https://hot.cnbeta.com/articles/funny/1299273.htm",
+			"urlToImage": "https://static.cnbetacdn.com/article/2022/0801/fd48c5b23ef3d39.jpg",
+			"publishedAt": "2022-08-01T05:51:43Z",
+			"content": "Tiffany \r\n NFT OpenSea \r\n NFT NFT 0.1 ETH / 160 BAYC 0.08 ETH \r\nTiffany &amp; Co. NFT NFT \r\n 5 NFTiff CryptoPunk Tiffany &amp; Co. / \r\nTiffany &amp; Co. NFT 30 ETH \r\n / NFT 54%\r\nTiffany &amp; Co. Web… [+29 chars]"
+		},
+		{
+			"source": {
+				"id": "business-insider",
+				"name": "Business Insider"
+			},
+			"author": "prosen@insider.com (Phil Rosen)",
+			"title": "JPMorgan expects a European recession by 2023 as the energy crisis worsens. An economist explains how the continent could skirt a downturn.",
+			"description": "JPMorgan said Europe will see a recession before 2023 - but a top economist explained how the continent could skirt a downturn.",
+			"url": "https://www.businessinsider.com/economist-explains-europe-recession-eu-central-bank-fed-policy-inflation-2022-8",
+			"urlToImage": "https://i.insider.com/62d931800c98f500195ecb72?width=1200&format=jpeg",
+			"publishedAt": "2022-08-24T11:15:00Z",
+			"content": "Happy hump day, readers. Phil Rosen here, your faithful host reporting from New York. \r\nToday's rundown is as packed as it is pressing. Europe is facing serious economic headwinds as a recession look… [+5594 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Entrepreneur"
+			},
+			"author": "Damon Nam",
+			"title": "The Beginner's Guide to Investing in Cryptocurrencies",
+			"description": "In this article, we review what are cryptocurrencies and how you can personally invest in them.",
+			"url": "https://www.entrepreneur.com/article/430705",
+			"urlToImage": "https://assets.entrepreneur.com/content/3x2/2000/1658869884-GettyImages-1335900085.jpg",
+			"publishedAt": "2022-08-01T19:00:00Z",
+			"content": "Recent years have seen a plethora of cryptocurrencies being launched, starting with Bitcoin during the Great Financial Crisis in 2008. Today, the total market capitalization of these cryptocurrencies… [+5302 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Boing Boing"
+			},
+			"author": "Thom Dunn",
+			"title": "This NFT of a destroyed diamond is the perfect microcosm for all NFTs",
+			"description": "I stumbled across this Twitter thread the other day, of some web3 profiteer pitching ideas for how to extract value from existing brands, using blockchain tokens. Most of them are monetized loyalty programs operating under the assumption that the loyalty rewa…",
+			"url": "https://boingboing.net/2022/08/02/this-nft-of-a-destroyed-diamond-is-the-perfect-microcosm-for-all-nfts.html",
+			"urlToImage": "https://i0.wp.com/boingboing.net/wp-content/uploads/2022/07/Screen-Shot-2022-07-26-at-10.30.35-AM.png?fit=1200%2C673&ssl=1",
+			"publishedAt": "2022-08-02T12:26:29Z",
+			"content": "I stumbled across this Twitter thread the other day, of some web3 profiteer pitching ideas for how to extract value from existing brands, using blockchain tokens. Most of them are monetized loyalty p… [+3376 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Www.su.se"
+			},
+			"author": "Johnny Bergenholtz-Foglander",
+			"title": "It’s raining PFAS: rainwater is unsafe to drink even in Antarctica and Tibet",
+			"description": "Per- and polyfluoroalkyl substances (PFAS) are man-made hazardous chemicals that are spread globally in the atmosphere and as a result they can be found in the rainwater and snow in even the most remote locations on Earth. During the last 20 years, guideline …",
+			"url": "https://www.su.se/english/news/it-s-raining-pfas-even-in-antarctica-and-on-the-tibetan-plateau-rainwater-is-unsafe-to-drink-1.620735",
+			"urlToImage": "https://www.su.se/polopoly_fs/1.620736!/image/image.jpg",
+			"publishedAt": "2022-08-13T15:54:30Z",
+			"content": "Per- and polyfluoroalkyl substances (PFAS) are man-made hazardous chemicals that are spread globally in the atmosphere and as a result they can be found in the rainwater and snow in even the most rem… [+3998 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "tagesschau.de"
+			},
+			"author": "tagesschau",
+			"title": "Auswertung historischer Daten: Schweizer Gletscher mehr als halbiert",
+			"description": "Erstmals haben Forschende die Entwicklung der Schweizer Gletscher im 20. Jahrhundert rekonstruiert. Ihre Beobachtungen sind alarmierend: Seit 1931 nahm das Eisvolumen um mehr als die Hälfte ab. Und die Entwicklung verläuft immer rasanter.",
+			"url": "https://www.tagesschau.de/ausland/klimawandel/gletscher-schweiz-105.html",
+			"urlToImage": "https://www.tagesschau.de/multimedia/bilder/gletscher-pontresina-101~_v-original.jpg",
+			"publishedAt": "2022-08-22T20:23:20Z",
+			"content": "Erstmals haben Forschende die Entwicklung der Schweizer Gletscher im 20. Jahrhundert rekonstruiert. Ihre Beobachtungen sind alarmierend: Seit 1931 nahm das Eisvolumen um mehr als die Hälfte ab. Und d… [+2468 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Techmeme.com"
+			},
+			"author": null,
+			"title": "A breakdown of the $7.6B+ in ETH that Tornado Cash received since 2019 shows 49.6% was from DeFi, 17.7% was from sanctioned entities, and 10.5% was stolen funds (Chainalysis)",
+			"description": "Chainalysis:\nA breakdown of the $7.6B+ in ETH that Tornado Cash received since 2019 shows 49.6% was from DeFi, 17.7% was from sanctioned entities, and 10.5% was stolen funds  —  Today, the U.S. Treasury's Office of Foreign Assets Control (OFAC) sanctioned the…",
+			"url": "https://www.techmeme.com/220809/p16",
+			"urlToImage": "https://blog.chainalysis.com/wp-content/uploads/2022/08/tornado-ofac-min-scaled.jpg",
+			"publishedAt": "2022-08-09T13:40:05Z",
+			"content": "The New Consumer— by Dan Frommer\r\nA publication about how and why people spend their time and money, focusing on the most interesting and innovative companies, people, products, and trends."
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "BuzzFeed News"
+			},
+			"author": "Katie Notopoulos",
+			"title": "Crypto Diaries: A Crypto Entrepreneur Whose Wife Doesn't Allow Bitcoin Talk",
+			"description": "Kyle Hill is the latest in our series on what people in crypto actually do all day.View Entire Post ›",
+			"url": "https://www.buzzfeednews.com/article/katienotopoulos/crypto-diaries-kyle-hill-bitcoin",
+			"urlToImage": "https://img.buzzfeed.com/buzzfeed-static/static/2022-08/5/19/enhanced/469e12dce80b/original-6277-1659728244-42.jpg?crop=1444:756;0,486%26downsize=1250:*",
+			"publishedAt": "2022-08-08T14:37:46Z",
+			"content": "7 p.m. Soccer night. I drive to the field in Santa Monica. I snap a picture with my Stacks water bottle and tag @nftsonbitcoin on IG. I post two quick memes to my story the first one comparing fiat c… [+1764 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "New Atlas"
+			},
+			"author": "Michael Irving",
+			"title": "Hydrogel casing keeps vaccines stable without refrigeration up to 150 °F",
+			"description": "Most vaccines need to be refrigerated, which makes it difficult and expensive to get them to remote areas where they’re often needed most. Now, researchers at ETH Zurich have developed a new method for encapsulating vaccines in hydrogels so they can be transp…",
+			"url": "https://newatlas.com/medical/hydrogel-vaccine-stable-high-temperatures/",
+			"urlToImage": "https://assets.newatlas.com/dims4/default/6a6a459/2147483647/strip/true/crop/762x400+20+0/resize/1200x630!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Fa7%2F1a%2F352fdbcb44548a64d34d2aa1b265%2Fvaccine-hydrogel.png&na.image_optimisation=0",
+			"publishedAt": "2022-08-08T05:51:19Z",
+			"content": "Most vaccines need to be refrigerated, which makes it difficult and expensive to get them to remote areas where theyre often needed most. Now, researchers at ETH Zurich have developed a new method fo… [+1893 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Futurity: Research News"
+			},
+			"author": "Marianne Lucien-ETH Zurich",
+			"title": "Team finds new clue to the moon’s origin",
+			"description": "New research represents a significant piece of the puzzle of our understanding how the moon and, potentially, other celestial bodies formed.",
+			"url": "https://www.futurity.org/clue-moon-origin-2783022/",
+			"urlToImage": "https://www.futurity.org/wp/wp-content/uploads/2022/08/moon-origins-1600.jpg",
+			"publishedAt": "2022-08-15T17:33:45Z",
+			"content": "Researchers have discovered the first definitive proof that the moon inherited indigenous noble gases from the Earth’s mantle.\r\nThe discovery represents a significant piece of the puzzle towards unde… [+4306 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Techmeme.com"
+			},
+			"author": null,
+			"title": "Nansen: users spent ~$2.7B worth of ether to mint NFTs in H1 2022; 50.7% of the ETH raised stayed with the NFT projects and 45.7% went to non-entity wallets (Zhiyuan Sun/Cointelegraph)",
+			"description": "Zhiyuan Sun / Cointelegraph:\nNansen: users spent ~$2.7B worth of ether to mint NFTs in H1 2022; 50.7% of the ETH raised stayed with the NFT projects and 45.7% went to non-entity wallets  —  Over 1 million unique wallet addresses were involved in the minting p…",
+			"url": "https://www.techmeme.com/220803/p5",
+			"urlToImage": "https://images.cointelegraph.com/images/1200_aHR0cHM6Ly9zMy5jb2ludGVsZWdyYXBoLmNvbS91cGxvYWRzLzIwMjItMDgvYzA3Y2I5NTYtOWYxZi00YjFlLTkzYjQtZTA2ZDhmYzIzOTRiLmpwZw==.jpg",
+			"publishedAt": "2022-08-03T06:45:01Z",
+			"content": "The New Consumer— by Dan Frommer\r\nA publication about how and why people spend their time and money, focusing on the most interesting and innovative companies, people, products, and trends."
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Techmeme.com"
+			},
+			"author": null,
+			"title": "An anonymous Tornado Cash user sends high-profile crypto users, such as Jimmy Fallon and Brian Armstrong, ETH from a sanctioned address, likely to troll them (CoinDesk)",
+			"description": "CoinDesk:\nAn anonymous Tornado Cash user sends high-profile crypto users, such as Jimmy Fallon and Brian Armstrong, ETH from a sanctioned address, likely to troll them  —  An anonymous crypto user sent small amounts of ether from a sanctioned Tornado Cash add…",
+			"url": "https://www.techmeme.com/220809/p20",
+			"urlToImage": "https://www.coindesk.com/resizer/1PlAft--__SfjzVVgqcGlbe_TAQ=/1200x628/center/middle/cloudfront-us-east-1.images.arcpublishing.com/coindesk/VFKOLC3ARND7ZN67X6GLY3WFJA.jpg",
+			"publishedAt": "2022-08-09T15:35:01Z",
+			"content": "The New Consumer— by Dan Frommer\r\nA publication about how and why people spend their time and money, focusing on the most interesting and innovative companies, people, products, and trends."
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Lifehacker.ru"
+			},
+			"author": "Андрей Пронин",
+			"title": "Учёные: Луна могла «отколоться» от древней Земли",
+			"description": "Эту невероятную гипотезу подтвердили результаты анализа лунных метеоритов, найденных в Антарктиде.",
+			"url": "https://lifehacker.ru/luna-mogla-otkolotsya-ot-zemli/",
+			"urlToImage": "https://cdn.lifehacker.ru/wp-content/uploads/2022/08/c012hx-kopiya_1660314542.jpg",
+			"publishedAt": "2022-08-12T14:40:11Z",
+			"content": ", . Indigenous noble gases in the Moons interior / Science Advances Science Advances.\r\n , . , 4,5 . « », 60 .\r\n , - , . . , . , , . , , .\r\n / NASA/ETH Zurich/Patrizia Will\r\n. , 30% , , , . , .\r\n , , … [+33 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Quartz India"
+			},
+			"author": "Scott Nover",
+			"title": "Crypto is falling, but crypto domain name sales are spiking",
+			"description": "There’s a crypto land grab afoot, but this time it doesn’t involve pricy JPEGs of simian lowlifes, shiba inu-themed meme coins, or virtual real estate in the metaverse. This speculative boom is, in a sense, something internet entrepreneurs have been doing for…",
+			"url": "https://qz.com/crypto-is-falling-but-crypto-domain-name-sales-are-spi-1849414444",
+			"urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/q_75,w_1200,h_630,c_fill/c4ab7e86e7748d6e99cce8bc1b3cd798.JPG",
+			"publishedAt": "2022-08-16T12:55:00Z",
+			"content": "Theres a crypto land grab afoot, but this time it doesnt involve pricy JPEGs of simian lowlifes, shiba inu-themed meme coins, or virtual real estate in the metaverse. This speculative boom is, in a s… [+4273 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Futurity: Research News"
+			},
+			"author": "Peter Rüegg-ETH Zurich",
+			"title": "How some cassava plants evade mosaic virus",
+			"description": "Researchers have identified the gene responsible for resistance in certain cassava cultivars against the devastating cassava mosaic disease.",
+			"url": "https://www.futurity.org/cassava-mosaic-virus-2773682-2/",
+			"urlToImage": "https://www.futurity.org/wp/wp-content/uploads/2022/07/cassava_mosaic_virus_1600.jpg",
+			"publishedAt": "2022-07-27T12:53:15Z",
+			"content": "Researchers have identified the gene responsible for resistance in certain cassava cultivars against the devastating cassava mosaic disease.\r\nThe finding is an important step for breeding virus-resis… [+3724 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Quartz India"
+			},
+			"author": "Scott Nover and Nate DiCamillo",
+			"title": "What is the ethereum merge?",
+			"description": "Ethereum, the blockchain that enabled the rise of nonfungible tokens (NFTs), is about to launch one of the most closely watched experiments in the crypto world.Read more...",
+			"url": "https://qz.com/what-is-the-ethereum-merge-1849419652",
+			"urlToImage": "https://i.kinja-img.com/gawker-media/image/upload/q_75,w_1200,h_630,c_fill/28c032bd75b6c25d432359919e118893.JPG",
+			"publishedAt": "2022-08-19T17:07:00Z",
+			"content": "Ethereum, the blockchain that enabled the rise of nonfungible tokens (NFTs), is about to launchone of the most closely watched experiments in the crypto world.\r\nOn or around Sept. 15, theprocess ofva… [+4607 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Jandan.net"
+			},
+			"author": "majer",
+			"title": "去年价值270多万美元的随机生成艺术品 NFT，大家猜猜现在值多少钱了？",
+			"description": "当时以992.5ETH的价格成交",
+			"url": "http://jandan.net/p/111192",
+			"urlToImage": null,
+			"publishedAt": "2022-08-21T14:32:47Z",
+			"content": "majer @ 2022.08.21 , 22:32\r\n3 Art Blocks CuratedChromie SquiggleNFT 400 (1362 ETH)\r\nNFTArt BlocksErick Snowfro2020NFT\r\nNFTNFT\r\nETHETH1600\r\nChromie Squiggle\r\n 922.5 ETH Chromie Squiggle #7583(#+ ) 20 … [+290 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Phys.Org"
+			},
+			"author": "Franziska Schmid",
+			"title": "A historical perspective on glacial retreat",
+			"description": "Researchers at ETH Zurich and WSL have for the first time reconstructed the extent of Switzerland's glacier ice loss in the 20th century. For this purpose, the researchers used historical imagery and conclude that the country's glaciers lost half their volume…",
+			"url": "https://phys.org/news/2022-08-historical-perspective-glacial-retreat.html",
+			"urlToImage": "https://scx2.b-cdn.net/gfx/news/2022/a-historical-perspecti.jpg",
+			"publishedAt": "2022-08-22T12:50:04Z",
+			"content": "Researchers at ETH Zurich and WSL have for the first time reconstructed the extent of Switzerland's glacier ice loss in the 20th century. For this purpose, the researchers used historical imagery and… [+5501 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Motley Fool"
+			},
+			"author": "newsfeedback@fool.com (Keegan Francis)",
+			"title": "What The Merge Might Mean for Your Ethereum Holdings",
+			"description": "Knowing the outcomes of The Merge and the consequences can help maximize your return from Ethereum's planned upgrade.",
+			"url": "https://www.fool.com/cryptocurrency/2022/08/16/what-the-merge-might-mean-for-your-eth-holdings/",
+			"urlToImage": "https://g.foolcdn.com/editorial/images/694686/person-using-ethereum-on-tablet.jpeg",
+			"publishedAt": "2022-08-16T09:30:00Z",
+			"content": "An upgrade called The Merge is coming to Ethereum(ETH -1.08%) as early as September, the final stage for Ethereum to become a proof-of-stake (PoS) blockchain. After this upgrade, anyone will be able … [+4707 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Cnbeta.com"
+			},
+			"author": "raymon725",
+			"title": "iCloud遭入侵：Cameo CEO损失无聊猿NFT等逾20万美元加密资产",
+			"description": "Cameo 联合创始人 Steven Galanis 表示，因苹果 iCloud 账户（Apple ID）遭黑客入侵，其于本周六损失了包括“无聊猿”（BAYC）在内的多个“非同质化代币”（NFT）、以及价值超 7 万美元的其它加密货币 —— 总损失超过了 20 万美元。 阅读全文",
+			"url": "https://www.cnbeta.com/articles/tech/1301987.htm",
+			"urlToImage": "https://static.cnbetacdn.com/article/2022/0808/f63bf570690eb45.jpg",
+			"publishedAt": "2022-08-08T07:37:26Z",
+			"content": "Steven Galanis 1 31.9 BAYC NFT 13 \r\n NFT Yuga Labs BAYC Otherdeed land NFT 6.9 APE Coin 4000 ETH \r\nSteven Galanis Cameo Caitlyn JennerLindsay Lohan Ice T \r\n COVID 2020 1 5 25% \r\nSteven Galanis iCloud… [+59 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "PetaPixel"
+			},
+			"author": "Matt Growcoot",
+			"title": "GameStop Pulls ‘Tasteless’ NFT Based on 9/11 ‘Falling Man’ Photo",
+			"description": "GameStop has removed an NFT from its marketplace that clearly resembles the \"Falling Man\" photograph taken during the 9/11 terrorist attacks on the World Trade Center.\n[Read More]",
+			"url": "https://petapixel.com/2022/07/27/gamestop-pulls-tasteless-nft-based-on-9-11-falling-man-photo/",
+			"urlToImage": "https://petapixel.com/assets/uploads/2022/07/fallingmanfeature.jpg",
+			"publishedAt": "2022-07-27T17:51:24Z",
+			"content": "GameStop has removed an NFT from its marketplace that clearly resembles the “Falling Man” photograph taken during the 9/11 terrorist attacks on the World Trade Center. \r\nThe “tasteless” NFT features … [+2140 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Cnbeta.com"
+			},
+			"author": "raymon725",
+			"title": "SEC正调查Coinbase是否违规开展未注册证券的交易业务",
+			"description": "彭博社报道称，加密货币交易所 Coinbase 正面临美国证券交易委员会（SEC）关于其“是否允许用户交易未注册证券”的调查。虽然官方尚未公开，但据知情人士透露，在该平台添加了百余款额外的加密代币后，SEC 开始仔细研究 Coinbase 的做法，其中就包括基于 Shiba Inu 模因的狗狗币（Dogecoin）。 阅读全文",
+			"url": "https://www.cnbeta.com/articles/tech/1297409.htm",
+			"urlToImage": "https://static.cnbetacdn.com/article/2022/0727/f43bbf0ecb82d9f.png",
+			"publishedAt": "2022-07-27T03:46:59Z",
+			"content": "TheVerge ICO \r\n SEC Coinbase Ishan Wahi Nikhil Wahi Sameer Ramani \r\nSEC Ishan Wahi ICO 110 \r\n SEC Nikhil Wahi Ramani 25 9 \r\nMedium Coinbase Paul Grewal SEC \r\nCoinbase SEC \r\nSEC \r\n2018 SEC Jay Clayton… [+89 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Cnbeta.com"
+			},
+			"author": "raymon725",
+			"title": "超8000加密货币钱包被黑客卷走数百万Solana与USDC资产",
+			"description": "昨日，外媒报道 Nomad 代币桥遭遇了漏洞攻击，导致其 1.9 亿美元资产被掏空。与此同时，不知名的攻击者也在周二晚间扫荡了数千个包含价值至少 400 万美元的 Solana 和 USDC 的加密货币钱包。Decrypt.co 指出，攻击发生于太平洋标准时晚间 20:00，并且似乎起源于 Solana 浏览器钱包 Phantom 。 阅读全文",
+			"url": "https://www.cnbeta.com/articles/tech/1300267.htm",
+			"urlToImage": "https://static.cnbetacdn.com/article/2022/0803/a0c1afb1f643210.png",
+			"publishedAt": "2022-08-03T08:36:41Z",
+			"content": "5000 Solana \r\n OtterSec 5000 Solana \r\nWatcher Guru 8000+\r\nETH MetaMask \r\nPhantom Solana CoinMarketCap \r\nSolana 8% 24 45% \r\nMiles Deutscher \r\n $SOL Phantom 600 \r\n Phantom + \r\nSolana NFT Magic Eden Twi… [+532 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "HYPEBEAST"
+			},
+			"author": "info@hypebeast.com (HYPEBEAST), HYPEBEAST",
+			"title": "Tiffany & Co Announces NFT CryptoPunk Pendants",
+			"description": "On Sunday, July 31, Tiffany & Co announced that it will be launching its NFT -- \"NFTiff,\" exclusively available to CryptoPunk owners. The collection is made up of 250 digital assets that grant holders access to a one-of-one example of their Punk in the form o…",
+			"url": "https://hypebeast.com/2022/7/tiffany-co-crypto-punk-nft-pendant",
+			"urlToImage": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F07%2Ftiffany-co-crypto-punk-nft-pendant-tw3.jpg?w=960&cbr=1&q=90&fit=max",
+			"publishedAt": "2022-08-01T03:50:04Z",
+			"content": "On Sunday, July 31, Tiffany &amp; Co announced that it will be launching its NFT — “NFTiff,” exclusively available to CryptoPunk owners. The collection is made up of 250 digital assets that grant hol… [+3100 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "The Guardian"
+			},
+			"author": "Alex Hern",
+			"title": "Meta’s BlenderBot 3 wants to chat – but can you trust it?",
+			"description": "Facebook’s parent company has created a bot capable of weighing in on almost any topic – from radicalisation to sending Mark Zuckerberg to jailLast week, researchers at Facebook’s parent company Meta released BlenderBot 3, a “publicly available chatbot that i…",
+			"url": "https://amp.theguardian.com/technology/2022/aug/10/meta-ai-facebook-blenderbot-3-chatbot",
+			"urlToImage": "https://i.guim.co.uk/img/media/fce93079d42c7cc6d23e56bb1cd54e626f1d7a5d/66_0_1200_720/master/1200.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=3773bc02a7897acda7095c9bdc4871e5",
+			"publishedAt": "2022-08-10T10:31:39Z",
+			"content": "Last week, researchers at Facebooks parent company Meta released BlenderBot 3, a publicly available chatbot that improves its skills and safety over time. The chatbot is built on top of Metas OPT-175… [+9884 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "CNET"
+			},
+			"author": "Daniel Van Boom",
+			"title": "Ethereum Merge Explained: Why It Matters For Everyone - CNET",
+			"description": "Ethereum will soon adopt a proof-of-stake system, which some say will reduce its carbon emissions by over 99%.",
+			"url": "https://www.cnet.com/personal-finance/crypto/ethereum-merge-explained-why-it-matters-for-everyone/",
+			"urlToImage": "https://www.cnet.com/a/img/resize/e20cf953a1e584b3e9442bad7df0fd8dcd60d147/2022/07/14/70fe602c-0eca-4060-9e47-2375450b2ad9/gettyimages-1241390930.jpg?auto=webp&fit=crop&height=630&width=1200",
+			"publishedAt": "2022-07-25T04:06:00Z",
+			"content": "The Ethereum Merge is significant, and not just for people who own crypto. In the works in one form or another since 2014, the long-delayed Merge will see the second biggest blockchain reduce its car… [+10658 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Phys.Org"
+			},
+			"author": "Science X staff",
+			"title": "One more clue to the moon's origin",
+			"description": "Humankind has maintained an enduring fascination with the moon. It was not until Galileo's time, however, that scientists really began study it. Over the course of nearly five centuries, researchers put forward numerous, much debated theories as to how the mo…",
+			"url": "https://phys.org/news/2022-08-clue-moon.html",
+			"urlToImage": "https://scx2.b-cdn.net/gfx/news/2022/one-more-clue-to-the-m.jpg",
+			"publishedAt": "2022-08-10T18:00:10Z",
+			"content": "Humankind has maintained an enduring fascination with the moon. It was not until Galileo's time, however, that scientists really began study it. Over the course of nearly five centuries, researchers … [+4572 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Science Daily"
+			},
+			"author": null,
+			"title": "Map of immune system connections reveals new therapeutic opportunities",
+			"description": "Researchers have created the first full connectivity map of the human immune system, showing how immune cells communicate with each other and ways to modulate these pathways in disease.",
+			"url": "https://www.sciencedaily.com/releases/2022/08/220803112558.htm",
+			"urlToImage": "https://www.sciencedaily.com/images/scidaily-icon.png",
+			"publishedAt": "2022-08-03T15:25:58Z",
+			"content": "A first of its kind comprehensive map of the network of connections that make up the human immune system has been created, which could lead to new immunotherapies to treat cancer, infectious diseases… [+5046 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "PC Gamer"
+			},
+			"author": "Jody Macgregor",
+			"title": "GameStop took down an NFT based on a 9/11 victim",
+			"description": "It had already been traded for 0.165 ETH, or $US265.",
+			"url": "https://www.pcgamer.com/gamestop-took-down-an-nft-based-on-a-911-victim/",
+			"urlToImage": "https://cdn.mos.cms.futurecdn.net/buCjprnW2NQ32ofiBctZnb-1200-80.jpg",
+			"publishedAt": "2022-07-24T23:46:55Z",
+			"content": "In February, videogame retailer/persistent meme GameStop announced it was planning to open an NFT marketplace. Currently in beta, the GameStop NFT marketplace (opens in new tab) allows customers to b… [+2284 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Journal du geek"
+			},
+			"author": "Antoine Gautherie",
+			"title": "Ces météorites lunaires contiennent des gaz originaires… de la Terre",
+			"description": "Une information qui pourrait bien mettre fin au débat sur l'origine de notre satellite.\nCes météorites lunaires contiennent des gaz originaires… de la Terre",
+			"url": "https://www.journaldugeek.com/2022/08/12/ces-meteorites-lunaires-contiennent-des-gaz-originaires-de-la-terre/",
+			"urlToImage": "https://www.journaldugeek.com/content/uploads/2022/08/theia-moon-impact.jpg",
+			"publishedAt": "2022-08-12T07:00:50Z",
+			"content": "Une information qui pourrait bien mettre fin au débat sur l'origine de notre satellite.Lorsquils ont analysé six météorites lunaires retrouvées en Antarctique par la NASA, des chercheurs suisses affi… [+5649 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Xataka.com"
+			},
+			"author": "Carlos Prego",
+			"title": "Esta torre utiliza agua, sol y CO2 para crear combustible para aviones neutro en carbono. Y está en España",
+			"description": "Con el debate abierto sobre la sostenibilidad de los vuelos más cortos y nuevos impuestos, la aviación lo tiene claro: necesita reducir su huella medioambiental. Sobre la mesa tiene ya diferentes opciones para lograrlo, como las naves eléctricas o con hidróge…",
+			"url": "https://www.xataka.com/energia/esta-torre-utiliza-agua-sol-aire-para-crear-combustible-para-aviones-neutro-carbono-esta-espana",
+			"urlToImage": "https://i.blogs.es/230599/photo-1---solar-tower-at-imdea-energy/840_560.jpg",
+			"publishedAt": "2022-07-27T14:00:02Z",
+			"content": "Con el debate abierto sobre la sostenibilidad de los vuelos más cortos y nuevos impuestos, la aviación lo tiene claro: necesita reducir su huella medioambiental. Sobre la mesa tiene ya diferentes opc… [+4433 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Space.com"
+			},
+			"author": "Robert Lea",
+			"title": "Moon rocks found in Antarctica include tiny amounts of gas that may have come from Earth",
+			"description": "The discovery of noble gases from Earth's mantle in lunar meteorites may confirm that the moon formed when our planet suffered a giant impact.",
+			"url": "https://www.space.com/moon-meteorites-noble-gases-from-earth",
+			"urlToImage": "https://cdn.mos.cms.futurecdn.net/x3yoSpVGfvNijUbdJUTN8K-1200-80.jpg",
+			"publishedAt": "2022-08-11T10:00:45Z",
+			"content": "Moon rocks aren't just about the rock — the gas trapped inside is just as intriguing.\r\nA new examination of six lunar meteorites\r\n found in Antarctica has revealed the first definitive proof that the… [+4531 chars]"
+		},
+		{
+			"source": {
+				"id": "business-insider",
+				"name": "Business Insider"
+			},
+			"author": "insider@insider.com (Brian Nibley)",
+			"title": "What is a crypto wallet? Understanding the software that allows you to store and transfer crypto securely",
+			"description": "A crypto wallet is a piece of software or hardware that enables you to use cryptocurrency. There are different types of wallets for different uses.",
+			"url": "https://www.businessinsider.com/personal-finance/crypto-wallet",
+			"urlToImage": "https://i.insider.com/615b59c6542a580019a8b7c6?width=1200&format=jpeg",
+			"publishedAt": "2022-07-26T17:31:02Z",
+			"content": "You can't fold up a bitcoin and put it in your wallet. Yet you can hold the keys to your crypto by using a crypto wallet of your own. \r\nWhat is a crypto wallet?\r\nA crypto wallet is a software program… [+8836 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Cnbeta.com"
+			},
+			"author": "study875",
+			"title": "不明人士向名人发送0.1 ETH 疑似抗议美国制裁混币器Tornado",
+			"description": "本周一（8 月 8 日），美国财政部外国资产控制办公室 (OFAC) 对混币协议 Tornado.cash 实施制裁，禁止美国个人和实体通过隐私工具进行交互或交易。不过在周二，有不明人士通过 Tornado 协议向多位名人发送了 0.1 个 ETH，疑似对制裁 Tornado 做出抗议。 阅读全文",
+			"url": "https://www.cnbeta.com/articles/tech/1302917.htm",
+			"urlToImage": "https://static.cnbetacdn.com/article/2022/0810/05ddbef1e001346.webp",
+			"publishedAt": "2022-08-10T09:23:10Z",
+			"content": "NFT Astaria Joseph Delong Tornado Cash0.1ETHENSTerraFatManETH\r\nJimmy Fallon()\r\nShaquille O'Neal(NBA)\r\nPUMA(PUMA)\r\nRandi Zuckerberg(Facebook)\r\nLogan Paul(Youtube·)\r\nBrian Armstrong(Coinbase·)\r\nSteve A… [+141 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Cool Hunting"
+			},
+			"author": "Josh Rubin",
+			"title": "Interview: Digital Artist FVCKRENDER and D.S. & Durga’s David Moltz",
+			"description": "The digital artist and fragrance maker on their new NFT perfume and bridging scents and the Metaverse Internationally renowned digital artist FVCKRENDER (aka Frederic Duquette) partnered with New York-based immersive fragrance brand D.S. & Durga to create a n…",
+			"url": "http://coolhunting.com/tech/interview-digital-artist-fvckrender-and-d-s-durgas-david-moltz/",
+			"urlToImage": "https://i0.wp.com/coolhunting.com/wp-content/uploads/2022/08/manticore-musk-hero-image.jpg?fit=1200%2C675&ssl=1",
+			"publishedAt": "2022-08-08T13:03:51Z",
+			"content": "The digital artist and fragrance maker on their new NFT perfume and bridging scents and the Metaverse\nInternationally renowned digital artist FVCKRENDER (aka Frederic Duquette) partnered with New Yor… [+3837 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Archinect"
+			},
+			"author": "Josh Niland",
+			"title": "Mariam Kamara highlights a diverse group of new faculty appointments at the ETH Zurich",
+			"description": "Renowned West African architect Mariam Kamara will be among twelve new professors joining the faculty of the ETH Zurich, the school announced on its website late last month.  Her appointment represents a “turning point” for the ETH, as the school’s faculty is…",
+			"url": "https://archinect.com/news/article/150320686/mariam-kamara-highlights-a-diverse-group-of-new-faculty-appointments-at-the-eth-zurich",
+			"urlToImage": "https://archinect.imgix.net/uploads/b9/b9c5917a245f7eb558e5a109eb1a2164.jpg?fit=crop&auto=compress%2Cformat&w=1200",
+			"publishedAt": "2022-08-17T17:23:00Z",
+			"content": "Renowned West African architect Mariam Kamara will be among twelve new professors joining the faculty of the ETH Zurich, the school announced on its website late last month. \r\nHer appointment represe… [+2068 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "01net.com"
+			},
+			"author": "Florian Bayard",
+			"title": "En offrant des cryptomonnaies, un internaute a piégé plusieurs célébrités",
+			"description": "Tornado Cash, un mixeur de cryptomonnaies très prisé des pirates, a été interdit aux États-Unis. Pour démontrer l'absurdité de l'interdiction, un internaute a piégé plusieurs célébrités par le biais de la blockchain Ethereum. Explications.\nL'article En offran…",
+			"url": "https://www.01net.com/actualites/offrant-cryptomonnaies-internaute-piege-celebrites.html",
+			"urlToImage": "https://www.01net.com/app/uploads/2022/07/wallet-crypto-WorldSpectrum-Pixabay.jpg",
+			"publishedAt": "2022-08-10T09:15:26Z",
+			"content": "Tornado Cash, un mixeur de cryptomonnaies très prisé des pirates, a été interdit aux États-Unis. Pour démontrer l’absurdité de l’interdiction, un internaute a piégé plusieurs célébrités par le biais … [+5891 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Motley Fool"
+			},
+			"author": "newsfeedback@fool.com (Travis Hoium)",
+			"title": "Will Bitcoin Ever Hit $50,000 Again?",
+			"description": "Bitcoin is still the biggest cryptocurrency, but it may not hold that title forever.",
+			"url": "https://www.fool.com/investing/2022/08/18/will-bitcoin-ever-hit-50000-again/",
+			"urlToImage": "https://g.foolcdn.com/editorial/images/696976/pig-taking-of-like-a-rocket.jpg",
+			"publishedAt": "2022-08-18T19:46:41Z",
+			"content": "Bitcoin(BTC 0.63%) has dropped from all-time highs in late 2022, but has bounced back in recent weeks. Is this a bull run and will the cryptocurrency get to $50,000 again? This video digs into why co… [+191 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Futurity: Research News"
+			},
+			"author": "Shirley Cardenas-McGill",
+			"title": "Bubbles and ultrasound can make bandages stickier",
+			"description": "Researchers have figured out how to use ultrasound and bubbles to make medical adhesive bandages stickier and last longer—even on wet skin.",
+			"url": "https://www.futurity.org/ultrasound-bubbles-bandages-adhesives-2782342/",
+			"urlToImage": "https://www.futurity.org/wp/wp-content/uploads/2022/08/bubbles-bandages-1600.jpg",
+			"publishedAt": "2022-08-15T13:23:09Z",
+			"content": "Researchers have discovered they can use ultrasound waves and bubbles to control the stickiness of medical adhesive bandages.\r\nThe breakthrough could lead to new advances in medical adhesives, especi… [+1861 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "tagesschau.de"
+			},
+			"author": "tagesschau",
+			"title": "Rasante Schmelze am Rhonegletscher treibt Forscher um",
+			"description": "Um mindestens drei Meter ist die Eisdicke des Rhonegletschers in den vergangenen Wochen zurückgegangen. Forscher treibt vor allem um, was sich in den Tiefen des Gletschers abspielt. <em>Von Kathrin Hondl.</em>",
+			"url": "https://www.tagesschau.de/ausland/europa/rhone-gletscher-103.html",
+			"urlToImage": "https://www.tagesschau.de/multimedia/bilder/rhonegletscher-103~_v-original.jpg",
+			"publishedAt": "2022-08-16T14:27:54Z",
+			"content": "Um mindestens drei Meter ist die Eisdicke des Rhonegletschers in den vergangenen Wochen zurückgegangen. Forscher treibt vor allem um, was sich in den Tiefen des Gletschers abspielt. \r\nEs tropft in de… [+3410 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Phys.Org"
+			},
+			"author": "Marianne Lucien",
+			"title": "Heat waves thawing Arctic permafrost",
+			"description": "In the northernmost region of the earth the arctic permafrost is melting at an accelerated rate. For more than a decade, an international team of researchers from ETH Zurich, the University of Alaska Fairbanks, and the German Aerospace Center have observed to…",
+			"url": "https://phys.org/news/2022-07-arctic-permafrost.html",
+			"urlToImage": "https://scx2.b-cdn.net/gfx/news/hires/2022/heatwaves-thawing-arct.jpg",
+			"publishedAt": "2022-07-28T11:04:08Z",
+			"content": "In the northernmost region of the earth the arctic permafrost is melting at an accelerated rate. For more than a decade, an international team of researchers from ETH Zurich, the University of Alaska… [+4188 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "CoinDesk"
+			},
+			"author": "Daniel Kuhn",
+			"title": "Is Ethereum's Merge Priced-In?",
+			"description": "Arca’s director of research lays out the case for buying ETH ahead of the Merge.",
+			"url": "https://www.coindesk.com/layer2/2022/08/22/is-ethereums-merge-priced-in/",
+			"urlToImage": "https://www.coindesk.com/resizer/Px_AH3QHcbE8NFIac1s8YiZI2kQ=/1200x628/center/middle/cloudfront-us-east-1.images.arcpublishing.com/coindesk/UKUQZJMD6ZFXTMDJPDIM2NXGVA.jpg",
+			"publishedAt": "2022-08-22T16:45:00Z",
+			"content": "Katie Talati, the director of research at investment firm Arca, thinks traditional finance institutions are at risk of missing out on a once-in-a-decade trade. Right now, she said, ether (ETH) is woe… [+4547 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "CoinDesk"
+			},
+			"author": "Lyllah Ledesma, Omkar Godbole",
+			"title": "First Mover Americas: BTC, ETH Drop Amid Geopolitical Tensions",
+			"description": "The latest price moves in bitcoin (BTC) and crypto markets in context for August 2, 2022.",
+			"url": "https://www.coindesk.com/markets/2022/08/02/first-mover-americas-btc-eth-drop-amid-geopolitical-tensions/",
+			"urlToImage": "https://www.coindesk.com/resizer/QNPBc0muER1siACWII_EgibHLn0=/1200x628/center/middle/cloudfront-us-east-1.images.arcpublishing.com/coindesk/2JYBKDAZ3JAF7AEURUGC4L6BKI.jpg",
+			"publishedAt": "2022-08-02T14:04:06Z",
+			"content": "<ul><li>Price Point: The correlation between crypto and stock markets is strong, as global markets take a hit amid heightening geopolitical tensions. Both bitcoin and ether are down.\r\n</li><li>Market… [+4374 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "CoinDesk"
+			},
+			"author": "Eli Tan, Oliver Knight, Nikhilesh De",
+			"title": "Someone Is Trolling Celebs by Sending ETH From Tornado Cash",
+			"description": "An anonymous crypto user sent small amounts of ether from a sanctioned Tornado Cash address to celebrities and prominent crypto figures on Tuesday.",
+			"url": "https://www.coindesk.com/policy/2022/08/09/someone-is-trolling-celebs-by-sending-eth-from-tornado-cash/",
+			"urlToImage": "https://www.coindesk.com/resizer/1PlAft--__SfjzVVgqcGlbe_TAQ=/1200x628/center/middle/cloudfront-us-east-1.images.arcpublishing.com/coindesk/VFKOLC3ARND7ZN67X6GLY3WFJA.jpg",
+			"publishedAt": "2022-08-09T15:16:46Z",
+			"content": "An anonymous user sent a slew of Tornado Cash transactions to high-profile Ethereum addresses on Tuesday in what appears to be a troll implicating them in a potential regulatory mess.\r\nImpacted walle… [+2093 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Xataka.com"
+			},
+			"author": "Jose García",
+			"title": "He probado a ganar dinero con Brave y me he llevado tres euros en un mes",
+			"description": "Ganar dinero usando una aplicación o programa suena bien. Bastante bien, de hecho, y más si es un navegador que, seguramente, usemos varias horas al día. Eso es lo que nos propone el navegador Brave: úsame, deja que te mande algunos anuncios en forma de notif…",
+			"url": "https://www.xataka.com/aplicaciones/he-probado-a-ganar-dinero-brave-me-he-llevado-tres-euros-mes",
+			"urlToImage": "https://i.blogs.es/022ed0/_dsc8503/840_560.jpeg",
+			"publishedAt": "2022-08-13T08:01:56Z",
+			"content": "Ganar dinero usando una aplicación o programa suena bien. Bastante bien, de hecho, y más si es un navegador que, seguramente, usemos varias horas al día. Eso es lo que nos propone el navegador Brave:… [+6137 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Ifanr.com"
+			},
+			"author": "何, 嘉昕",
+			"title": "早报｜苹果或叫停 iPhone 14 涨价/国产大飞机 C919 取得重大进展/蔚来或推 10 万级车型",
+			"description": "CEO 和员工薪酬差距越大，企业效率越高？#欢迎关注爱范儿官方微信公众号：爱范儿（微信号：ifanr），更多精彩内容第一时间为您奉上。\n爱范儿 |\n原文链接 ·\n查看评论 ·\n新浪微博",
+			"url": "https://www.ifanr.com/1503841",
+			"urlToImage": "https://s3.ifanr.com/wp-content/uploads/2022/08/0729.018.jpeg",
+			"publishedAt": "2022-08-02T00:36:55Z",
+			"content": "<ul><li> 10 </li><li></li><li> C919 </li><li></li><li></li><li></li><li>CEO </li><li> iPhone 14 </li><li></li><li>Pico VR </li><li></li><li>Tiffany &amp; Co CryptoPunks  NFT</li><li></li><li></li><li… [+945 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "HYPEBEAST"
+			},
+			"author": "info@hypebeast.com (HYPEBEAST), HYPEBEAST",
+			"title": "The Limited Edt x adidas Originals Forum 84 Low Celebrates Singapore's Independence",
+			"description": "Continuing its collaborative relationship with adidas, Singapore-based sneaker retailer, Limited Edt, has reconnected with adidas Originals to celebrate Singapore’s independence this month with a Forum 84 Low release. The latest team-up serves as the third an…",
+			"url": "https://hypebeast.com/2022/8/limited-edt-adidas-originals-forum-84-low-singapore-forum-release-info",
+			"urlToImage": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F08%2Flimited-edt-adidas-originals-forum-84-low-release-info-tw.jpg?w=960&cbr=1&q=90&fit=max",
+			"publishedAt": "2022-08-17T04:03:43Z",
+			"content": "Continuing its collaborative relationship with adidas, Singapore-based sneaker retailer, Limited Edt, has reconnected with adidas Originals to celebrate Singapores independence this month with a Foru… [+2543 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Rnikhil.com"
+			},
+			"author": "Nikhil",
+			"title": "Tornado cash takedown and its repercussions",
+			"description": "” If you have nothing to hide, you have nothing to fear”",
+			"url": "http://rnikhil.com/2022/08/09/tornado-cash-block.html",
+			"urlToImage": null,
+			"publishedAt": "2022-08-09T20:06:02Z",
+			"content": "If you have nothing to hide, you have nothing to fear\r\nThis is a common saying parroted by folks (made popular in the US after 9/11) for justifying many types of surveillance. It is also sometimes mi… [+4430 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "CoinDesk"
+			},
+			"author": "Shaurya Malwa, James Rubin",
+			"title": "First Mover Asia: Crypto Companies Struggle With Layoffs, but Some See Opportunity to Add Talent; BTC, ETH Soar After Fed Rate Hike",
+			"description": "The bear market has forced multiple organizations to cut their workforces, hurting morale and weakening the companies; BTC, ETH soar.",
+			"url": "https://www.coindesk.com/markets/2022/07/27/first-mover-asia-crypto-companies-struggle-with-layoffs-but-some-see-opportunity-to-add-talent-btc-eth-soar-after-fed-rate-hike/",
+			"urlToImage": "https://www.coindesk.com/resizer/LU7C6FEwhXM-n6T1oeca9wTrpM4=/1200x628/center/middle/cloudfront-us-east-1.images.arcpublishing.com/coindesk/4CXQVE2XGVGGXI2A5PSXTKAPLI.jpg",
+			"publishedAt": "2022-07-27T23:05:38Z",
+			"content": "Good morning. Heres whats happening:\r\nPrices: Bitcoin and ether soar after the Federal Reserve raises interest rates.\r\nInsights: Crypto firms reckon with layoffs, but the bear market may create oppor… [+11814 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "CoinDesk"
+			},
+			"author": "Omkar Godbole",
+			"title": "Ether's Deepest 'Backwardation' Since 2020 Crash Shows Traders Prepping for Ethereum PoW Split",
+			"description": "Traders have been buying ETH in the spot market and selling ether futures to withstand volatility, creating the unusual dynamic.",
+			"url": "https://www.coindesk.com/markets/2022/08/08/ethers-deepest-backwardation-since-2020-crash-shows-traders-prepping-for-ethereum-pow-split/",
+			"urlToImage": "https://www.coindesk.com/resizer/hzwmrCODUBJToXaRBaHrRaQa3uY=/1200x628/center/middle/cloudfront-us-east-1.images.arcpublishing.com/coindesk/DSGKEYIYWRF7LMJ6SDNPBL77XQ.jpg",
+			"publishedAt": "2022-08-08T15:32:49Z",
+			"content": "Ether's (ETH) futures market showed \"backwardation\" on Monday, with three-month contracts trading at the widest discount to the spot price since the coronavirus-induced crash of March 2020.\r\nData pro… [+2910 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Buzzorange.com"
+			},
+			"author": "邵元婷",
+			"title": "以太幣大回血！以太坊測試網 Goerli 成功完成合併，為什麼以太坊的合併這麼重要？",
+			"description": "近年來幣圈最關注的大事件應該就是以太坊的合併，這也會是以太坊有史以來最重要的升級。以太坊共同創辦人 Vitalik Buterin 表示，預計在今年 9 月中下旬將正式從工作量證明機制（PoW） 轉變[...]\nThe post 以太幣大回血！以太坊測試網 Goerli 成功完成合併，為什麼以太坊的合併這麼重要？ appeared first on TechOrange 科技報橘.",
+			"url": "https://buzzorange.com/techorange/2022/08/12/goerli-ethereum-merge/",
+			"urlToImage": "https://buzzorange.com/techorange/app/uploads/2022/08/kanchanara-kB2JSGHM7bQ-unsplash-scaled.jpg",
+			"publishedAt": "2022-08-12T09:16:10Z",
+			"content": "Vitalik Buterin 9 PoW PoS 90% Goerli 11 \r\n Goerli \r\n Ropsten Sepolia Goerli   8 11  PoS PoW PoS Goerli 9 19 \r\n Twitter Tim Beiko POS  \r\npandas on the screen! pic.twitter.com/0nYll6gImH\r\n— Tim Beiko |… [+475 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "CoinDesk"
+			},
+			"author": "Omkar Godbole",
+			"title": "Interest in Ether Options Rises to Record as Traders Bet on 'Merge'",
+			"description": "\"A few hedge fund names have been large buyers of the ETH calls,\" one trading firm noted.",
+			"url": "https://www.coindesk.com/markets/2022/07/28/ether-open-options-reach-record-high-as-merge-optimism-drives-demand/",
+			"urlToImage": "https://www.coindesk.com/resizer/17ErUvDWIJxyfSP2mnZOSYYpUNI=/1200x628/center/middle/cloudfront-us-east-1.images.arcpublishing.com/coindesk/76C7OAGQLVCRPABHBINXM4VPFE.jpg",
+			"publishedAt": "2022-07-28T11:27:25Z",
+			"content": "Please note that ourprivacy policy,terms of use,cookies, anddo not sell my personal informationhas been updated.\r\nThe leader in news and information on cryptocurrency, digital assets and the future o… [+556 chars]"
+		},
+		{
+			"source": {
+				"id": "new-scientist",
+				"name": "New Scientist"
+			},
+			"author": "Adam Vaughan",
+			"title": "Even 'net zero' aviation could still cause significant global warming",
+			"description": "Not accounting for aviation’s non-CO2 effects such as contrails could ignore 90 per cent of future flights’ contribution to climate change",
+			"url": "https://www.newscientist.com/article/2330299-even-net-zero-aviation-could-still-cause-significant-global-warming/",
+			"urlToImage": "https://images.newscientist.com/wp-content/uploads/2022/07/22152610/SEI_115884016.jpg",
+			"publishedAt": "2022-07-25T16:00:50Z",
+			"content": "By Adam Vaughan\r\nPlanes queueing for take-off in Chengdu Shuangliu International Airport, China\r\nJingying Zhao/Getty Images\r\nFuture flights will endanger the goals of the Paris climate agreement if e… [+3165 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "New Atlas"
+			},
+			"author": "Nick Lavars",
+			"title": "3D model suggests ancient Megadolon could eat an orca in just five bites",
+			"description": "By combining cutting-edge digital modeling with analysis of a rare, one-of-a-kind fossil, scientists have pieced together the first 3D reconstruction of the Megadolon, the largest shark to ever live. From this new 3D model the scientists were able to gain fas…",
+			"url": "https://newatlas.com/biology/3d-model-megadolon-megafauna-giant-shark/",
+			"urlToImage": "https://assets.newatlas.com/dims4/default/9a702d4/2147483647/strip/true/crop/6368x3343+0+1385/resize/1200x630!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2Fa3%2Fc8%2Ff56b43084dbcaa8a45b190df1acd%2Ffig-4-j.%20J.%20Giraldo..jpg&na.image_optimisation=0",
+			"publishedAt": "2022-08-18T02:38:32Z",
+			"content": "By combining cutting-edge digital modeling with analysis of a rare, one-of-a-kind fossil, scientists have pieced together the first 3D reconstruction of the Megadolon, the largest shark to ever live.… [+3538 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "New Atlas"
+			},
+			"author": "Nick Lavars",
+			"title": "Scientists create first full map of human immune system connectivity",
+			"description": "By using advanced screening methods to tune into the communications taking place between individual cells, scientists have produced the first full connectivity map of the human immune system. This new wiring diagram will help researchers better understand the…",
+			"url": "https://newatlas.com/medical/first-map-human-immune-system-connectivity/",
+			"urlToImage": "https://assets.newatlas.com/dims4/default/a0e804c/2147483647/strip/true/crop/2000x1050+0+0/resize/1200x630!/quality/90/?url=http%3A%2F%2Fnewatlas-brightspot.s3.amazonaws.com%2F5f%2F80%2Fe28bbce7456ab986160f08975421%2Fdepositphotos-374448990-l.jpg&na.image_optimisation=0",
+			"publishedAt": "2022-08-05T09:07:08Z",
+			"content": "By using advanced screening methods to tune into the communications taking place between individual cells, scientists have produced the first full connectivity map of the human immune system. This ne… [+3419 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Motley Fool"
+			},
+			"author": "newsfeedback@fool.com (Dominic Basulto)",
+			"title": "3 Potential Paths for Ethereum After the Big Merge",
+			"description": "If you are thinking about buying Ethereum, consider these three scenarios for what might happen with this popular cryptocurrency in 2022.",
+			"url": "https://www.fool.com/investing/2022/08/04/3-potential-paths-for-ethereum-after-the-big-merge/",
+			"urlToImage": "https://g.foolcdn.com/editorial/images/693185/woman-using-ethereum.jpg",
+			"publishedAt": "2022-08-04T09:00:00Z",
+			"content": "Right now, Ethereum(ETH -1.89%) is getting a lot of attention for the Merge, which is scheduled to take place on September 19. If this much-anticipated technological upgrade goes through as planned, … [+4161 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Motley Fool"
+			},
+			"author": "newsfeedback@fool.com (Dominic Basulto)",
+			"title": "Why Ethereum Is a Better Long-Term Buy Than Bitcoin",
+			"description": "Bitcoin's long reign as the most popular crypto to hold in your portfolio may be coming to an end.",
+			"url": "https://www.fool.com/investing/2022/07/24/why-ethereum-is-a-better-long-term-buy-than-bitcoi/",
+			"urlToImage": "https://g.foolcdn.com/editorial/images/691048/tracking-investments-wealth-family-planning.jpg",
+			"publishedAt": "2022-07-24T09:30:00Z",
+			"content": "If you could hold only a single crypto in your portfolio, what would it be? Most people would probably answer Bitcoin(BTC 0.20%), and for good reason. Bitcoin is not only the best-known and most popu… [+3873 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Motley Fool"
+			},
+			"author": "newsfeedback@fool.com (Neil Patel)",
+			"title": "Should You Buy Ethereum While It's Beaten Down?",
+			"description": "This top smart-contract crypto has a major catalyst on the horizon.",
+			"url": "https://www.fool.com/investing/2022/08/23/should-you-buy-ethereum-while-its-beaten-down/",
+			"urlToImage": "https://g.foolcdn.com/editorial/images/697193/eth-on-dice.jpg",
+			"publishedAt": "2022-08-23T10:45:00Z",
+			"content": "Ethereum(ETH 2.37%) was the first blockchain network to introduce smart contracts, which are software programs that self-execute when two unrelated parties satisfy the necessary conditions of a trans… [+3872 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Tecnoblog.net"
+			},
+			"author": "Bruno Ignacio",
+			"title": "XP vai lançar plataforma de negociação de criptomoedas Xtage em agosto",
+			"description": "Xtage estará disponível para clientes da XP Investimentos com o \"perfil adequado\"; bitcoin (BTC) e ether (ETH) serão as primeiras criptomoedas listadas\nXP vai lançar plataforma de negociação de criptomoedas Xtage em agosto",
+			"url": "https://tecnoblog.net/noticias/2022/07/27/xp-vai-lancar-plataforma-de-negociacao-de-criptomoedas-xtage-em-agosto/",
+			"urlToImage": "https://files.tecnoblog.net/wp-content/uploads/2021/01/38747838010_810898b891_k-e1611096030496.jpg",
+			"publishedAt": "2022-07-27T14:44:50Z",
+			"content": "A XP Investimentos planeja lançar sua própria plataforma para a negociação de criptomoedas, batizada de Xtage, em meados de agosto deste ano. Inicialmente, serão disponibilizados bitcoin (BTC) e ethe… [+2568 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Motley Fool"
+			},
+			"author": "newsfeedback@fool.com (Chris MacDonald)",
+			"title": "What Investors Are Watching With Ethereum, as This Token Pushes Higher Today",
+			"description": "The upcoming merge is a big deal, and investors have a lot to consider with this massive upgrade.",
+			"url": "https://www.fool.com/investing/2022/08/24/what-investors-are-watching-as-ethereum-pushes-hig/",
+			"urlToImage": "https://g.foolcdn.com/editorial/images/697901/crypto79.jpg",
+			"publishedAt": "2022-08-24T17:08:27Z",
+			"content": "What happened\r\nAs investors continue to wade in the choppy cryptocurrency waters, a few top tokens continue to generate most of the interest in this sector. Among the key tokens of note for most has … [+2291 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Futurity: Research News"
+			},
+			"author": "Oliver Morsch-ETH Zurich",
+			"title": "Attosecond measurements capture electrons in water clusters",
+			"description": "A new method allows for time-resolved measurements of electron motion in water clusters lasting only a few attoseconds.",
+			"url": "https://www.futurity.org/electron-water-clusters-attoseconds-2772942-2/",
+			"urlToImage": "https://www.futurity.org/wp/wp-content/uploads/2022/07/electrons_water_clusters_attoseconds_1600.jpg",
+			"publishedAt": "2022-07-26T14:35:21Z",
+			"content": "A new method allows for time-resolved measurements of electron motion in water clusters lasting only a few attoseconds.\r\nThe technique can be used for more detailed studies of water as well as faster… [+4042 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Futurity: Research News"
+			},
+			"author": "Marianne Lucien-ETH Zurich",
+			"title": "Hydrogel could ease need for vaccine ‘cold chain’",
+			"description": "The need to keep vaccines cold makes global shipping a challenge. Researchers say their hydrogel approach could change that.",
+			"url": "https://www.futurity.org/vaccines-hydrogel-cold-chain-2778812-2/",
+			"urlToImage": "https://www.futurity.org/wp/wp-content/uploads/2022/08/vaccine_cold_chain_1600.jpg",
+			"publishedAt": "2022-08-08T00:30:20Z",
+			"content": "Even without refrigeration, a new hydrogel vastly improves the shelf life of vaccines, say researchers.\r\nNearly half of all vaccines go to waste due to the logistical obstacles involved in transporti… [+4255 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Tecmundo.com.br"
+			},
+			"author": "Jorge Marin",
+			"title": "Canal do Flamengo é hackeado e mostra live falsa de Elon Musk",
+			"description": "O FlaTV, canal oficial do Flamengo no YouTube, está transmitindo desde a manhã desta segunda-feira (25) uma live falsa com a participação do bilionário Elon Musk, dono da Tesla e da SpaceX.O canal, que possui mais de 6,52 milhões de inscritos, parece ter sido…",
+			"url": "https://www.tecmundo.com.br/seguranca/242214-canal-flamengo-hackeado-mostra-live-falsa-elon-musk.htm",
+			"urlToImage": "https://tm.ibxk.com.br/2022/07/25/25074543865003.jpg",
+			"publishedAt": "2022-07-25T12:30:04Z",
+			"content": "O FlaTV, canal oficial do Flamengo no YouTube, está transmitindo desde a manhã desta segunda-feira (25) uma live falsa com a participação do bilionário Elon Musk, dono da Tesla e da SpaceX.\r\nO canal,… [+1734 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "CoinDesk"
+			},
+			"author": "David Z Morris",
+			"title": "Who Will Mine Ethereum After It's Gone?",
+			"description": "Rumors of a continued proof-of-work version of Ethereum should be viewed with extreme caution. But by god, it’s fascinating.",
+			"url": "https://www.coindesk.com/layer2/2022/08/03/who-will-mine-ethereum-after-its-gone/",
+			"urlToImage": "https://www.coindesk.com/resizer/BpBnHkR43oPA5pOM2ow_KKJYwZs=/1200x628/center/middle/cloudfront-us-east-1.images.arcpublishing.com/coindesk/4PNTUJLY5VHX3CLZHLOGJXCYLE.jpg",
+			"publishedAt": "2022-08-03T16:57:29Z",
+			"content": "Ethereums long-awaited transition from a proof-of-work to proof-of-stake-based consensus system is just over the horizon, and the anticipation has created a bullish narrative for the smart-contract p… [+10401 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Phys.Org"
+			},
+			"author": "Science X staff",
+			"title": "It's raining PFAS: Even in Antarctica and on the Tibetan Plateau, rainwater is unsafe to drink",
+			"description": "Per- and polyfluoroalkyl substances (PFAS) are man-made hazardous chemicals that are spread globally in the atmosphere and as a result they can be found in the rainwater and snow in even the most remote locations on Earth. During the last 20 years, guideline …",
+			"url": "https://phys.org/news/2022-08-pfas-antarctica-tibetan-plateau-rainwater.html",
+			"urlToImage": "https://scx2.b-cdn.net/gfx/news/hires/2022/rainwater-1.jpg",
+			"publishedAt": "2022-08-02T13:40:01Z",
+			"content": "Per- and polyfluoroalkyl substances (PFAS) are man-made hazardous chemicals that are spread globally in the atmosphere and as a result they can be found in the rainwater and snow in even the most rem… [+4490 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Neowin"
+			},
+			"author": "Paul Hill",
+			"title": "The Jack Dorsey tweet NFT has a current best offer of $400, down 650,000%",
+			"description": "Sina Estavi who bought Jack Dorsey&#039;s first tweet NFT in March last year, has seen the asset fall in value by a staggering amount. The latest offer is for 0.25 eth or $400, while Estavi paid $2.9m.",
+			"url": "https://www.neowin.net/news/the-jack-dorsey-tweet-nft-has-a-current-best-offer-of-400-down-650000/",
+			"urlToImage": "https://cdn.neow.in/news/images/uploaded/2022/06/1654664952_1641554458_nft_story.jpg",
+			"publishedAt": "2022-08-02T14:32:01Z",
+			"content": "In March 2021, when the crypto and NFT markets were white-hot, Jack Dorsey co-founder of Twitter decided to sell his very first tweet as an NFT. Eventually, the asset was sold to Sina Estavi for 1630… [+1321 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Universe Today"
+			},
+			"author": "Scott Alan Johnston",
+			"title": "Lunar Rocks Have Earth's Noble Gases Trapped Inside. More Evidence That the Moon Came From the Earth",
+			"description": "Piecing together the history of the Solar System from the traces left behind isn’t easy. Bit by bit, however, we’re working it out. This month, new research examining the composition of lunar meteorites offers compelling evidence that the Moon and the Earth w…",
+			"url": "https://www.universetoday.com/157153/lunar-rocks-have-earths-noble-gases-trapped-inside-more-evidence-that-the-moon-came-from-the-earth/",
+			"urlToImage": "https://www.universetoday.com/wp-content/uploads/2022/08/image.imageformat.fullwidthwidepage.214201784.jpg",
+			"publishedAt": "2022-08-16T00:15:27Z",
+			"content": "Piecing together the history of the Solar System from the traces left behind isnt easy. Bit by bit, however, were working it out. This month, new research examining the composition of lunar meteorite… [+4238 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Nature.com"
+			},
+			"author": "Tian-Ren Li, Fabian Huck, GiovanniMaria Piccini, Konrad Tiefenbacher",
+			"title": "Publisher Correction: Mimicry of the proton wire mechanism of enzymes inside a supramolecular capsule enables β-selective O-glycosylations",
+			"description": "Nature Chemistry - Publisher Correction: Mimicry of the proton wire mechanism of enzymes inside a supramolecular capsule enables β-selective O-glycosylations",
+			"url": "https://www.nature.com/articles/s41557-022-01040-w",
+			"urlToImage": null,
+			"publishedAt": "2022-08-19T00:00:00Z",
+			"content": "<li>Department of Chemistry, University of Basel, Basel, Switzerland\r\nTian-Ren Li, Fabian Huck &amp; Konrad Tiefenbacher\r\n</li><li>NCCR Molecular Systems Engineering, Basel, Switzerland\r\nTian-Ren Li,… [+292 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "CoinDesk"
+			},
+			"author": "Omkar Godbole",
+			"title": "Anomalous Ether Futures Pricing Condition Is Likely to Revert After the Merge",
+			"description": "\"The current state of backwardation reflects the general market view that ETH will fall following the Merge, but this could be short-lived,\" one observer said.",
+			"url": "https://www.coindesk.com/markets/2022/08/24/anomalous-ether-futures-pricing-condition-is-likely-to-revert-after-the-merge/",
+			"urlToImage": "https://www.coindesk.com/resizer/H2AE98QnrHsNN2UqPR26n3szNyo=/1200x628/center/middle/cloudfront-us-east-1.images.arcpublishing.com/coindesk/A6XU3PPD3NDCFMXXN224GYCVCM.png",
+			"publishedAt": "2022-08-24T12:25:48Z",
+			"content": "Ether (ETH) proponents would like all price indicators to flash bullish signals as Ethereum's long-pending upgrade, dubbed \"the Merge,\" nears.\r\nThe futures market, however, has slipped into backwarda… [+4109 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Seeking Alpha"
+			},
+			"author": "The Digital Trend",
+			"title": "The Ethereum Wars: Miners, Stakers, Forks And Merges",
+			"description": "As we approach the merge, Ethereum will face challenges. Read more to find out why I believe ETH will come out on top.",
+			"url": "https://seekingalpha.com/article/4529915-ethereum-wars-miners-stakers-forks-merges",
+			"urlToImage": "https://static.seekingalpha.com/cdn/s3/uploads/getty_images/1338914239/image_1338914239.jpg?io=getty-c-w750",
+			"publishedAt": "2022-08-04T21:51:33Z",
+			"content": "gremlin/E+ via Getty Images\r\nThesis Summary\r\n Ethereum (ETH-USD) is the world's second-largest cryptocurrency by market cap, and since its inception in 2013, it has had a colourful journey to the top… [+6682 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "CoinDesk"
+			},
+			"author": "Jamie Crawley",
+			"title": "Sygnum Bank Expands Staking to Cardano",
+			"description": "Cardano's ADA joins Ethereum's ETH, Internet Computer's ICP and Tezos' YTZ in the firm's staking offering, which is integrated with its banking platform.",
+			"url": "https://www.coindesk.com/business/2022/08/02/sygnum-bank-expands-staking-to-cardano/",
+			"urlToImage": "https://www.coindesk.com/resizer/6nggfe0myqlcKvkGj-n06KwmCcU=/1200x628/center/middle/cloudfront-us-east-1.images.arcpublishing.com/coindesk/YSJEGMAKGBHGJGIIC7A43PSIIY.jpg",
+			"publishedAt": "2022-08-02T12:01:42Z",
+			"content": "Please note that ourprivacy policy,terms of use,cookies, anddo not sell my personal informationhas been updated.\r\nThe leader in news and information on cryptocurrency, digital assets and the future o… [+556 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Scientific American"
+			},
+			"author": "Naomi Oreskes",
+			"title": "The Public Wants Scientists to Be More Involved in Policy Debates",
+			"description": "Researchers worry about being branded as partisan, but people want to hear from experts",
+			"url": "https://www.scientificamerican.com/article/the-public-wants-scientists-to-be-more-involved-in-policy-debates/",
+			"urlToImage": "https://static.scientificamerican.com/sciam/cache/file/0B10B7F6-A68A-4546-B979EDFA4899EC62.jpg",
+			"publishedAt": "2022-08-21T13:00:00Z",
+			"content": "Many scientists are loath to involve themselves in policy debates for fear of losing credibility. They worry that if they participate in public debate on a contested issue, they will be viewed as bia… [+4179 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Presse-citron"
+			},
+			"author": "Hadrien Augusto",
+			"title": "Hack crypto : des milliers de portefeuilles Solana vidés, que se passe-t-il ?",
+			"description": "Présente dans le top 10 des cryptomonnaies, Solana fait face à un hack de taille.",
+			"url": "https://www.presse-citron.net/hack-crypto-des-milliers-de-portefeuilles-solana-vides-que-se-passe-t-il/",
+			"urlToImage": "https://www.presse-citron.net/app/uploads/2021/10/Solana-crypto.jpeg",
+			"publishedAt": "2022-08-03T07:00:21Z",
+			"content": "Au cours de la nuit, plus de 8000 portefeuilles Solana ont été vidés, dans ce qui semble être une attaque massive profitant dune vulnérabilité sur le réseau de la blockchain concurrente à Ethereum. D… [+3251 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "CoinDesk"
+			},
+			"author": "Aoyon Ashraf",
+			"title": "‘Hey, Look, It’s a Monkey!’ Ethereum’s Vitalik Buterin Pokes Fun at Ape NFTs, Expresses Optimism About the Merge",
+			"description": "The co-founder of Ethereum spoke as ETH, the network’s native coin, reached the highest levels since June as the Merge passed a test",
+			"url": "https://www.coindesk.com/business/2022/08/11/hey-look-its-a-monkey-ethereums-vitalik-buterin-pokes-fun-at-ape-nfts-expresses-optimism-about-the-merge/",
+			"urlToImage": "https://www.coindesk.com/resizer/aYWb7SG0dUCU1lvKGN3DRYShqUw=/1200x628/center/middle/cloudfront-us-east-1.images.arcpublishing.com/coindesk/5INEAUI2CNG23H7IPE6GR25QGM.jpg",
+			"publishedAt": "2022-08-11T15:50:45Z",
+			"content": "Vitalik Buterin poked fun at the Bored Ape Yacht Club (BAYC) non-fungible tokens (NFTs) built atop the Ethereum ecosystem he co-founded, and expressed optimism about the Merge, the impending fundamen… [+2728 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "R-bloggers.com"
+			},
+			"author": "sang-heon lee",
+			"title": "R code snippet : Read Historical Prices of Cryptocurrencies",
+			"description": "This post shows how to read prices of cryptocurrencies given symbols as a string. Read historical prices of cryptocurrencies Pairs trading also can be applied to cryptocurrencies. It is, therefore, a starting point of pairs trading bac...\n\n\nContinue reading: …",
+			"url": "https://www.r-bloggers.com/2022/08/r-code-snippet-read-historical-prices-of-cryptocurrencies/",
+			"urlToImage": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEit28PcYRvUjrMxVeQtB-XgkQcASf8kFdd_2a24uHpuq8BmLd76nVnDnJMXhkWDjgHwkf9-LK8movOA99r4XfPK7go9Zbt5XWyF_eUC05QzPYo1YpTqcJYLCdb684YncKHpoE3EB8ijUcPa4n7ZKZKDQO6kCZbriE1HBI-GajaYY4HrGpo_ft2p8Usk/s1600/getSymbols_crypto.png",
+			"publishedAt": "2022-08-13T14:39:00Z",
+			"content": "[This article was first published on SH Fintech Modeling, and kindly contributed to R-bloggers]. (You can report issue about the content on this page here)\r\nWant to share your content on R-bloggers? … [+2328 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "CoinDesk"
+			},
+			"author": "Glenn Williams, Helene Braun, Jimmy He",
+			"title": "Market Wrap: Bitcoin Pauses Losing Streak but the Trend Is Still Not Bullish",
+			"description": "BTC was slightly higher on the day, but ETH was outpacing the largest cryptocurrency by market cap. Bitcoin’s price (BTC) increased 0.3% on Thursday, ending a streak of four consecutive negative days. Average trading volume was larger than average. Prices ini…",
+			"url": "https://www.coindesk.com/markets/2022/08/18/market-wrap-bitcoin-pauses-losing-streak-but-the-trend-is-still-not-bullish/",
+			"urlToImage": "https://www.coindesk.com/resizer/MOFnYQRYmtcPWuMOLobejR8Wxiw=/1200x628/center/middle/cloudfront-us-east-1.images.arcpublishing.com/coindesk/WUJVFQUIFZCH3FFSHHYZTVM75U.jpg",
+			"publishedAt": "2022-08-18T20:32:26Z",
+			"content": "BTC Pauses Its Recent Fall, Albeit Barely\r\nBitcoins price (BTC) increased 0.3% on Thursday, ending a streak of four consecutive negative days. Average trading volume was higher than usual. Prices ini… [+7210 chars]"
+		},
+		{
+			"source": {
+				"id": null,
+				"name": "Nature.com"
+			},
+			"author": "John T. McCrone, Verity Hill, Sumali Bajaj, Rosario Evans Pena, Ben C. Lambert, Rhys Inward, Samir Bhatt, Erik Volz, Christopher Ruis, Simon Dellicour, Guy Baele, Alexander E. Zarebski, Adam Sadilek, Neo Wu, Aaron Schneider, Xiang Ji, Jayna Raghwani, Ben Jackson, Rachel Colquhoun, Áine O’Toole, Thomas P. Peacock, Kate Twohig, Simon Thelwall, Gavin Dabrera, Richard Myers, Nuno R. Faria, Carmen Huber, Isaac I. Bogoch, Kamran Khan, Louis du Plessis, Jeffrey C. Barrett, David M. Aanensen, Wendy S. Barclay, Meera Chand, Thomas Connor, Nicholas J. Loman, Marc A. Suchard, Oliver G. Pybus, Andrew Rambaut, Moritz U. G. Kraemer",
+			"title": "Context-specific emergence and growth of the SARS-CoV-2 Delta variant",
+			"description": "Nature - Context-specific emergence and growth of the SARS-CoV-2 Delta variant",
+			"url": "https://www.nature.com/articles/s41586-022-05200-3",
+			"urlToImage": null,
+			"publishedAt": "2022-08-11T00:00:00Z",
+			"content": "<li>Institute of Evolutionary Biology, University of Edinburgh, Edinburgh, UK\r\nJohn T. McCrone, Verity Hill, Ben Jackson, Rachel Colquhoun, Áine OToole &amp; Andrew Rambaut\r\n</li><li>Department of Zo… [+3226 chars]"
+		}
+	]
+}

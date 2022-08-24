@@ -1,0 +1,58 @@
+{
+  "status": "success",
+  "data": {
+    "referenceCurrencyRate": 1,
+    "totalCoins": 15550,
+    "totalMarkets": 30203,
+    "totalExchanges": 177,
+    "totalMarketCap": "1101050469524",
+    "total24hVolume": "77969094152",
+    "btcDominance": 37.739399005355274,
+    "bestCoins": [
+      {
+        "uuid": "cKExCczgV",
+        "symbol": "UST",
+        "name": "TerraUSD",
+        "iconUrl": "https://cdn.coinranking.com/mtb0IvtcM/terrausd.png",
+        "coinrankingUrl": "https://coinranking.com/coin/cKExCczgV+terrausd-ust"
+      },
+      {
+        "uuid": "ZIXroLSIK",
+        "symbol": "NU",
+        "name": "NuCypher",
+        "iconUrl": "https://cdn.coinranking.com/EDLGxX9Wk/nucypher.svg",
+        "coinrankingUrl": "https://coinranking.com/coin/ZIXroLSIK+nucypher-nu"
+      },
+      {
+        "uuid": "Knsels4_Ol-Ny",
+        "symbol": "ATOM",
+        "name": "Cosmos",
+        "iconUrl": "https://cdn.coinranking.com/HJzHboruM/atom.svg",
+        "coinrankingUrl": "https://coinranking.com/coin/Knsels4_Ol-Ny+cosmos-atom"
+      }
+    ],
+    "newestCoins": [
+      {
+        "uuid": "GjumCDbk_",
+        "symbol": "SERG",
+        "name": "Seiren Games Network",
+        "iconUrl": "https://cdn.coinranking.com/RT2hkPtoO/21487.png",
+        "coinrankingUrl": "https://coinranking.com/coin/GjumCDbk_+seirengamesnetwork-serg"
+      },
+      {
+        "uuid": "u9vE9srdx",
+        "symbol": "SEON",
+        "name": "SeedOn",
+        "iconUrl": "https://cdn.coinranking.com/k58eFxcMA/13360.png",
+        "coinrankingUrl": "https://coinranking.com/coin/u9vE9srdx+seedon-seon"
+      },
+      {
+        "uuid": "HvdbkrCio",
+        "symbol": "SEDA",
+        "name": "SEDA",
+        "iconUrl": "https://cdn.coinranking.com/tXqp_VP_-/18592.png",
+        "coinrankingUrl": "https://coinranking.com/coin/HvdbkrCio+seda-seda"
+      }
+    ]
+  }
+}
